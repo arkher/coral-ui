@@ -11,6 +11,17 @@
 
 <img alt="expo examples" src="https://i.imgur.com/j253BeR.png">
 
+## Features
+
+- Expo
+- Typescript
+- Storybook web/mobile
+- Shopify/Restyle
+- Eslint/Prettier
+- Theme-based
+- Husky
+- Bob - Builder
+
 React Native component library built with Shopify's Restyle library to allow for **theming** and **utility style props**.
 
 ```
@@ -91,6 +102,12 @@ You'll be able to pick from things like a feature, bug fix, or CI update. And ad
 After creating this branch, create a pull request (PR) on Github. Once approved, it will be moved to a release branch (like `next`), and eventually merged into master.
 
 When merged into master, the CI (CircleCI in our case) will run semantic-release, which checks commits since last release.
+
+## Todo
+
+- [ ] PLOP - Micro-generator
+- [ ] Snapshot testing
+- [ ] Unit testing
 
 ## 📝 Notes
 
