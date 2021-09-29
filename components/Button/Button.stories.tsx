@@ -9,7 +9,7 @@ import notes from './notes/notes.md';
 
 export default {
   title: 'Button',
-  component: Button,
+  component: Button
 };
 
 export const BasicButton = () => (
@@ -18,7 +18,7 @@ export const BasicButton = () => (
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#F5FCFF',
+      backgroundColor: '#F5FCFF'
     }}
   >
     <Button onPress={action('clicked-text')}>
@@ -29,8 +29,8 @@ export const BasicButton = () => (
 
 BasicButton.story = {
   parameters: {
-    notes: { markdown: notes },
-  },
+    notes: { markdown: notes }
+  }
 };
 
 storiesOf('Button', module)
@@ -40,16 +40,13 @@ storiesOf('Button', module)
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#F5FCFF'
       }}
     >
       {getStory()}
     </View>
   ))
-  .add(
-    'Basic button',
-    BasicButton,
-  );
+  .add('Basic button', BasicButton);
 // .add(
 //   "with some emoji",
 //   () => (
