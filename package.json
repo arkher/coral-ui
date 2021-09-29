@@ -1,0 +1,141 @@
+{
+  "name": "coral-ui",
+  "description": "React Native component library using Shopify's Restyle",
+  "keywords": [
+    "components",
+    "react-native-components",
+    "restyle",
+    "styled-system",
+    "ui"
+  ],
+  "scripts": {
+    "start": "expo start",
+    "web": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "test:unit": "jest",
+    "lint": "eslint",
+    "format": "prettier *.{js,tsx} -w",
+    "prepare": "bob build",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
+  },
+  "dependencies": {
+    "@shopify/restyle": "^1.4.0",
+    "expo": "~38.0.0",
+    "expo-constants": "~9.1.1",
+    "expo-font": "~8.2.1",
+    "expo-linear-gradient": "~8.2.1",
+    "react": "~16.11.0",
+    "react-dom": "~16.11.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+    "react-native-web": "0.11.7",
+    "@storybook/addon-actions": "^5.3",
+    "@storybook/addon-knobs": "^5.3",
+    "@storybook/addon-links": "^5.3",
+    "@storybook/addon-notes": "^5.3.21"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.0",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@expo/webpack-config": "^0.11.11",
+    "@react-native-community/bob": "^0.16.2",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@storybook/addons": "~5.2.1",
+    "@storybook/react": "~5.2.1",
+    "@storybook/react-native": "~5.3.19",
+    "@types/react": "~16.9.41",
+    "@types/react-dom": "~16.9.8",
+    "@types/react-native": "~0.62.13",
+    "babel-loader": "^8.0.6",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-react-native-a11y": "^2.0.2",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "jest-expo": "^38.0.2",
+    "prettier": "^2.1.1",
+    "react-test-renderer": "^16.13.1",
+    "semantic-release": "^17.1.2",
+    "typescript": "^3.7.2",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.25",
+    "@storybook/addon-ondevice-notes": "^5.3.21"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/__mocks__/globalMock.js"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist/"
+    ]
+  },
+  "main": "dist/commonjs/index.js",
+  "react-native": "components/index.ts",
+  "module": "dist/module/index.js",
+  "types": "dist/typescript/components/index.d.ts",
+  "files": [
+    "components",
+    "dist",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "@react-native-community/bob": {
+    "source": "components",
+    "output": "dist",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "dist/"
+  ],
+  "command": {
+    "publish": {
+      "conventionalCommits": true
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "release": {
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "dist/**/*.{js,ts}",
+          "package.json",
+          "package-lock.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]nn${nextRelease.notes}"
+      }
+    ]
+  }
+}
