@@ -1,4 +1,4 @@
-# Restyle UI
+# Coral UI
 
 <p>
   <!-- iOS -->
