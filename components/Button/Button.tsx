@@ -43,7 +43,7 @@ const Button: React.FC<ButtonProps> = ({
 
 Button.defaultProps = {
   loading: false,
-  textProps: {}
+  textProps: {},
 };
 
 export default Button;
