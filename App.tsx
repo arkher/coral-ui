@@ -1,9 +1,11 @@
-import { configure, getStorybookUI } from "@storybook/react-native";
+/* eslint-disable import/extensions */
+/* eslint-disable global-require */
+import { configure, getStorybookUI } from '@storybook/react-native';
 
 configure(() => {
   // Since require.context doesn't exist in metro bundler world, we have to
   // manually import files ending in *.stories.js
-  require("./stories");
+  require('./stories');
 }, module);
 
 export default getStorybookUI({
