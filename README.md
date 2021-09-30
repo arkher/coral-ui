@@ -22,7 +22,7 @@
 - Husky
 - Bob - Builder
 
-React Native component library built with Shopify's Restyle library to allow for **theming** and **utility style props**.
+Biblioteca de componentes em React native feita com a biblioteca Restyle do Shopify, permitindo e facilitando **desenvolvimento baseado em temas** and **props utilitárias de estilo**.
 
 ```
 <Box backgroundColor="primary" mt={2} p={3}>
@@ -32,38 +32,37 @@ React Native component library built with Shopify's Restyle library to allow for
 </Box>
 ```
 
-> This is setup as Storybook with Expo, instead of Expo with Storybook.
+> Este setup utiliza Storybook com Expo, ao invés of Expo with Storybook.
 
-## Getting Started
+## Iniciando
 
-1. `yarn` - Install dependencies
-1. `yarn web` - Run Storybook
+1. `yarn` - Instala as dependências
+1. `yarn web` - Inicia o Storybook em visualização Web no browser padrão
 
-### Running on Native Devices
+### Rodando em dispositivos nativos (Android/IOS)
 
-1. `yarn start` - Start Expo in browser (should open a new tab)
-1. Wait for app to bundle. This may take 30+ seconds.
-1. Use QR code from Expo to open app on testing device (or press `i` to open simulator if available)
+1. `yarn start` - Inicia o Expo no browser
+1. Espere o bundle da aplicação. Pode demorar um pouco.
+1. Use o QR code do Expo para abrir a aplicação em um dispositivo (ou pressione `i` para abrir um simulador, caso esteja disponível)
 
-### 📁 File Structure
+### 📁 Estrutura de Arquivos
 
 ```
-Storybook with Expo CLI
-├── stories
-│   ├── index.js ➡️ Native story imports
-│   └── Example.stories.js ➡️ A Storybook page to render
-├── assets ➡️ All static assets for your project
-├── App.tsx ➡️ Entry Point for universal Expo apps
-├── app.config.js ➡️ Expo config file
-└── babel.config.js ➡️ Babel config (should be using `babel-preset-expo`)
+Storybook com Expo CLI
+├── assets ➡️ Assets estáticos do projeto
+├── App.tsx ➡️ Entry Point universal para aplicações Expo
+├── app.config.js ➡️ Arquivo de configuração do Expo
+└── babel.config.js ➡️ Configuração do Babel (utiliza `babel-preset-expo`)
 ```
 
-### Adding Storybook Stories
+### Adicionando stories ao Storybook
 
-1. Create a file alongside your component named `ComponentName.stories.tsx`.
-2. We use CSF story format (lets us export stories to test in other context):
+1. Crie um arquivo no diretório do componente chamado `ComponentName.stories.tsx`.
+2. Utilizamos CSF (Component Story Format), que nos permite exportar stories e testar em outros contextos:
 
 ```js
+// Text.stories.tsx
+
 import React from "react";
 import { storiesOf } from "@storybook/react-native";
 // Import your component
@@ -79,29 +78,29 @@ export default {
 export const Basic = () => <Text>What's up</Text>;
 export const Colored = () => <Text color="red">What's up</Text>;
 
-// This is necessary to make it show in Expo
-// Add all stories to RN/Expo storybook
+// Isto é necessário para ser mostrado no Expo
+// Adiciona todos os stories ao Storybook RN/Expo
 storiesOf("Text", module).add("Basic", Basic).add("Colored", Colored);
 ```
 
-3. You should be able to see it in Storybook web if you spin it up `expo web`. But to see it native, you need to import the story directly in `stories/index.js`.
+3. Você deve conseguir visualizar o Storybook na web apenas com o comando `expo web`. Mas para vê-los nativamente, deve importar os stories diretamente no arquivo `stories/index.js`.
 
-Done! You should see your new component stories in Storybook web and native.
+Pronto! Agora você já deve ser capaz de visualizar os stories do seu componente no Storybook web e nativo.
 
 ### Semantic Release
 
-This project is setup with semantic-release to automatically handle versioning based on git commits and branching. It also is setup with Commitzen's CLI (`yarn commit`), which walks you through crafting a "conventional commit".
+Este projeto está configurado com Semantic-release para versionar automaticamente baseado nos commits e banches. Está configurado também com a CLI do Commitzen (`yarn commit`), que cria um commit convencional padronizado.
 
-1. Create a branch for your work: `git checkout -b name-here`
-1. Do some cool code jutsu.
-1. `git add` your changed files.
-1. `yarn commit` to run the CLI
+1. Crie sua branch de trabalho: `git checkout -b name-here`
+2. Faça suas mudanças.
+3. `git add` seus arquivos.
+4. `yarn commit` para rodar a CLI do Commitzen.
 
-You'll be able to pick from things like a feature, bug fix, or CI update. And add your commit message, as well as a longer detailed message.
+Você poderá escolher entre feature, bug fix ou CI update, por exemplo. E adicionar sua mensagem de commit, assim como uma mensagem detalhada.
 
-After creating this branch, create a pull request (PR) on Github. Once approved, it will be moved to a release branch (like `next`), and eventually merged into master.
+Após criar sua branch, crie um pull request (PR). Uma vez aprovado, será movido para uma branch de release (como `next`), e eventualmente mergeado na master.
 
-When merged into master, the CI (CircleCI in our case) will run semantic-release, which checks commits since last release.
+Quando mergeado na master, um CI (CircleCI no nosso caso) irá rodar semantic-release, que checa commits desde a última release.
 
 ## Todo
 
@@ -109,6 +108,6 @@ When merged into master, the CI (CircleCI in our case) will run semantic-release
 - [ ] Snapshot testing
 - [ ] Unit testing
 
-## 📝 Notes
+## 📝 Notas
 
 - [Storybook React Native](https://storybook.js.org/docs/guides/guide-react-native/)
