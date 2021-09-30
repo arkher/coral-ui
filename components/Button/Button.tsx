@@ -5,7 +5,7 @@ import { Theme } from '../../themes/default';
 import Box from '../Box/Box';
 import Text from '../Text/Text';
 
-type ButtonProps = {
+export type ButtonProps = {
   onPress: () => void;
   loading?: boolean;
   textProps?: TextProps<Theme>;
@@ -40,10 +40,5 @@ const Button: React.FC<ButtonProps> = ({
     </Box>
   </TouchableHighlight>
 );
-
-Button.defaultProps = {
-  loading: false,
-  textProps: {},
-};
 
 export default Button;
