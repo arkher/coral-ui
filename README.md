@@ -99,9 +99,6 @@ Este projeto está configurado com Semantic-release para versionar automaticamen
 Você poderá escolher entre feature, bug fix ou CI update, por exemplo. E adicionar sua mensagem de commit, assim como uma mensagem detalhada.
 
 Após criar sua branch, crie um pull request (PR). Uma vez aprovado, será movido para uma branch de release (como `next`), e eventualmente mergeado na master.
-
-Quando mergeado na master, um CI (CircleCI no nosso caso) irá rodar semantic-release, que checa commits desde a última release.
-
 ## Todo
 
 - [ ] PLOP - Micro-generator
