@@ -22,7 +22,7 @@
 - Husky
 - Bob - Builder
 
-Biblioteca de componentes em React native feita com a biblioteca Restyle do Shopify, permitindo e facilitando **desenvolvimento baseado em temas** and **props utilitárias de estilo**.
+Biblioteca de componentes em React native feita com a biblioteca Restyle do Shopify, permitindo e facilitando **desenvolvimento baseado em temas** e **props utilitárias de estilo**.
 
 ```
 <Box backgroundColor="primary" mt={2} p={3}>
@@ -32,7 +32,7 @@ Biblioteca de componentes em React native feita com a biblioteca Restyle do Shop
 </Box>
 ```
 
-> Este setup utiliza Storybook com Expo, ao invés of Expo with Storybook.
+> Este setup utiliza Storybook com Expo.
 
 ## Iniciando
 
