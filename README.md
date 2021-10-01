@@ -81,6 +81,7 @@ export const Colored = () => <Text color="red">What's up</Text>;
 // Isto é necessário para ser mostrado no Expo
 // Adiciona todos os stories ao Storybook RN/Expo
 storiesOf("Text", module).add("Basic", Basic).add("Colored", Colored);
+
 ```
 
 3. Você deve conseguir visualizar o Storybook na web apenas com o comando `expo web`. Mas para vê-los nativamente, deve importar os stories diretamente no arquivo `stories/index.js`.
