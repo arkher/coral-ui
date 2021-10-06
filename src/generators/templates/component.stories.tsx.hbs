@@ -1,0 +1,15 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+import {{pascalCase name}} from './{{pascalCase name}}';
+import Text from './Text'
+
+export default {
+  title: '{{pascalCase name}}',
+  component: {{pascalCase name}},
+};
+
+// Stories
+export const Basic{{pascalCase name}} = (): React.ReactNode => <Text m="sm">Olá mundo!</Text>;
+
+// Add all stories to RN/Expo storybook
+storiesOf('{{pascalCase name}}', module).add('Basic', Basic{{pascalCase name}});
