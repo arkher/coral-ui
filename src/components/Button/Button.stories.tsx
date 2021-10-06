@@ -15,16 +15,18 @@ export default {
 
 export const BasicButton = (): React.ReactNode => {
   const bg = select(`Background`, colors, 'primaryBase');
+
   const width = number('width', 160, {
     min: 160,
     max: 480,
     range: true,
     step: 10,
   });
+
   return (
     <Button
       onPress={action('clicked')}
-      bg={bg}
+      bg={bg as any}
       width={width}
       alignItems="center"
       m="sm"
@@ -52,7 +54,7 @@ export const ButtonLoading = (): React.ReactNode => {
     <Button
       onPress={action('loading')}
       loading
-      bg={bg}
+      bg={bg as any}
       width={width}
       alignItems="center"
       m="sm"

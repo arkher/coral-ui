@@ -95,7 +95,7 @@ export type Theme = typeof theme;
 export default theme;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const colors: any = [
+export const colors: string[] = [
   'primaryDarkest',
   'primaryDark',
   'primaryBase',

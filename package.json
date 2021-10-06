@@ -17,7 +17,8 @@
     "format": "prettier *.{js,tsx} -w",
     "prepare": "bob build",
     "commit": "git-cz",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "genarate:component": "plop --plopfile ./src/generators/plopfile.js component"
   },
   "dependencies": {
     "@shopify/restyle": "^1.4.0",
@@ -71,6 +72,7 @@
     "husky": "^4.3.0",
     "jest": "^26.4.2",
     "jest-expo": "^38.0.2",
+    "plop": "^2.7.4",
     "prettier": "^2.4.1",
     "react-test-renderer": "^16.13.1",
     "semantic-release": "^17.1.2",
@@ -89,18 +91,18 @@
     ]
   },
   "main": "dist/commonjs/index.js",
-  "react-native": "components/index.ts",
+  "react-native": "src/components/index.ts",
   "module": "dist/module/index.js",
   "types": "dist/typescript/components/index.d.ts",
   "files": [
-    "components",
+    "src",
     "dist",
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__"
   ],
   "@react-native-community/bob": {
-    "source": "components",
+    "source": "src",
     "output": "dist",
     "targets": [
       "commonjs",
