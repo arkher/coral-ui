@@ -29,7 +29,7 @@ export const BasicButton = (): React.ReactNode => {
       alignItems="center"
       m="sm"
     >
-      <Text variant="bold">{text('Button text', 'Hello Button')}</Text>
+      <Text>{text('Button text', 'Hello Button')}</Text>
     </Button>
   );
 };
