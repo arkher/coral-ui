@@ -13,7 +13,7 @@ export const CustomFontComponent = () => {
   useEffect(() => {
     (async () => {
       await Font.loadAsync({
-        'retro-regular': require('../assets/retro-regular.ttf')
+        'retro-regular': require('../assets/fonts/retro-regular/retro-regular.ttf')
       });
       setLoaded(true);
     })();

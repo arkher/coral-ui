@@ -8,7 +8,7 @@ export default {
 };
 
 // Stories
-export const BasicText = (): React.ReactNode => <Text m="s">Olá mundo!</Text>;
+export const BasicText = (): React.ReactNode => <Text m="sm">Olá mundo!</Text>;
 
 // Add all stories to RN/Expo storybook
 storiesOf('Text', module).add('Basic', BasicText);

@@ -6,6 +6,7 @@ import Text from '../Text/Text';
 import Button from './Button';
 import buttonNotes from './notes/button-notes.md';
 import loadingButtonNotes from './notes/loading-button-notes.md';
+import { colors } from '../../themes/default';
 
 export default {
   title: 'Button',
@@ -13,22 +14,7 @@ export default {
 };
 
 export const BasicButton = (): React.ReactNode => {
-  const bg = select(
-    `Background`,
-    [
-      'primary',
-      'secondary',
-      'purpleLight',
-      'purplePrimary',
-      'purpleDark',
-      'greenLight',
-      'greenPrimary',
-      'greenDark',
-      'black',
-      'white',
-    ],
-    `primary`,
-  );
+  const bg = select(`Background`, colors, 'primaryBase');
   const width = number('width', 160, {
     min: 160,
     max: 480,
@@ -41,9 +27,9 @@ export const BasicButton = (): React.ReactNode => {
       bg={bg}
       width={width}
       alignItems="center"
-      m="s"
+      m="sm"
     >
-      <Text>{text('Button text', 'Hello Button')}</Text>
+      <Text variant="bold">{text('Button text', 'Hello Button')}</Text>
     </Button>
   );
 };
@@ -55,22 +41,7 @@ BasicButton.story = {
 };
 
 export const ButtonLoading = (): React.ReactNode => {
-  const bg = select(
-    `Background`,
-    [
-      'primary',
-      'secondary',
-      'purpleLight',
-      'purplePrimary',
-      'purpleDark',
-      'greenLight',
-      'greenPrimary',
-      'greenDark',
-      'black',
-      'white',
-    ],
-    `primary`,
-  );
+  const bg = select(`Background`, colors, 'primaryBase');
   const width = number('width', 160, {
     min: 160,
     max: 480,
@@ -84,7 +55,7 @@ export const ButtonLoading = (): React.ReactNode => {
       bg={bg}
       width={width}
       alignItems="center"
-      m="s"
+      m="sm"
     >
       <Text>Test</Text>
     </Button>
