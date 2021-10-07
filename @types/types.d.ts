@@ -85,6 +85,6 @@ type CustomSpacing =
   | 'huge'
   | 'giant';
 
-type CustomSpacingInline = 'quarck' | 'nano' | 'xs' | 'sm' | 'md' | 'lg';
+type CustomSpacingInset = 'quarck' | 'nano' | 'xs' | 'sm' | 'md' | 'lg';
 
 type CustomSize = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';

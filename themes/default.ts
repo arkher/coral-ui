@@ -46,11 +46,13 @@ const palette = {
   highlight05Light: '#DDF4F2',
 };
 
-const spacing = {
-  sm: 8,
-  md: 16,
-  lg: 24,
-  xl: 40,
+export const spacingInsetValues = {
+  quarck: 4,
+  nano: 8,
+  xs: 16,
+  sm: 24,
+  md: 32,
+  lg: 40,
 };
 
 const textVariants = {
@@ -84,7 +86,7 @@ const borderRadius = {
 
 const theme = createTheme({
   colors: palette,
-  spacing,
+  spacing: spacingInsetValues,
   breakpoints: {
     phone: 0,
     tablet: 768,
@@ -201,7 +203,7 @@ export const spacings: CustomSpacing[] = [
   'giant',
 ];
 
-export const spacingsInline: CustomSpacingInline[] = [
+export const spacingsInset: CustomSpacingInset[] = [
   'quarck',
   'nano',
   'xs',
@@ -280,13 +282,6 @@ export const shadowRadiusValues = {
   superdistant: 32,
 };
 
-export const shadowValues = {
-  near: '0px 1.5px 3.5px 0px #000000 12%; ',
-  medium: '0px 4px 8px 0px #000000 10%;',
-  distant: '0px 10px 16px 0px #000000 10%;',
-  superdistant: '0px 16px 32px 0px #000000 10%;',
-};
-
 export const spacingValues = {
   quarck: 4,
   nano: 8,
@@ -301,15 +296,6 @@ export const spacingValues = {
   xxxl: 120,
   huge: 160,
   giant: 200,
-};
-
-export const spacingInsetValues = {
-  quarck: 4,
-  nano: 8,
-  xs: 16,
-  sm: 24,
-  md: 32,
-  lg: 40,
 };
 
 export const sizeValues = {

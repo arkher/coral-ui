@@ -12,12 +12,12 @@ import {
 const Box = createBox<Theme>();
 
 type CoralBoxProps = Partial<{
-  children?: ReactNode;
-  bw?: CustomBorderWidth;
-  op?: CustomOpacity;
-  sof?: CustomShadow;
-  sr?: CustomShadow;
-  sop?: CustomShadow;
+  children: ReactNode;
+  bw: CustomBorderWidth;
+  op: CustomOpacity;
+  sof: CustomShadow;
+  sr: CustomShadow;
+  sop: CustomShadow;
 }> &
   Partial<BoxProps<Theme>>;
 
