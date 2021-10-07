@@ -17,7 +17,7 @@
     "format": "prettier *.{js,tsx} -w",
     "prepare": "bob build",
     "commit": "git-cz",
-    "semantic-release": "semantic-release"
+    "release": "semantic-release"
   },
   "dependencies": {
     "@shopify/restyle": "^1.4.0",
@@ -133,19 +133,27 @@
     }
   },
   "release": {
-    "prepare": [
+    "branch": "master",
+    "npmPublish": false,
+    "ci": false,
+    "plugins": [
+      "@semantic-release/commit-analyzer",
       "@semantic-release/changelog",
+      "@semantic-release/release-notes-generator",
       "@semantic-release/npm",
-      {
-        "path": "@semantic-release/git",
-        "assets": [
-          "dist/**/*.{js,ts}",
-          "package.json",
-          "package-lock.json",
-          "CHANGELOG.md"
-        ],
-        "message": "chore(release): ${nextRelease.version} [skip ci]nn${nextRelease.notes}"
-      }
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "dist/**/*.{js,ts}",
+            "package.json",
+            "package-lock.json",
+            "CHANGELOG.md"
+          ],
+          "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
+        }
+      ]
     ]
-  }
+  },
+  "version": "1.0.0"
 }
