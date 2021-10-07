@@ -47,7 +47,7 @@ const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {loading ? (
-        <ActivityIndicator color="white" style={{ height: 16 }} />
+        <ActivityIndicator color="white" />
       ) : (
         <Text color="white" {...textProps}>
           {children}
