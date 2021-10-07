@@ -2,6 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react-native';
+import { View } from 'react-native';
 import Text from '../Text/Text';
 import Button from './Button';
 import buttonNotes from './notes/button-notes.md';
@@ -22,15 +23,11 @@ export const BasicButton = (): React.ReactNode => {
     step: 10,
   });
   return (
-    <Button
-      onPress={action('clicked')}
-      bg={bg}
-      width={width}
-      alignItems="center"
-      m="sm"
-    >
-      <Text>{text('Button text', 'Hello Button')}</Text>
-    </Button>
+    <View style={{ width, marginTop: 8, marginLeft: 8 }}>
+      <Button onPress={action('clicked')} bg={bg} alignItems="center">
+        <Text>{text('Button text', 'Hello Button')}</Text>
+      </Button>
+    </View>
   );
 };
 
@@ -49,16 +46,9 @@ export const ButtonLoading = (): React.ReactNode => {
     step: 10,
   });
   return (
-    <Button
-      onPress={action('loading')}
-      loading
-      bg={bg}
-      width={width}
-      alignItems="center"
-      m="sm"
-    >
-      <Text>Test</Text>
-    </Button>
+    <View style={{ width, marginTop: 8, marginLeft: 8 }}>
+      <Button onPress={action('loading')} loading bg={bg} alignItems="center" />
+    </View>
   );
 };
 
