@@ -16,15 +16,17 @@ export default {
 
 export const BasicButton = (): React.ReactNode => {
   const bg = select(`Background`, colors, 'primaryBase');
+
   const width = number('width', 160, {
     min: 160,
     max: 480,
     range: true,
     step: 10,
   });
+
   return (
     <View style={{ width, marginTop: 8, marginLeft: 8 }}>
-      <Button onPress={action('clicked')} bg={bg} alignItems="center">
+      <Button onPress={action('clicked')} bg={bg}>
         <Text>{text('Button text', 'Hello Button')}</Text>
       </Button>
     </View>

@@ -39,11 +39,12 @@ const Button: React.FC<ButtonProps> = ({
 }) => (
   <TouchableHighlight underlayColor="transparent" onPress={onPress}>
     <SimpleBox
-      py="md"
-      px="md"
       backgroundColor="primaryBase"
       borderRadius="sm"
       shadowColor="black"
+      height={{ phone: 48, tablet: 48 }}
+      alignItems="center"
+      justifyContent="center"
       {...props}
     >
       {loading ? (
