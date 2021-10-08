@@ -20,7 +20,7 @@
     "**/*.spec.ts",
     "**/*.stories.[tj]sx",
     "**/*.test.[tj]sx",
-    "App.test.tsx",
-    "App.tsx"
+    "**/*.js",
+    "babel.config.js"
   ],
 }
