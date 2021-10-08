@@ -1,15 +1,34 @@
-import React from 'react';
-import { BoxProps, TextProps } from '@shopify/restyle';
-import { ActivityIndicator, TouchableHighlight } from 'react-native';
-import { Theme } from '../../themes/default';
-import Box from '../Box/Box';
+import {
+  BoxProps,
+  createRestyleComponent,
+  TextProps,
+  createBox,
+} from '@shopify/restyle';
+import React, { ReactNode } from 'react';
+import { ActivityIndicator, TouchableHighlight, View } from 'react-native';
+import {
+  borderWidth,
+  opacity,
+  shadowOffset,
+  shadowOpacity,
+  shadowRadius,
+  Theme,
+} from '../../themes/default';
 import Text from '../Text/Text';
 
 export type ButtonProps = {
+  children?: ReactNode;
   onPress: () => void;
   loading?: boolean;
   textProps?: TextProps<Theme>;
+  bw?: CustomBorderWidth;
+  op?: CustomOpacity;
+  sof?: CustomShadow;
+  sr?: CustomShadow;
+  sop?: CustomShadow;
 } & Partial<BoxProps<Theme>>;
+
+const SimpleBox = createBox<Theme>();
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -19,15 +38,12 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => (
   <TouchableHighlight underlayColor="transparent" onPress={onPress}>
-    <Box
-      py="m"
-      px="xl"
-      backgroundColor="primary"
-      borderRadius={{ phone: 8 as never, tablet: 8 as never }}
-      shadowOffset={{ height: 2, width: 0 }}
-      shadowRadius={5}
+    <SimpleBox
+      py="md"
+      px="md"
+      backgroundColor="primaryBase"
+      borderRadius="sm"
       shadowColor="black"
-      shadowOpacity={0.2}
       {...props}
     >
       {loading ? (
@@ -37,8 +53,11 @@ const Button: React.FC<ButtonProps> = ({
           {children}
         </Text>
       )}
-    </Box>
+    </SimpleBox>
   </TouchableHighlight>
 );
 
-export default Button;
+export default createRestyleComponent<ButtonProps, Theme>(
+  [borderWidth, opacity, shadowOffset, shadowRadius, shadowOpacity],
+  Button,
+);

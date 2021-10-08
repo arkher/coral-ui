@@ -20551,6 +20551,11 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-public-sans@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-public-sans/-/typeface-public-sans-1.1.13.tgz#451ba783150205746506b29ee30272850d584dcb"
+  integrity sha512-cBrpPUvIeaYIacxtxPeCpKM7vAJb27+8E9HAT7R3ZA2zrj9ntm630tpSgBCn/Ip6D11pWSmKVR4eZ8Pr1Yxnog==
+
 typescript@3.7.3:
   version "3.7.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.3.tgz#b36840668a16458a7025b9eabfad11b66ab85c69"

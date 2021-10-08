@@ -2,10 +2,12 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react-native';
+import { View } from 'react-native';
 import Text from '../Text/Text';
 import Button from './Button';
 import buttonNotes from './notes/button-notes.md';
 import loadingButtonNotes from './notes/loading-button-notes.md';
+import { colors } from '../../themes/default';
 
 export default {
   title: 'Button',
@@ -13,22 +15,7 @@ export default {
 };
 
 export const BasicButton = (): React.ReactNode => {
-  const bg = select(
-    `Background`,
-    [
-      'primary',
-      'secondary',
-      'purpleLight',
-      'purplePrimary',
-      'purpleDark',
-      'greenLight',
-      'greenPrimary',
-      'greenDark',
-      'black',
-      'white',
-    ],
-    `primary`,
-  );
+  const bg = select(`Background`, colors, 'primaryBase');
   const width = number('width', 160, {
     min: 160,
     max: 480,
@@ -36,15 +23,11 @@ export const BasicButton = (): React.ReactNode => {
     step: 10,
   });
   return (
-    <Button
-      onPress={action('clicked')}
-      bg={bg}
-      width={width}
-      alignItems="center"
-      m="s"
-    >
-      <Text>{text('Button text', 'Hello Button')}</Text>
-    </Button>
+    <View style={{ width, marginTop: 8, marginLeft: 8 }}>
+      <Button onPress={action('clicked')} bg={bg} alignItems="center">
+        <Text>{text('Button text', 'Hello Button')}</Text>
+      </Button>
+    </View>
   );
 };
 
@@ -55,22 +38,7 @@ BasicButton.story = {
 };
 
 export const ButtonLoading = (): React.ReactNode => {
-  const bg = select(
-    `Background`,
-    [
-      'primary',
-      'secondary',
-      'purpleLight',
-      'purplePrimary',
-      'purpleDark',
-      'greenLight',
-      'greenPrimary',
-      'greenDark',
-      'black',
-      'white',
-    ],
-    `primary`,
-  );
+  const bg = select(`Background`, colors, 'primaryBase');
   const width = number('width', 160, {
     min: 160,
     max: 480,
@@ -78,16 +46,9 @@ export const ButtonLoading = (): React.ReactNode => {
     step: 10,
   });
   return (
-    <Button
-      onPress={action('loading')}
-      loading
-      bg={bg}
-      width={width}
-      alignItems="center"
-      m="s"
-    >
-      <Text>Test</Text>
-    </Button>
+    <View style={{ width, marginTop: 8, marginLeft: 8 }}>
+      <Button onPress={action('loading')} loading bg={bg} alignItems="center" />
+    </View>
   );
 };
 
