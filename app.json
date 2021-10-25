@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Coral UI",
+    "slug": "coral-ui",
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "platforms": ["ios", "android", "web"],
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pulse.sbcoral",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.pulse.sbcoral",
+      "versionCode": 1
+    }
+  }
+}

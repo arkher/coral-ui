@@ -7,20 +7,11 @@
       "esnext"
     ],
     "moduleResolution": "node",
+    "noEmit": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-    "target": "ESNext"
+    "strict": true,
+    "target": "es6"
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "lib",
-    "**/*.spec.ts",
-    "**/*.stories.[tj]sx",
-    "**/*.test.[tj]sx",
-    "**/*.js",
-    "babel.config.js"
-  ],
+  "extends": "expo/tsconfig.base"
 }

@@ -1,5 +1,5 @@
 import { createRestyleFunction, createTheme } from '@shopify/restyle';
-import 'typeface-public-sans';
+// import 'typeface-public-sans';
 
 const palette = {
   primaryDarkest: '#002559',
