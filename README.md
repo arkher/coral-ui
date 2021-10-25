@@ -9,7 +9,7 @@
   <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
 </p>
 
-<img alt="expo examples" src="https://i.imgur.com/j253BeR.png">
+<!-- <img alt="expo examples" src="https://i.imgur.com/j253BeR.png"> -->
 
 ## Features
 
@@ -38,6 +38,18 @@ Biblioteca de componentes em React native feita com a biblioteca Restyle do Shop
 
 1. `yarn` - Instala as dependências
 1. `yarn web` - Inicia o Storybook em visualização Web no browser padrão
+1. `yarn android` - Inicia o Storybook em visualização no dispositivo ou emulador Android
+1. `yarn ios` - Inicia o Storybook em visualização no dispositivo ou emulador ios
+
+## Consumindo a lib
+
+1. `yarn add coral-ui` - Instalando a biblioteca
+1. `yarn add typeface-{font-name}` ou `import /font/*.ttf` - Instalando a fonte de sua preferência react-native-vector-icons
+1. `yarn add react-native-vector-icons` - Instale o pacote de icones
+1. `npx react-native link react-native-vector-icons` faça o link dos icones e reinecie o emulador
+1. `yarn start --reset-cache` inicie o servidor limpando o cache do metro bundle
+1. `yarn android` instale o .apk em modo debug
+1. Enjoy 😎!
 
 ### Rodando em dispositivos nativos (Android/IOS)
 

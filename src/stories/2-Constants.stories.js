@@ -4,7 +4,7 @@ import Constants from 'expo-constants';
 import { Text } from 'react-native';
 
 export default {
-  title: 'Constants',
+  title: 'Infos/Constants',
 };
 
 export const constants = () => (

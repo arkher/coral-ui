@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default {
-  title: 'LinearGradient',
+  title: 'Teste/LinearGradient',
 };
 
 export const linearGradient = () => (

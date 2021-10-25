@@ -1,16 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import Text from './Text';
+import Text from '../../src/components/Text';
+import CenterView from './CenterView';
 // import { fontSizes, letterSpacings, lineHeights } from '../../themes/default';
 
 export default {
-  title: 'Componente/Text',
+  title: 'Text',
   component: Text,
 };
 
 // Stories
 // eslint-disable-next-line arrow-body-style
-export const BasicText = (): React.ReactNode => {
+export const BasicText = () => {
   return (
     <Text m="sm">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis rerum
@@ -21,4 +22,6 @@ export const BasicText = (): React.ReactNode => {
 };
 
 // Add all stories to RN/Expo storybook
-storiesOf('Text', module).add('Basic', BasicText);
+storiesOf('Text', module)
+  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+  .add('Basic', BasicText);

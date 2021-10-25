@@ -1,15 +1,15 @@
 /* eslint-disable import/extensions */
-/* eslint-disable global-require */
-import { configure, getStorybookUI } from '@storybook/react-native';
+import React from 'react';
+import { StatusBar } from 'react-native';
+import { ThemeProvider } from '@shopify/restyle';
+import Storybook from './.storybook-mobile';
+import theme from './src/themes/default';
 
-configure(() => {
-  // Since require.context doesn't exist in metro bundler world, we have to
-  // manually import files ending in *.stories.js
-  require('./src/components');
-}, module);
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <StatusBar />
+    <Storybook />
+  </ThemeProvider>
+);
 
-export default getStorybookUI({
-  // Pass AsyncStorage below if you want Storybook to open your
-  // last visited story after you close and re-open your app
-  asyncStorage: null,
-});
+export default App;
