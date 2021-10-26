@@ -19,6 +19,9 @@ export default {
   decorators: [withDesign],
 };
 
+const urlHandoff =
+  'https://www.figma.com/file/3raVfIADTUZCzFOOaQ9PMQ/HANDOFF-%7C-Core-Components-Mobile-%7C-Institucional?node-id=203%3A1636';
+
 export const Primary = ({ bg }: any): React.ReactNode => {
   return (
     <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
@@ -32,43 +35,58 @@ export const Primary = ({ bg }: any): React.ReactNode => {
 Primary.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/aeyr4f8PsBOub352GVhfiN/HANDOFF-%7C-Core-Components-Web-%7C-Institucional?node-id=103%3A6476',
+    url: urlHandoff,
   },
 };
 
 export const Secondary = (): React.ReactNode => {
   return (
     <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
-      <Button onPress={action('clicked')} bg="primaryBase">
-        <Text>Button text</Text>
+      <Button
+        bg="neutralLightest"
+        borderColor="primaryBase"
+        bw="hairline"
+        onPress={action('clicked')}
+      >
+        <Text color="primaryBase">Button text</Text>
       </Button>
     </View>
   );
+};
+
+Secondary.parameters = {
+  design: {
+    type: 'figma',
+    url: urlHandoff,
+  },
 };
 
 export const Tertiary = (): React.ReactNode => {
   return (
     <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
-      <Button onPress={action('clicked')} bg="primaryBase">
-        <Text>Button text</Text>
+      <Button bg="neutralLightest" onPress={action('clicked')}>
+        <Text color="primaryBase">Button text</Text>
       </Button>
     </View>
   );
 };
 
-// export const ButtonLoading = (): React.ReactNode => {
-//   return (
-//     <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
-//       <Button
-//         onPress={action('loading')}
-//         loading
-//         bg="primaryBase"
-//         alignItems="center"
-//       />
-//     </View>
-//   );
-// };
+Tertiary.parameters = {
+  design: {
+    type: 'figma',
+    url: urlHandoff,
+  },
+};
 
-// storiesOf('Button', module)
-//   .add('Basic button', Primary)
-//   .add('Loading', ButtonLoading);
+export const ButtonLoading = (): React.ReactNode => {
+  return (
+    <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
+      <Button
+        onPress={action('loading')}
+        loading
+        bg="primaryBase"
+        alignItems="center"
+      />
+    </View>
+  );
+};

@@ -1,10 +1,21 @@
 import React from 'react';
 import { ThemeProvider } from '@shopify/restyle';
-import theme from '../src/themes/default';
+import themeInstitucional from '../src/themes/default';
+import themeMaestro from '../src/themes/maestro';
+import 'typeface-public-sans';
 
-export const decorators = [
-  story => <ThemeProvider theme={theme}>{story()}</ThemeProvider>,
-];
+export const globalTypes = {
+  theme: {
+    name: 'Tema',
+    description: 'Temas fornecidos pelo Design System Mobile',
+    defaultValue: 'institucional',
+    toolbar: {
+      icon: 'book',
+      items: ['institucional', 'maestro'],
+      showName: true,
+    },
+  },
+};
 
 export const parameters = {
   actions: {
@@ -17,3 +28,17 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [
+  (story, context) => {
+    const labelTheme = context.globals.theme;
+
+    return (
+      <ThemeProvider
+        theme={labelTheme === 'maestro' ? themeMaestro : themeInstitucional}
+      >
+        {story()}
+      </ThemeProvider>
+    );
+  },
+];
