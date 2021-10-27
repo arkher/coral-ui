@@ -6,3 +6,5 @@ export { default as Text } from './Text';
 export * from './Text';
 export { default as TextInput } from './InputText';
 export * from './InputText';
+export { default as Checkbox } from './Checkbox';
+export * from './Checkbox';
