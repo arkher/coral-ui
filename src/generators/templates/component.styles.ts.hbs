@@ -1,3 +1,12 @@
-import styled from 'styled-components/native';
+import { ViewStyle, StyleSheet } from 'react-native';
 
-export const Container = styled.View``;
+interface Props {}
+
+const customStyle: ViewStyle = {};
+
+const styles = (props: Props) =>
+  StyleSheet.create({
+    customStyle,
+  });
+
+export default styles;

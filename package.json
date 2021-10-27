@@ -27,7 +27,7 @@
     "lint": "eslint",
     "format": "prettier *.{js,tsx} -w",
     "commit": "git-cz",
-    "genarate:component": "plop --plopfile ./src/generators/plopfile.js component",
+    "generate:component": "plop --plopfile ./src/generators/plopfile.js component",
     "release": "semantic-release",
     "storybook": "start-storybook",
     "clean": "rm -rf dist && rm -rf node_modules"
