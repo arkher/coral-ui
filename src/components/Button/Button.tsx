@@ -1,10 +1,5 @@
-import {
-  BoxProps,
-  createRestyleComponent,
-  TextProps,
-  createBox,
-} from '@shopify/restyle';
-import React, { ReactNode } from 'react';
+import { createRestyleComponent } from '@shopify/restyle';
+import React from 'react';
 import { ActivityIndicator, TouchableHighlight } from 'react-native';
 import {
   borderWidth,
@@ -15,20 +10,8 @@ import {
   Theme,
 } from '../../themes/default';
 import Text from '../Text/Text';
-
-export type ButtonProps = {
-  children?: ReactNode;
-  onPress: () => void;
-  loading?: boolean;
-  textProps?: TextProps<Theme>;
-  bw?: CustomBorderWidth;
-  op?: CustomOpacity;
-  sof?: CustomShadow;
-  sr?: CustomShadow;
-  sop?: CustomShadow;
-} & Partial<BoxProps<Theme>>;
-
-const SimpleBox = createBox<Theme>();
+import Box from '../Box/Box';
+import { ButtonProps } from './interface';
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -38,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => (
   <TouchableHighlight underlayColor="transparent" onPress={onPress}>
-    <SimpleBox
+    <Box
       backgroundColor="primaryBase"
       borderRadius="sm"
       shadowColor="black"
@@ -54,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
           {children}
         </Text>
       )}
-    </SimpleBox>
+    </Box>
   </TouchableHighlight>
 );
 
