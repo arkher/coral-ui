@@ -21,6 +21,9 @@ export default {
     disabled: {
       control: { type: 'none' },
     },
+    onChange: {
+      control: { type: 'none' },
+    },
   },
   decorators: [withDesign],
 };
