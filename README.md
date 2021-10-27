@@ -41,15 +41,34 @@ Biblioteca de componentes em React native feita com a biblioteca Restyle do Shop
 1. `yarn android` - Inicia o Storybook em visualização no dispositivo ou emulador Android
 1. `yarn ios` - Inicia o Storybook em visualização no dispositivo ou emulador ios
 
-## Consumindo a lib
+## Consumindo a lib como cliente
 
 1. `yarn add coral-ui` - Instalando a biblioteca
 1. `yarn add typeface-{font-name}` ou `import /font/*.ttf` - Instalando a fonte de sua preferência react-native-vector-icons
 1. `yarn add react-native-vector-icons` - Instale o pacote de icones
 1. `npx react-native link react-native-vector-icons` faça o link dos icones e reinecie o emulador
+1. Faça o import do `themeProvider` e o tema de sua preferência utilizando o exemplo destacado abaixo:
+
+```tsx
+import React from 'react';
+import App from './App';
+
+import {ThemeProvider, themeInstitucional, Box} from 'coral-ui';
+
+const App = () => {
+  return (
+    <ThemeProvider theme={themeInstitucional}>
+      <App />
+    </ThemeProvider>
+  );
+};
+
+export default App;
+```
+
 1. `yarn start --reset-cache` inicie o servidor limpando o cache do metro bundle
-1. `yarn android` instale o .apk em modo debug
-1. Enjoy 😎!
+2. `yarn android` instale o .apk em modo debug
+3. Enjoy 😎!
 
 ### Rodando em dispositivos nativos (Android/IOS)
 

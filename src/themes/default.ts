@@ -164,6 +164,16 @@ export const lineHeights: CustomLineHeight[] = [
   'tight',
 ];
 
+export const radius: CustomRadius[] = [
+  'none',
+  'sm',
+  'md',
+  'lg',
+  'xl',
+  'pill',
+  'circular',
+];
+
 export const letterSpacings: CustomLetterSpacing[] = [
   'superdistant',
   'distant',
@@ -352,12 +362,6 @@ export const shadowRadius = createRestyleFunction({
 });
 
 export const shadowOpacity = createRestyleFunction({
-  property: 'sop',
-  styleProperty: 'shadowOpacity',
-  transform: ({ value }: { value: CustomShadow }) => shadowOpacityValues[value],
-});
-
-export const cardVariants = createRestyleFunction({
   property: 'sop',
   styleProperty: 'shadowOpacity',
   transform: ({ value }: { value: CustomShadow }) => shadowOpacityValues[value],
