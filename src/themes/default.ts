@@ -1,5 +1,4 @@
 import { createRestyleFunction, createTheme } from '@shopify/restyle';
-// import 'typeface-public-sans';
 
 const palette = {
   primaryDarkest: '#002559',
@@ -353,6 +352,12 @@ export const shadowRadius = createRestyleFunction({
 });
 
 export const shadowOpacity = createRestyleFunction({
+  property: 'sop',
+  styleProperty: 'shadowOpacity',
+  transform: ({ value }: { value: CustomShadow }) => shadowOpacityValues[value],
+});
+
+export const cardVariants = createRestyleFunction({
   property: 'sop',
   styleProperty: 'shadowOpacity',
   transform: ({ value }: { value: CustomShadow }) => shadowOpacityValues[value],
