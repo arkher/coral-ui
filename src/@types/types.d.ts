@@ -88,3 +88,5 @@ type CustomSpacing =
 type CustomSpacingInset = 'quarck' | 'nano' | 'xs' | 'sm' | 'md' | 'lg';
 
 type CustomSize = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+
+type CustomRadius = 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'pill' | 'circular';

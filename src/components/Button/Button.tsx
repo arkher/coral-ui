@@ -5,7 +5,7 @@ import {
   createBox,
 } from '@shopify/restyle';
 import React, { ReactNode } from 'react';
-import { ActivityIndicator, TouchableHighlight, View } from 'react-native';
+import { ActivityIndicator, TouchableHighlight } from 'react-native';
 import {
   borderWidth,
   opacity,

@@ -3,6 +3,7 @@ import { ThemeProvider } from '@shopify/restyle';
 import themeInstitucional from '../src/themes/default';
 import themeMaestro from '../src/themes/maestro';
 import 'typeface-public-sans';
+import 'typeface-inter';
 
 export const globalTypes = {
   theme: {
