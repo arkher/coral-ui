@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { KeyboardAvoidingView, View } from 'react-native';
 import style from './style';
 
-export default function CenterView({ children }) {
-  return <View style={style.main}>{children}</View>;
-}
+const CenterView = ({ children }) => {
+  return (
+    <KeyboardAvoidingView behavior="padding" enabled>
+      <View style={style.main}>{children}</View>
+    </KeyboardAvoidingView>
+  );
+};
 
 CenterView.defaultProps = {
   children: null,
@@ -14,3 +18,5 @@ CenterView.defaultProps = {
 CenterView.propTypes = {
   children: PropTypes.node,
 };
+
+export default CenterView;
