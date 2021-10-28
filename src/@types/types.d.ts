@@ -57,6 +57,8 @@ type CustomFontSize =
   | 'giant'
   | 'display';
 
+type CustomHeightComponent = 'small' | 'medium';
+
 type CustomLineHeight = 'superdistant' | 'distant' | 'medium' | 'tight';
 
 type CustomLetterSpacing = 'superdistant' | 'distant' | 'medium' | 'tight';
@@ -88,3 +90,5 @@ type CustomSpacing =
 type CustomSpacingInset = 'quarck' | 'nano' | 'xs' | 'sm' | 'md' | 'lg';
 
 type CustomSize = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+
+type CustomRadius = 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'pill' | 'circular';

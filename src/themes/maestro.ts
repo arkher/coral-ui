@@ -77,19 +77,19 @@ const themeMaestro: MaestroCustomProps = {
   },
   textVariants: {
     bold: {
-      fontFamily: '"Gotham", sans-serif',
+      fontFamily: '"Inter", sans-serif',
       fontWeight: '700',
     },
     semibold: {
-      fontFamily: '"Gotham", sans-serif',
+      fontFamily: '"Inter", sans-serif',
       fontWeight: '600',
     },
     medium: {
-      fontFamily: '"Gotham", sans-serif',
+      fontFamily: '"Inter", sans-serif',
       fontWeight: '500',
     },
     regular: {
-      fontFamily: '"Gotham", sans-serif',
+      fontFamily: '"Inter", sans-serif',
       fontWeight: '400',
     },
   },

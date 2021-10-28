@@ -164,6 +164,16 @@ export const lineHeights: CustomLineHeight[] = [
   'tight',
 ];
 
+export const radius: CustomRadius[] = [
+  'none',
+  'sm',
+  'md',
+  'lg',
+  'xl',
+  'pill',
+  'circular',
+];
+
 export const letterSpacings: CustomLetterSpacing[] = [
   'superdistant',
   'distant',
@@ -219,6 +229,11 @@ export const borderWidthValues = {
   thin: 2,
   thick: 4,
   heavy: 8,
+};
+
+export const sizeHeightValues = {
+  small: 40,
+  medium: 56,
 };
 
 export const fontSizeValues = {
@@ -319,6 +334,13 @@ export const fontSize = createRestyleFunction({
   transform: ({ value }: { value: CustomFontSize }) => fontSizeValues[value],
 });
 
+export const heightComponent = createRestyleFunction({
+  property: 'h',
+  styleProperty: 'height',
+  transform: ({ value }: { value: CustomHeightComponent }) =>
+    sizeHeightValues[value],
+});
+
 export const lineHeight = createRestyleFunction({
   property: 'lh',
   styleProperty: 'lineHeight',
@@ -352,12 +374,6 @@ export const shadowRadius = createRestyleFunction({
 });
 
 export const shadowOpacity = createRestyleFunction({
-  property: 'sop',
-  styleProperty: 'shadowOpacity',
-  transform: ({ value }: { value: CustomShadow }) => shadowOpacityValues[value],
-});
-
-export const cardVariants = createRestyleFunction({
   property: 'sop',
   styleProperty: 'shadowOpacity',
   transform: ({ value }: { value: CustomShadow }) => shadowOpacityValues[value],

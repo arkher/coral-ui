@@ -1,4 +1,4 @@
-# input text
+# shopify-input-text
 
 ## Properties
 

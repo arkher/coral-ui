@@ -4,7 +4,7 @@ import Text from './Text';
 // import { fontSizes, letterSpacings, lineHeights } from '../../themes/default';
 
 export default {
-  title: 'Componente/Text',
+  title: 'Elements/Text',
   component: Text,
 };
 
