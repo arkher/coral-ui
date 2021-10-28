@@ -20,7 +20,8 @@ module.exports = function (plop) {
     actions: data => {
       const nameOfNewFile = pascalCaseTransform(data.name);
 
-      const content = `export * from './${nameOfNewFile}/${nameOfNewFile}';\n`;
+      const content = `export { default as ${nameOfNewFile} } from './${nameOfNewFile}';\nexport * from './${nameOfNewFile}';\n`;
+
       const pathFile = resolve(__dirname, '../components/index.ts');
 
       fs.appendFileSync(pathFile, content);
@@ -30,6 +31,11 @@ module.exports = function (plop) {
           type: 'add',
           path: '../components/{{pascalCase name}}/{{pascalCase name}}.tsx',
           templateFile: 'templates/component.tsx.hbs',
+        },
+        {
+          type: 'add',
+          path: '../components/{{pascalCase name}}/index.ts',
+          templateFile: 'templates/index.ts.hbs',
         },
         {
           type: 'add',
