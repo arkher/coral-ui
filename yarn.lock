@@ -1592,6 +1592,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@expo-google-fonts/public-sans@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/public-sans/-/public-sans-0.2.0.tgz#13b114b241c0efddec4d3d41199780cd04018b6a"
+  integrity sha512-4z+d63UgJ9b5HDn2gPyqrE4IUTAfVg/teRvRVK6GAV9kAyYQFU4Y69Uj9+ZGX58jvuTtk+bslnX7u0xaU7k5JA==
+
 "@expo/config-plugins@1.0.33":
   version "1.0.33"
   resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-1.0.33.tgz#8ee78ea6f939f7e04606e9afa22b32139ea974a0"
