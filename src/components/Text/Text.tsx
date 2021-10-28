@@ -1,33 +1,22 @@
-import React, { ReactNode } from 'react';
-import {
-  createRestyleComponent,
-  createText,
-  TextProps,
-} from '@shopify/restyle';
+import React from 'react';
+import { createRestyleComponent, createText } from '@shopify/restyle';
 import {
   fontSize,
   letterSpacing,
   lineHeight,
   Theme,
 } from '../../themes/default';
+import { CustomTextProps } from './interface';
 
 const Text = createText<Theme>();
 
-type CoralTextProps = Partial<{
-  children?: ReactNode;
-  fs?: CustomFontSize;
-  lh?: CustomLineHeight;
-  ls?: CustomLetterSpacing;
-}> &
-  Partial<TextProps<Theme>>;
-
-const CoralText: React.FC<CoralTextProps> = ({ children, ...props }) => (
+const CustomText: React.FC<CustomTextProps> = ({ children, ...props }) => (
   <Text variant="regular" {...props}>
     {children}
   </Text>
 );
 
-export default createRestyleComponent<CoralTextProps, Theme>(
+export default createRestyleComponent<CustomTextProps, Theme>(
   [fontSize, lineHeight, letterSpacing],
-  CoralText,
+  CustomText,
 );

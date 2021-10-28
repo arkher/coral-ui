@@ -231,6 +231,11 @@ export const borderWidthValues = {
   heavy: 8,
 };
 
+export const sizeHeightValues = {
+  small: 40,
+  medium: 56,
+};
+
 export const fontSizeValues = {
   details: 10,
   xxxxs: 12,
@@ -327,6 +332,13 @@ export const fontSize = createRestyleFunction({
   property: 'fs',
   styleProperty: 'fontSize',
   transform: ({ value }: { value: CustomFontSize }) => fontSizeValues[value],
+});
+
+export const heightComponent = createRestyleFunction({
+  property: 'h',
+  styleProperty: 'height',
+  transform: ({ value }: { value: CustomHeightComponent }) =>
+    sizeHeightValues[value],
 });
 
 export const lineHeight = createRestyleFunction({

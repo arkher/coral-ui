@@ -1,5 +1,5 @@
-import { BoxProps, createBox, createRestyleComponent } from '@shopify/restyle';
-import React, { ReactNode } from 'react';
+import { createBox, createRestyleComponent } from '@shopify/restyle';
+import React from 'react';
 import {
   borderWidth,
   opacity,
@@ -7,25 +7,24 @@ import {
   shadowOpacity,
   shadowRadius,
   Theme,
+  heightComponent,
 } from '../../themes/default';
+import { CustomBoxProps } from './interface';
 
 const Box = createBox<Theme>();
 
-type CoralBoxProps = Partial<{
-  children: ReactNode;
-  bw: CustomBorderWidth;
-  op: CustomOpacity;
-  sof: CustomShadow;
-  sr: CustomShadow;
-  sop: CustomShadow;
-}> &
-  Partial<BoxProps<Theme>>;
-
-const CoralBox: React.FC<CoralBoxProps> = ({ children, ...props }) => (
+const CustomBox: React.FC<CustomBoxProps> = ({ children, ...props }) => (
   <Box {...props}>{children}</Box>
 );
 
-export default createRestyleComponent<CoralBoxProps, Theme>(
-  [borderWidth, opacity, shadowOffset, shadowRadius, shadowOpacity],
-  CoralBox,
+export default createRestyleComponent<CustomBoxProps, Theme>(
+  [
+    borderWidth,
+    opacity,
+    shadowOffset,
+    shadowRadius,
+    shadowOpacity,
+    heightComponent,
+  ],
+  CustomBox,
 );
