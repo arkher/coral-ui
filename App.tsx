@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-boolean-value */
 /* eslint-disable camelcase */
 import React from 'react';
-import { StatusBar, Text } from 'react-native';
+import { Text, StatusBar } from 'react-native';
 
 import {
   useFonts,
@@ -16,26 +17,26 @@ import theme from './src/themes/default';
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
-    PublicSans_400Regular,
-    PublicSans_500Medium,
-    PublicSans_600SemiBold,
-    PublicSans_700Bold,
+    regular: PublicSans_400Regular,
+    medium: PublicSans_500Medium,
+    semibold: PublicSans_600SemiBold,
+    bold: PublicSans_700Bold,
   });
 
   const themeWithFont = {
     ...theme,
     textVariants: {
       bold: {
-        fontFamily: 'PublicSans_700Bold',
+        fontFamily: 'bold',
       },
       semibold: {
-        fontFamily: 'PublicSans_600SemiBold',
+        fontFamily: 'semibold',
       },
       medium: {
-        fontFamily: 'PublicSans_500Medium',
+        fontFamily: 'medium',
       },
       regular: {
-        fontFamily: 'PublicSans_400Regular',
+        fontFamily: 'regular',
       },
     },
   };

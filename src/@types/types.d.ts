@@ -57,7 +57,7 @@ type CustomFontSize =
   | 'giant'
   | 'display';
 
-type CustomHeightComponent = 'small' | 'medium';
+type CustomHeightComponent = 'small' | 'medium' | 'smallArea' | 'mediumArea';
 
 type CustomLineHeight = 'superdistant' | 'distant' | 'medium' | 'tight';
 

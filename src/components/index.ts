@@ -1,10 +1,14 @@
 export { default as Box } from './Box';
 export * from './Box';
-export { default as Button } from './Button';
-export * from './Button';
+export { default as Input } from './Input';
+export * from './Input';
 export { default as Text } from './Text';
 export * from './Text';
+export { default as Button } from './Button';
+export * from './Button';
 export { default as Checkbox } from './Checkbox';
 export * from './Checkbox';
 export { default as TextField } from './TextField';
 export * from './TextField';
+export { default as TextArea } from './TextArea';
+export * from './TextArea';

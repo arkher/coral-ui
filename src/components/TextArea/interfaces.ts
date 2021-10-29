@@ -1,10 +1,10 @@
-type TextFieldProps = {
+type TextAreaProps = {
   variant: 'small' | 'medium';
 } & Partial<{
   label: string;
-  assistiveText: string;
   placeholder: string;
   status: 'success' | 'error' | undefined;
+  maxLength: number;
 }>;
 
-export { TextFieldProps };
+export { TextAreaProps };

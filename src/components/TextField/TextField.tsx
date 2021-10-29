@@ -1,56 +1,22 @@
-import React, { useCallback, useRef, useState } from 'react';
-import { createRestyleComponent, spacing, useTheme } from '@shopify/restyle';
-
-import {
-  SafeAreaView,
-  TextInput,
-  TouchableWithoutFeedback,
-} from 'react-native';
-
+import React from 'react';
+import { SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Theme, borderWidth } from '../../themes/default';
+import { useTheme } from '@shopify/restyle';
+import { Theme } from '../../themes/default';
+
 import Text from '../Text';
 import Box from '../Box';
-import { InputProps, InputRef } from './interfaces';
+import Input from '../Input';
+import { TextFieldProps } from './interfaces';
 
-const TextField: React.FC<InputProps> = ({
+const TextField: React.FC<TextFieldProps> = ({
   label,
   placeholder,
   variant,
   assistiveText,
   status,
-  ...props
 }) => {
-  const { colors, textVariants } = useTheme<Theme>();
-  const [isFocused, setIsFocused] = useState(false);
-  const [isFilled, setIsFilled] = useState(false);
-
-  const inputElementRef = useRef<InputRef>(null);
-
-  const handleInputFocus = useCallback(() => {
-    setIsFocused(true);
-  }, []);
-
-  const handleInputBlur = useCallback(() => {
-    setIsFocused(false);
-    setIsFilled(!!inputElementRef.current?.value);
-  }, []);
-
-  const handleClear = useCallback(() => {
-    inputElementRef.current?.clear();
-    setIsFilled(false);
-  }, []);
-
-  const getBorderStatusColor = (): CustomColors => {
-    switch (status) {
-      case 'error':
-        return 'feedbackErrorBase';
-      case 'success':
-        return 'feedbackSuccessBase';
-      default:
-        return 'neutralDark';
-    }
-  };
+  const { colors } = useTheme<Theme>();
 
   return (
     <SafeAreaView>
@@ -59,43 +25,16 @@ const TextField: React.FC<InputProps> = ({
           {label}
         </Text>
       )}
-      <Box
-        bw="thin"
-        borderWidth={2}
-        borderColor={isFocused ? 'primaryBase' : getBorderStatusColor()}
-        p="nano"
+      <Input
+        placeholder={placeholder}
+        placeholderTextColor={colors.neutralDark}
+        variant={variant}
         my="quarck"
-        borderRadius="sm"
-        flexDirection="row"
-        alignItems="center"
-        h={variant}
-        {...props}
-      >
-        <TextInput
-          ref={inputElementRef}
-          placeholder={placeholder}
-          placeholderTextColor={colors.neutralDark}
-          onBlur={handleInputBlur}
-          onFocus={handleInputFocus}
-          style={{
-            flex: 1,
-            fontFamily: textVariants.regular.fontFamily,
-          }}
-        />
-        <TouchableWithoutFeedback onPress={handleClear}>
-          <Icon
-            name="close"
-            size={24}
-            color={
-              isFocused || isFilled
-                ? getBorderStatusColor()
-                : colors.neutralDark
-            }
-          />
-        </TouchableWithoutFeedback>
-      </Box>
+        p="nano"
+        icon="close"
+      />
       {!!assistiveText && (
-        <Box flexDirection="row">
+        <Box flexDirection="row" alignItems="baseline">
           <Icon
             name={
               status === 'success'
@@ -114,7 +53,4 @@ const TextField: React.FC<InputProps> = ({
   );
 };
 
-export default createRestyleComponent<InputProps, Theme>(
-  [spacing, borderWidth],
-  TextField,
-);
+export default TextField;
