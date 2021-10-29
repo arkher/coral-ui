@@ -1,7 +1,8 @@
 import React from 'react';
 import { TouchableHighlight } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Box, Text } from '..';
+import Box from '../Box';
+import Text from '../Text';
 import useStyles from './Checkbox.styles';
 import { CheckboxProps } from './interfaces';
 

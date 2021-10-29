@@ -223,6 +223,14 @@ export const spacingsInset: CustomSpacingInset[] = [
 
 export const sizes: CustomSize[] = ['sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'];
 
+export const borderWidthTokens: CustomBorderWidth[] = [
+  'none',
+  'hairline',
+  'thin',
+  'thick',
+  'heavy',
+];
+
 export const borderWidthValues = {
   none: 0,
   hairline: 1,
@@ -234,6 +242,8 @@ export const borderWidthValues = {
 export const sizeHeightValues = {
   small: 40,
   medium: 56,
+  smallArea: 108,
+  mediumArea: 140,
 };
 
 export const fontSizeValues = {

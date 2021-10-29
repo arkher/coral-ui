@@ -4,11 +4,7 @@ import { KeyboardAvoidingView, View } from 'react-native';
 import style from './style';
 
 const CenterView = ({ children }) => {
-  return (
-    <KeyboardAvoidingView behavior="padding" enabled>
-      <View style={style.main}>{children}</View>
-    </KeyboardAvoidingView>
-  );
+  return <View style={style.main}>{children}</View>;
 };
 
 CenterView.defaultProps = {
