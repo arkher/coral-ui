@@ -23,8 +23,8 @@ const useStyles = ({ checked, disabled, required }: Props) => {
 
   return StyleSheet.create({
     checkBox: {
-      width: '100%',
-      height: '100%',
+      width: 24,
+      height: 24,
       borderWidth: checked ? 0 : 2,
       borderRadius: 4,
       justifyContent: 'center',

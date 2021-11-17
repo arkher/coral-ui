@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-boolean-value */
 /* eslint-disable camelcase */
 import React from 'react';
-import { Text, StatusBar } from 'react-native';
+import { StatusBar, Text } from 'react-native';
 
 import {
   useFonts,
