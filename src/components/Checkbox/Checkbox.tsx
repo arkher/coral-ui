@@ -22,12 +22,7 @@ const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
   };
 
   return (
-    <Box
-      height={{ phone: 24, tablet: 24 }}
-      width={{ phone: 24, tablet: 24 }}
-      flexDirection="row"
-      alignItems="center"
-    >
+    <Box flexDirection="row" alignItems="center">
       <TouchableHighlight
         style={styles.checkBox}
         onPress={handleChange}
@@ -37,7 +32,7 @@ const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
       </TouchableHighlight>
 
       <Text
-        fontSize={14}
+        fs="xxxs"
         color={disabled ? 'neutralBase' : 'neutralDarkest'}
         ml={{ phone: 'nano', tablet: 'nano' }}
       >

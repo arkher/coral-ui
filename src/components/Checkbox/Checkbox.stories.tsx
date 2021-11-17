@@ -8,6 +8,7 @@ export default {
   argTypes: {
     label: {
       control: { type: 'text' },
+      defaultValue: 'Label',
     },
     value: {
       control: { type: 'boolean' },
@@ -29,7 +30,7 @@ export default {
 };
 
 const urlHandoff =
-  'https://www.figma.com/file/3raVfIADTUZCzFOOaQ9PMQ/HANDOFF-%7C-Core-Components-Mobile-%7C-Institucional?node-id=203%3A1636';
+  'https://www.figma.com/file/3raVfIADTUZCzFOOaQ9PMQ/HANDOFF-%7C-Core-Components-Mobile-%7C-Institucional?node-id=356%3A5928';
 
 // Stories
 export const Basic = ({ label, value }: any): React.ReactNode => (
