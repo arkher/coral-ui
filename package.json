@@ -23,7 +23,7 @@
     "build": "rm -rf dist && rollup -c",
     "prepare": "rm -rf dist && rollup -c",
     "build-storybook": "build-storybook",
-    "test:unit": "jest",
+    "test": "jest",
     "lint": "eslint",
     "format": "prettier *.{js,tsx} -w",
     "commit": "git-cz",
@@ -66,6 +66,8 @@
     "@storybook/react": "~6.3.12",
     "@storybook/react-native": "~5.3.25",
     "@storybook/ui": "^6.3.12",
+    "@testing-library/jest-native": "^4.0.4",
+    "@testing-library/react-native": "^8.0.0",
     "@types/jest": "^27.0.2",
     "@types/react": "~16.9.41",
     "@types/react-dom": "~16.9.8",
@@ -105,20 +107,30 @@
     "rollup-plugin-typescript2": "^0.27.0",
     "semantic-release": "^17.1.2",
     "storybook-addon-designs": "^6.2.0",
+    "ts-jest": "^26.4.2",
     "typeface-public-sans": "^1.1.13",
     "typescript": "~4.0.0"
   },
   "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
-    ],
+    "preset": "react-native",
     "setupFilesAfterEnv": [
-      "<rootDir>/__mocks__/globalMock.js"
+      "@testing-library/jest-native/extend-expect"
     ],
-    "modulePathIgnorePatterns": [
-      "<rootDir>/dist/"
-    ]
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.jest.json"
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
   },
   "eslintIgnore": [
     "node_modules/",
