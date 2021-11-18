@@ -51,6 +51,16 @@ const TextArea: React.FC<TextAreaProps> = ({
     default: colors.neutralDark,
   };
 
+  useEffect(() => {
+    if (status === 'error') {
+      textareaRef.current?.error();
+    }
+
+    if (status === 'success') {
+      textareaRef.current?.success();
+    }
+  }, [status]);
+
   return (
     <SafeAreaView>
       {!!label && (
