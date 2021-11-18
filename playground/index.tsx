@@ -25,14 +25,21 @@ const Playground: React.FC = () => {
 
         <TextField
           label="Email"
-          variant="small"
+          variant="medium"
+          status="error"
           placeholder="Digite seu email"
           keyboardType="email-address"
           autoCapitalize="none"
         />
 
         <Box my="sm">
-          <TextArea label="Feedback" variant="medium" maxLength={10} />
+          <TextArea
+            label="Feedback"
+            placeholder="Digite aqui..."
+            variant="medium"
+            status="success"
+            maxLength={10}
+          />
         </Box>
       </Box>
 

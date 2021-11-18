@@ -6,7 +6,13 @@ import React, {
   forwardRef,
   ForwardRefRenderFunction,
 } from 'react';
-import { createRestyleComponent, spacing, useTheme } from '@shopify/restyle';
+import {
+  ColorProps,
+  createRestyleComponent,
+  ResponsiveValue,
+  spacing,
+  useTheme,
+} from '@shopify/restyle';
 import { TextInput, TouchableWithoutFeedback } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -25,6 +31,7 @@ const Input: React.FC<InputProps> = (
     maxLength,
     keyboardType,
     autoCapitalize,
+    style,
     ...props
   },
   ref,
@@ -33,27 +40,56 @@ const Input: React.FC<InputProps> = (
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
+  const [hasError, setHasError] = useState(false);
+  const [hasSuccess, setHasSuccess] = useState(false);
+
+  const [colorStatus, setColorStatus] =
+    useState<keyof Theme['colors']>('neutralDark');
+
   const inputElementRef = useRef<InputRef>(null);
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
+    setColorStatus('primaryBase');
   }, []);
 
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
-    setIsFilled(!!inputElementRef.current?.value);
-  }, []);
+    setColorStatus('neutralDark');
+    setIsFilled(!!ref.current?.value?.length);
+  }, [ref]);
 
   const handleClear = useCallback(() => {
     inputElementRef.current?.clear();
     setIsFilled(false);
   }, []);
 
-  useImperativeHandle(ref, () => undefined);
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      handleInputFocus();
+    },
+    blur: () => {
+      handleInputBlur();
+    },
+    error: () => {
+      setHasError(true);
+      setColorStatus('feedbackErrorBase');
+    },
+    success: () => {
+      setHasSuccess(true);
+      setColorStatus('feedbackSuccessBase');
+    },
+    clearStatus: () => {
+      setHasError(false);
+      setHasSuccess(false);
+      setColorStatus('neutralDark');
+    },
+  }));
 
   return (
     <Box
       bw="thin"
+      borderColor={colorStatus}
       borderRadius="sm"
       flexDirection="row"
       alignItems="center"
@@ -79,11 +115,7 @@ const Input: React.FC<InputProps> = (
             ref.current.value = value;
           }
         }}
-        style={{
-          flex: 1,
-          fontFamily: textVariants.regular.fontFamily,
-          textAlignVertical: 'top',
-        }}
+        style={style}
       />
 
       {icon && (

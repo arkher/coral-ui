@@ -1,5 +1,5 @@
-import React, { useCallback, useRef, useState, useEffect } from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
+import React, { useRef, useState, useEffect } from 'react';
+import { SafeAreaView } from 'react-native';
 import { useTheme } from '@shopify/restyle';
 import { Theme } from '../../themes/default';
 
@@ -16,7 +16,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   maxLength,
 }) => {
   const [countChar, setCountChar] = useState(0);
-  const { colors, textVariants } = useTheme<Theme>();
+  const { textVariants } = useTheme<Theme>();
   const textareaRef = useRef<any>(null);
 
   const [variantArea] = useState<CustomHeightComponent>(() => {
@@ -36,6 +36,16 @@ const TextArea: React.FC<TextAreaProps> = ({
     }
   }, [variant]);
 
+  useEffect(() => {
+    if (status === 'error') {
+      textareaRef.current?.error();
+    }
+
+    if (status === 'success') {
+      textareaRef.current?.success();
+    }
+  }, [status]);
+
   return (
     <SafeAreaView>
       {!!label && (
@@ -47,14 +57,20 @@ const TextArea: React.FC<TextAreaProps> = ({
       <Input
         ref={textareaRef}
         placeholder={placeholder}
-        placeholderTextColor={colors.neutralDark}
         variant={variantArea}
-        onChange={() => setCountChar(textareaRef.current?.value?.length || 0)}
         multiline
         maxLength={maxLength}
         numberOfLines={7}
         my="quarck"
         p="xs"
+        onChange={() => setCountChar(textareaRef.current?.value?.length || 0)}
+        onFocus={() => textareaRef.current?.focus()}
+        onBlur={() => textareaRef.current?.blur()}
+        style={{
+          flex: 1,
+          fontFamily: textVariants.regular.fontFamily,
+          textAlignVertical: 'top',
+        }}
       />
 
       {maxLength && (
