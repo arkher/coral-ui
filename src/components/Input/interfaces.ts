@@ -15,4 +15,13 @@ type InputProps = {
 
 type InputRef = HTMLInputElement & TextInput;
 
-export { InputProps, InputRef };
+type InputFowardEvents = {
+  value: string;
+  focus: () => void;
+  blur: () => void;
+  error: () => void;
+  success: () => void;
+  clear: () => void;
+};
+
+export { InputProps, InputRef, InputFowardEvents };

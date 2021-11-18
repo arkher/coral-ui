@@ -1,45 +1,113 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useRef,
+  useState,
+  useImperativeHandle,
+  forwardRef,
+  ForwardRefRenderFunction,
+} from 'react';
+
 import { createRestyleComponent, spacing, useTheme } from '@shopify/restyle';
-
-import { TextInput, TouchableWithoutFeedback } from 'react-native';
-
+import { Keyboard, TextInput, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Theme, borderWidth } from '../../themes/default';
 import Box from '../Box';
-import { InputProps, InputRef } from './interfaces';
+import { InputFowardEvents, InputProps, InputRef } from './interfaces';
 
-const TextField: React.FC<InputProps> = ({
-  placeholder,
-  variant,
-  editable,
-  multiline,
-  numberOfLines,
-  icon,
-  ...props
-}) => {
-  const { colors, textVariants } = useTheme<Theme>();
+const Input: React.FC<InputProps> = (
+  {
+    placeholder,
+    variant,
+    editable,
+    multiline,
+    numberOfLines,
+    icon,
+    maxLength,
+    keyboardType,
+    autoCapitalize,
+    style,
+    returnKeyType,
+    ...props
+  },
+  ref,
+) => {
+  const { colors } = useTheme<Theme>();
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
+
+  const [hasError, setHasError] = useState(false);
+  const [hasSuccess, setHasSuccess] = useState(false);
+
+  const [colorStatus, setColorStatus] =
+    useState<keyof Theme['colors']>('neutralDark');
 
   const inputElementRef = useRef<InputRef>(null);
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
-  }, []);
+
+    if (!hasError && !hasSuccess) {
+      setColorStatus('primaryBase');
+    }
+  }, [hasError, hasSuccess]);
 
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
-    setIsFilled(!!inputElementRef.current?.value);
-  }, []);
+
+    if (!hasError && !hasSuccess) {
+      setColorStatus('neutralDark');
+    }
+  }, [hasError, hasSuccess]);
 
   const handleClear = useCallback(() => {
     inputElementRef.current?.clear();
     setIsFilled(false);
   }, []);
 
+  const handleChange = useCallback(
+    (newValue: string) => {
+      if (maxLength && newValue?.length <= maxLength) {
+        // eslint-disable-next-line no-param-reassign
+        ref.current.value = newValue;
+      }
+
+      if (newValue.length > 0) {
+        setIsFilled(true);
+      }
+    },
+    [maxLength, ref],
+  );
+
+  useImperativeHandle(
+    ref,
+    () =>
+      ({
+        focus: () => {
+          handleInputFocus();
+        },
+        blur: () => {
+          handleInputBlur();
+        },
+        error: () => {
+          setHasError(true);
+          setColorStatus('feedbackErrorBase');
+        },
+        success: () => {
+          setHasSuccess(true);
+          setColorStatus('feedbackSuccessBase');
+        },
+        clear: () => {
+          setHasError(false);
+          setHasSuccess(false);
+          setColorStatus('neutralDark');
+        },
+      } as InputFowardEvents),
+  );
+
   return (
     <Box
       bw="thin"
+      borderColor={colorStatus}
       borderRadius="sm"
       flexDirection="row"
       alignItems="center"
@@ -51,16 +119,20 @@ const TextField: React.FC<InputProps> = ({
         placeholder={placeholder}
         placeholderTextColor={colors.neutralDark}
         onBlur={handleInputBlur}
+        onSubmitEditing={() => {
+          Keyboard.dismiss();
+        }}
         onFocus={handleInputFocus}
+        onChangeText={handleChange}
         editable={editable}
         multiline={multiline}
+        maxLength={maxLength}
+        keyboardType={keyboardType}
+        returnKeyType={returnKeyType}
         numberOfLines={numberOfLines}
+        autoCapitalize={autoCapitalize}
         selectionColor={colors.neutralDark}
-        style={{
-          flex: 1,
-          fontFamily: textVariants.regular.fontFamily,
-          textAlignVertical: 'top',
-        }}
+        style={style}
       />
 
       {icon && (
@@ -82,5 +154,5 @@ const TextField: React.FC<InputProps> = ({
 
 export default createRestyleComponent<InputProps, Theme>(
   [spacing, borderWidth],
-  TextField,
+  forwardRef(Input as ForwardRefRenderFunction<InputProps>),
 );

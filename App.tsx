@@ -12,8 +12,9 @@ import {
 } from '@expo-google-fonts/public-sans';
 
 import { ThemeProvider } from '@shopify/restyle';
-import Storybook from './.storybook-mobile';
+// import Storybook from './.storybook-mobile';
 import theme from './src/themes/default';
+import Playground from './playground/index';
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
@@ -45,7 +46,8 @@ const App: React.FC = () => {
     return (
       <ThemeProvider theme={themeWithFont}>
         <StatusBar />
-        <Storybook />
+        {/* <Storybook /> */}
+        <Playground />
       </ThemeProvider>
     );
   }
