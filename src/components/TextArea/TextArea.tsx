@@ -15,7 +15,9 @@ const TextArea: React.FC<TextAreaProps> = ({
   status,
   maxLength,
 }) => {
+  const [countChar, setCountChar] = useState(0);
   const { colors, textVariants } = useTheme<Theme>();
+  const textareaRef = useRef<any>(null);
 
   const [variantArea] = useState<CustomHeightComponent>(() => {
     switch (variant) {
@@ -43,10 +45,13 @@ const TextArea: React.FC<TextAreaProps> = ({
       )}
 
       <Input
+        ref={textareaRef}
         placeholder={placeholder}
         placeholderTextColor={colors.neutralDark}
         variant={variantArea}
+        onChange={() => setCountChar(textareaRef.current?.value?.length || 0)}
         multiline
+        maxLength={maxLength}
         numberOfLines={7}
         my="quarck"
         p="xs"
@@ -54,7 +59,9 @@ const TextArea: React.FC<TextAreaProps> = ({
 
       {maxLength && (
         <Box flexDirection="row" justifyContent="flex-end">
-          <Text color="neutralDark">000/{maxLength}</Text>
+          <Text color="neutralDark">
+            {countChar}/{maxLength}
+          </Text>
         </Box>
       )}
     </SafeAreaView>

@@ -15,6 +15,8 @@ const TextField: React.FC<TextFieldProps> = ({
   variant,
   assistiveText,
   status,
+  keyboardType,
+  autoCapitalize,
 }) => {
   const { colors } = useTheme<Theme>();
 
@@ -29,6 +31,8 @@ const TextField: React.FC<TextFieldProps> = ({
         placeholder={placeholder}
         placeholderTextColor={colors.neutralDark}
         variant={variant}
+        keyboardType={keyboardType}
+        autoCapitalize={autoCapitalize}
         my="quarck"
         p="nano"
         icon="close"

@@ -1,6 +1,12 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useRef,
+  useState,
+  useImperativeHandle,
+  forwardRef,
+  ForwardRefRenderFunction,
+} from 'react';
 import { createRestyleComponent, spacing, useTheme } from '@shopify/restyle';
-
 import { TextInput, TouchableWithoutFeedback } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -8,15 +14,21 @@ import { Theme, borderWidth } from '../../themes/default';
 import Box from '../Box';
 import { InputProps, InputRef } from './interfaces';
 
-const TextField: React.FC<InputProps> = ({
-  placeholder,
-  variant,
-  editable,
-  multiline,
-  numberOfLines,
-  icon,
-  ...props
-}) => {
+const Input: React.FC<InputProps> = (
+  {
+    placeholder,
+    variant,
+    editable,
+    multiline,
+    numberOfLines,
+    icon,
+    maxLength,
+    keyboardType,
+    autoCapitalize,
+    ...props
+  },
+  ref,
+) => {
   const { colors, textVariants } = useTheme<Theme>();
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
@@ -37,6 +49,8 @@ const TextField: React.FC<InputProps> = ({
     setIsFilled(false);
   }, []);
 
+  useImperativeHandle(ref, () => undefined);
+
   return (
     <Box
       bw="thin"
@@ -54,8 +68,17 @@ const TextField: React.FC<InputProps> = ({
         onFocus={handleInputFocus}
         editable={editable}
         multiline={multiline}
+        maxLength={maxLength}
+        keyboardType={keyboardType}
         numberOfLines={numberOfLines}
+        autoCapitalize={autoCapitalize}
         selectionColor={colors.neutralDark}
+        onChangeText={value => {
+          if (maxLength && value?.length <= maxLength) {
+            // eslint-disable-next-line no-param-reassign
+            ref.current.value = value;
+          }
+        }}
         style={{
           flex: 1,
           fontFamily: textVariants.regular.fontFamily,
@@ -82,5 +105,5 @@ const TextField: React.FC<InputProps> = ({
 
 export default createRestyleComponent<InputProps, Theme>(
   [spacing, borderWidth],
-  TextField,
+  forwardRef(Input as ForwardRefRenderFunction<InputProps>),
 );
