@@ -6,19 +6,13 @@ import React, {
   forwardRef,
   ForwardRefRenderFunction,
 } from 'react';
-import {
-  ColorProps,
-  createRestyleComponent,
-  ResponsiveValue,
-  spacing,
-  useTheme,
-} from '@shopify/restyle';
-import { TextInput, TouchableWithoutFeedback } from 'react-native';
 
+import { createRestyleComponent, spacing, useTheme } from '@shopify/restyle';
+import { Keyboard, TextInput, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Theme, borderWidth } from '../../themes/default';
 import Box from '../Box';
-import { InputProps, InputRef } from './interfaces';
+import { InputFowardEvents, InputProps, InputRef } from './interfaces';
 
 const Input: React.FC<InputProps> = (
   {
@@ -32,11 +26,12 @@ const Input: React.FC<InputProps> = (
     keyboardType,
     autoCapitalize,
     style,
+    returnKeyType,
     ...props
   },
   ref,
 ) => {
-  const { colors, textVariants } = useTheme<Theme>();
+  const { colors } = useTheme<Theme>();
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
@@ -50,41 +45,64 @@ const Input: React.FC<InputProps> = (
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
-    setColorStatus('primaryBase');
-  }, []);
+
+    if (!hasError && !hasSuccess) {
+      setColorStatus('primaryBase');
+    }
+  }, [hasError, hasSuccess]);
 
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
-    setColorStatus('neutralDark');
-    setIsFilled(!!ref.current?.value?.length);
-  }, [ref]);
+
+    if (!hasError && !hasSuccess) {
+      setColorStatus('neutralDark');
+    }
+  }, [hasError, hasSuccess]);
 
   const handleClear = useCallback(() => {
     inputElementRef.current?.clear();
     setIsFilled(false);
   }, []);
 
-  useImperativeHandle(ref, () => ({
-    focus: () => {
-      handleInputFocus();
+  const handleChange = useCallback(
+    (newValue: string) => {
+      if (maxLength && newValue?.length <= maxLength) {
+        // eslint-disable-next-line no-param-reassign
+        ref.current.value = newValue;
+      }
+
+      if (newValue.length > 0) {
+        setIsFilled(true);
+      }
     },
-    blur: () => {
-      handleInputBlur();
-    },
-    error: () => {
-      setHasError(true);
-      setColorStatus('feedbackErrorBase');
-    },
-    success: () => {
-      setHasSuccess(true);
-      setColorStatus('feedbackSuccessBase');
-    },
-    clearStatus: () => {
-      setHasError(false);
-      setHasSuccess(false);
-      setColorStatus('neutralDark');
-    },
-  }));
+    [maxLength, ref],
+  );
+
+  useImperativeHandle(
+    ref,
+    () =>
+      ({
+        focus: () => {
+          handleInputFocus();
+        },
+        blur: () => {
+          handleInputBlur();
+        },
+        error: () => {
+          setHasError(true);
+          setColorStatus('feedbackErrorBase');
+        },
+        success: () => {
+          setHasSuccess(true);
+          setColorStatus('feedbackSuccessBase');
+        },
+        clear: () => {
+          setHasError(false);
+          setHasSuccess(false);
+          setColorStatus('neutralDark');
+        },
+      } as InputFowardEvents),
+  );
 
   return (
     <Box
@@ -101,20 +119,19 @@ const Input: React.FC<InputProps> = (
         placeholder={placeholder}
         placeholderTextColor={colors.neutralDark}
         onBlur={handleInputBlur}
+        onSubmitEditing={() => {
+          Keyboard.dismiss();
+        }}
         onFocus={handleInputFocus}
+        onChangeText={handleChange}
         editable={editable}
         multiline={multiline}
         maxLength={maxLength}
         keyboardType={keyboardType}
+        returnKeyType={returnKeyType}
         numberOfLines={numberOfLines}
         autoCapitalize={autoCapitalize}
         selectionColor={colors.neutralDark}
-        onChangeText={value => {
-          if (maxLength && value?.length <= maxLength) {
-            // eslint-disable-next-line no-param-reassign
-            ref.current.value = value;
-          }
-        }}
         style={style}
       />
 
