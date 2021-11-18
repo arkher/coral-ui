@@ -8,6 +8,7 @@ import Text from '../Text';
 import Box from '../Box';
 import Input from '../Input';
 import { TextFieldProps } from './interfaces';
+import { InputFowardEvents } from '../Input/interfaces';
 
 const TextField: React.FC<TextFieldProps> = ({
   label,
@@ -17,9 +18,10 @@ const TextField: React.FC<TextFieldProps> = ({
   status,
   keyboardType,
   autoCapitalize,
+  returnKeyType,
 }) => {
   const { colors } = useTheme<Theme>();
-  const textfieldRef = useRef<any>(null);
+  const textfieldRef = useRef<InputFowardEvents>(null);
 
   useEffect(() => {
     if (status === 'error') {
@@ -30,6 +32,12 @@ const TextField: React.FC<TextFieldProps> = ({
       textfieldRef.current?.success();
     }
   }, [status]);
+
+  const statusKeyPair = {
+    error: colors.feedbackErrorBase,
+    success: colors.feedbackSuccessBase,
+    default: colors.neutralDark,
+  };
 
   return (
     <SafeAreaView>
@@ -44,6 +52,7 @@ const TextField: React.FC<TextFieldProps> = ({
         variant={variant}
         keyboardType={keyboardType}
         autoCapitalize={autoCapitalize}
+        returnKeyType={returnKeyType}
         my="quarck"
         p="nano"
         icon="close"
@@ -52,17 +61,22 @@ const TextField: React.FC<TextFieldProps> = ({
         }}
       />
       {!!assistiveText && (
-        <Box flexDirection="row" alignItems="baseline">
-          <Icon
-            name={
-              status === 'success'
-                ? 'check-circle-outline'
-                : 'information-outline'
-            }
-            color={colors.neutralDark}
-            size={16}
-          />
-          <Text mx="quarck" color="neutralDark">
+        <Box flexDirection="row" alignItems="center">
+          {status === 'success' && (
+            <Icon
+              name="check-circle-outline"
+              size={24}
+              color={statusKeyPair[status]}
+            />
+          )}
+          {status === 'error' && (
+            <Icon
+              name="alert-circle-outline"
+              size={24}
+              color={statusKeyPair[status]}
+            />
+          )}
+          <Text ml="quarck" fs="xxxxs" color="neutralDarkest">
             {assistiveText}
           </Text>
         </Box>

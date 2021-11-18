@@ -26,7 +26,8 @@ const Playground: React.FC = () => {
         <TextField
           label="Email"
           variant="medium"
-          status="error"
+          status="success"
+          assistiveText="Texto de suporte"
           placeholder="Digite seu email"
           keyboardType="email-address"
           autoCapitalize="none"
@@ -37,8 +38,9 @@ const Playground: React.FC = () => {
             label="Feedback"
             placeholder="Digite aqui..."
             variant="medium"
-            status="success"
+            status="error"
             maxLength={10}
+            assistiveText="Texto de suporte"
           />
         </Box>
       </Box>
@@ -47,11 +49,22 @@ const Playground: React.FC = () => {
         <Checkbox
           value={checked}
           onChange={() => setChecked(!checked)}
+          required
           label="Li e concordo com os termos de serviço"
         />
 
-        <Button my="sm" onPress={() => undefined}>
+        <Button mt="sm" onPress={() => undefined}>
           Enviar comentários
+        </Button>
+
+        <Button
+          my="nano"
+          bg="white"
+          borderColor="primaryBase"
+          bw="thin"
+          onPress={() => undefined}
+        >
+          <Text color="primaryBase">Cancelar</Text>
         </Button>
       </Box>
     </Box>
