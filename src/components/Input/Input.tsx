@@ -1,22 +1,15 @@
+import { createRestyleComponent, spacing, useTheme } from '@shopify/restyle';
 import React, {
-  useCallback,
-  useRef,
-  useState,
-  useImperativeHandle,
   forwardRef,
   ForwardRefRenderFunction,
+  useCallback,
+  useImperativeHandle,
+  useRef,
+  useState,
 } from 'react';
-import {
-  ColorProps,
-  createRestyleComponent,
-  ResponsiveValue,
-  spacing,
-  useTheme,
-} from '@shopify/restyle';
 import { TextInput, TouchableWithoutFeedback } from 'react-native';
-
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Theme, borderWidth } from '../../themes/default';
+import { borderWidth, Theme } from '../../themes/default';
 import Box from '../Box';
 import { InputProps, InputRef } from './interfaces';
 
@@ -88,7 +81,7 @@ const Input: React.FC<InputProps> = (
 
   return (
     <Box
-      bw="thin"
+      bw={hasError || hasSuccess || isFocused ? 'thin' : 'hairline'}
       borderColor={colorStatus}
       borderRadius="sm"
       flexDirection="row"

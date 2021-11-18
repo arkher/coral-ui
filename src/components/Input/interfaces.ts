@@ -13,6 +13,13 @@ type InputProps = {
   Partial<BoxProps<Theme>> &
   TextInputProps;
 
-type InputRef = HTMLInputElement & TextInput;
+type InputRef = HTMLInputElement &
+  TextInput & {
+    focus(): void;
+    blur(): void;
+    error(): void;
+    success(): void;
+    clearStatus(): void;
+  };
 
 export { InputProps, InputRef };

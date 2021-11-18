@@ -7,6 +7,7 @@ import Text from '../Text';
 import Input from '../Input';
 import Box from '../Box';
 import { TextAreaProps } from './interfaces';
+import { InputRef } from '../Input/interfaces';
 
 const TextArea: React.FC<TextAreaProps> = ({
   label,
@@ -17,7 +18,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 }) => {
   const [countChar, setCountChar] = useState(0);
   const { textVariants } = useTheme<Theme>();
-  const textareaRef = useRef<any>(null);
+  const textareaRef = useRef<InputRef>(null);
 
   const [variantArea] = useState<CustomHeightComponent>(() => {
     switch (variant) {
@@ -39,9 +40,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   useEffect(() => {
     if (status === 'error') {
       textareaRef.current?.error();
-    }
-
-    if (status === 'success') {
+    } else if (status === 'success') {
       textareaRef.current?.success();
     }
   }, [status]);
@@ -62,7 +61,8 @@ const TextArea: React.FC<TextAreaProps> = ({
         maxLength={maxLength}
         numberOfLines={7}
         my="quarck"
-        p="xs"
+        px="xs"
+        py="nano"
         onChange={() => setCountChar(textareaRef.current?.value?.length || 0)}
         onFocus={() => textareaRef.current?.focus()}
         onBlur={() => textareaRef.current?.blur()}
