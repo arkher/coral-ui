@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '@shopify/restyle';
@@ -19,6 +19,17 @@ const TextField: React.FC<TextFieldProps> = ({
   autoCapitalize,
 }) => {
   const { colors } = useTheme<Theme>();
+  const textfieldRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (status === 'error') {
+      textfieldRef.current?.error();
+    }
+
+    if (status === 'success') {
+      textfieldRef.current?.success();
+    }
+  }, [status]);
 
   return (
     <SafeAreaView>
@@ -28,14 +39,17 @@ const TextField: React.FC<TextFieldProps> = ({
         </Text>
       )}
       <Input
+        ref={textfieldRef}
         placeholder={placeholder}
-        placeholderTextColor={colors.neutralDark}
         variant={variant}
         keyboardType={keyboardType}
         autoCapitalize={autoCapitalize}
         my="quarck"
         p="nano"
         icon="close"
+        style={{
+          flex: 1,
+        }}
       />
       {!!assistiveText && (
         <Box flexDirection="row" alignItems="baseline">
