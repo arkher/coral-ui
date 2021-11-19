@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <View
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderColor": "#5D6A75",
+          "borderRadius": 4,
+          "display": "flex",
+          "flexDirection": "row",
+          "marginVertical": 4,
+          "paddingHorizontal": 16,
+          "paddingVertical": 8,
+        },
+        Array [
+          Object {
+            "borderWidth": 1,
+            "height": 140,
+          },
+        ],
+      ]
+    }
+    testID="Box"
+  >
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      numberOfLines={7}
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Placeholder"
+      placeholderTextColor="#5D6A75"
+      rejectResponderTermination={true}
+      selectionColor="#5D6A75"
+      style={
+        Array [
+          Object {},
+          Object {
+            "flex": 1,
+            "fontFamily": "\\"Inter\\", sans-serif",
+            "textAlignVertical": "top",
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+        },
+        Array [
+          Object {},
+        ],
+      ]
+    }
+    testID="Box"
+  />
+</RCTSafeAreaView>
+`;

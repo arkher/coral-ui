@@ -19,6 +19,8 @@ const TextArea: React.FC<TextAreaProps> = ({
   assistiveText,
   autoCapitalize,
   keyboardType,
+  value,
+  onChange,
 }) => {
   const [countChar, setCountChar] = useState(0);
   const { colors, textVariants } = useTheme<Theme>();
@@ -54,9 +56,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   useEffect(() => {
     if (status === 'error') {
       textareaRef.current?.error();
-    }
-
-    if (status === 'success') {
+    } else if (status === 'success') {
       textareaRef.current?.success();
     }
   }, [status]);
@@ -70,6 +70,7 @@ const TextArea: React.FC<TextAreaProps> = ({
       )}
 
       <Input
+        value={value}
         ref={textareaRef}
         placeholder={placeholder}
         variant={variantArea}
@@ -79,13 +80,17 @@ const TextArea: React.FC<TextAreaProps> = ({
         maxLength={maxLength}
         numberOfLines={7}
         my="quarck"
-        p="xs"
-        onChange={() => setCountChar(textareaRef.current?.value?.length || 0)}
+        px="xs"
+        py="nano"
+        onChange={() => {
+          onChange?.();
+          setCountChar(textareaRef.current?.value?.length || 0);
+        }}
         onFocus={() => textareaRef.current?.focus()}
         onBlur={() => textareaRef.current?.blur()}
         style={{
           flex: 1,
-          fontFamily: textVariants.regular.fontFamily,
+          fontFamily: textVariants?.regular?.fontFamily,
           textAlignVertical: 'top',
         }}
       />

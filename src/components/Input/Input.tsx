@@ -10,7 +10,7 @@ import React, {
 import { createRestyleComponent, spacing, useTheme } from '@shopify/restyle';
 import { Keyboard, TextInput, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Theme, borderWidth } from '../../themes/default';
+import { borderWidth, Theme } from '../../themes/default';
 import Box from '../Box';
 import { InputFowardEvents, InputProps, InputRef } from './interfaces';
 
@@ -106,7 +106,7 @@ const Input: React.FC<InputProps> = (
 
   return (
     <Box
-      bw="thin"
+      bw={hasError || hasSuccess || isFocused ? 'thin' : 'hairline'}
       borderColor={colorStatus}
       borderRadius="sm"
       flexDirection="row"
@@ -115,6 +115,7 @@ const Input: React.FC<InputProps> = (
       {...props}
     >
       <TextInput
+        testID="Input"
         ref={inputElementRef}
         placeholder={placeholder}
         placeholderTextColor={colors.neutralDark}
