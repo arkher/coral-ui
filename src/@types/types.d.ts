@@ -1,6 +1,7 @@
 type CustomBorderWidth = 'none' | 'hairline' | 'thin' | 'thick' | 'heavy';
 
 type CustomColors =
+  | 'transparent'
   | 'black'
   | 'primaryDarkest'
   | 'primaryDark'

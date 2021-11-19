@@ -1,5 +1,5 @@
+import { ReactNode } from 'react';
 import { BoxProps } from '@shopify/restyle';
-import { ReactNode } from 'markdown-to-jsx/node_modules/@types/react';
 import { Theme } from '../../themes/default';
 
 type CustomBoxProps = Partial<{
