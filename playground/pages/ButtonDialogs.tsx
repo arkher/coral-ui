@@ -1,79 +1,106 @@
-import React, { useState } from 'react';
-import { StatusBar } from 'react-native';
-import {
-  Box,
-  Text,
-  Button,
-  TextField,
-  TextArea,
-  Checkbox,
-} from '../../src/components';
+import React from 'react';
+import { ScrollView, StatusBar } from 'react-native';
+import { Box, Text, Button } from '../../src/components';
 
-const ButtonDialogs: React.FC = () => {
-  const [checked, setChecked] = useState(false);
+const ButtonDialogs: React.FC = () => (
+  <>
+    <StatusBar />
 
-  return (
-    <>
-      <StatusBar />
+    <ScrollView>
+      <Box padding="sm">
+        <Text>Variantes</Text>
 
-      <Box
-        padding="sm"
-        flexDirection="column"
-        justifyContent="space-between"
-        flex={1}
-      >
-        <Box>
-          <Text fs="md" pb="nano">
-            <Text fontWeight="bold">Coral</Text> - Design System 🚀
-          </Text>
+        <Button variant="primary" mt="sm" onPress={() => undefined}>
+          Primary
+        </Button>
 
-          <TextField
-            label="Email"
-            variant="medium"
-            status="success"
-            assistiveText="Texto de suporte"
-            placeholder="Digite seu email"
-            keyboardType="email-address"
-            autoCapitalize="none"
-          />
+        <Button variant="secondary" mt="sm" onPress={() => undefined}>
+          Secondary
+        </Button>
 
-          <Box my="sm">
-            <TextArea
-              label="Feedback"
-              placeholder="Digite aqui..."
-              variant="medium"
-              status="error"
-              maxLength={10}
-              assistiveText="Texto de suporte"
-            />
-          </Box>
-        </Box>
+        <Button variant="tertiary" mt="sm" onPress={() => undefined}>
+          Tertiary
+        </Button>
 
-        <Box>
-          <Checkbox
-            value={checked}
-            onChange={() => setChecked(!checked)}
-            required
-            label="Li e concordo com os termos de serviço"
-          />
+        <Text>Variantes with icons</Text>
 
-          <Button mt="sm" onPress={() => undefined}>
-            Enviar comentários
+        <Button
+          variant="primary"
+          icon="check-circle"
+          mt="sm"
+          onPress={() => undefined}
+        >
+          Primary
+        </Button>
+
+        <Button
+          variant="secondary"
+          icon="check-circle-outline"
+          mt="sm"
+          onPress={() => undefined}
+        >
+          Secondary
+        </Button>
+
+        <Button
+          variant="tertiary"
+          icon="download-outline"
+          mt="sm"
+          onPress={() => undefined}
+        >
+          Tertiary
+        </Button>
+
+        <Text mt="md">Loadings</Text>
+
+        <Box flexDirection="row" justifyContent="space-around">
+          <Button
+            variant="primary"
+            loading
+            mt="sm"
+            width={{ phone: 40, tablet: 60 }}
+            onPress={() => undefined}
+          >
+            Primary
           </Button>
 
           <Button
-            my="nano"
-            bg="white"
-            borderColor="primaryBase"
-            bw="thin"
+            variant="secondary"
+            loading
+            mt="sm"
+            width={{ phone: 40, tablet: 60 }}
             onPress={() => undefined}
           >
-            <Text color="primaryBase">Cancelar</Text>
+            Secondary
+          </Button>
+
+          <Button
+            variant="tertiary"
+            loading
+            mt="sm"
+            width={{ phone: 40, tablet: 60 }}
+            onPress={() => undefined}
+          >
+            Tertiary
           </Button>
         </Box>
+
+        <Text mt="md">Disable</Text>
+
+        <Button variant="primary" disabled mt="sm" onPress={() => undefined}>
+          Primary Disable
+        </Button>
+
+        <Button variant="secondary" disabled mt="sm" onPress={() => undefined}>
+          Secondary Disable
+        </Button>
+
+        <Button variant="tertiary" disabled mt="sm" onPress={() => undefined}>
+          Tertiary Disable
+        </Button>
       </Box>
-    </>
-  );
-};
+    </ScrollView>
+  </>
+);
 
 export default ButtonDialogs;
