@@ -1,7 +1,8 @@
-/* eslint-disable react/jsx-boolean-value */
 /* eslint-disable camelcase */
 import React from 'react';
-import { StatusBar, Text } from 'react-native';
+import { Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
   useFonts,
@@ -14,7 +15,11 @@ import {
 import { ThemeProvider } from '@shopify/restyle';
 // import Storybook from './.storybook-mobile';
 import theme from './src/themes/default';
-import Playground from './playground/index';
+import Forms from './playground/pages/Forms';
+import Playground from './playground';
+import ButtonDialogs from './playground/pages/ButtonDialogs';
+
+const Stack = createNativeStackNavigator();
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
@@ -45,9 +50,26 @@ const App: React.FC = () => {
   if (fontsLoaded) {
     return (
       <ThemeProvider theme={themeWithFont}>
-        <StatusBar />
-        {/* <Storybook /> */}
-        <Playground />
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="Playground">
+            <Stack.Screen
+              name="Playground"
+              component={Playground}
+              options={{ title: 'Tela de boas vindas' }}
+            />
+            <Stack.Screen
+              name="Forms"
+              component={Forms}
+              options={{ title: 'Formulários' }}
+            />
+            <Stack.Screen
+              name="ButtonDialogs"
+              component={ButtonDialogs}
+              options={{ title: 'Botões e Diálogos' }}
+            />
+            <Stack.Screen name="Storybook" component={Storybook} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </ThemeProvider>
     );
   }
