@@ -1,8 +1,11 @@
+import { ReactNode } from 'react';
 import { BoxProps, TextProps } from '@shopify/restyle';
-import { ReactNode } from 'markdown-to-jsx/node_modules/@types/react';
 import { Theme } from '../../themes/default';
 
 type ButtonProps = {
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  disabled?: boolean;
+  icon?: string;
   children?: ReactNode;
   onPress: () => void;
   loading?: boolean;
@@ -14,4 +17,12 @@ type ButtonProps = {
   sop?: CustomShadow;
 } & Partial<BoxProps<Theme>>;
 
-export { ButtonProps };
+type ColorsOptions = {
+  [index: string]: keyof Theme['colors'];
+};
+
+type BorderWidthOptions = {
+  [index: string]: CustomBorderWidth;
+};
+
+export { ButtonProps, ColorsOptions, BorderWidthOptions };

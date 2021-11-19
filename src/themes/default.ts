@@ -1,6 +1,8 @@
 import { createRestyleFunction, createTheme } from '@shopify/restyle';
 
 const palette = {
+  transparent: 'transparent',
+
   primaryDarkest: '#002559',
   primaryDark: '#093E87',
   primaryBase: '#106CEE',
@@ -97,6 +99,7 @@ export type Theme = typeof theme;
 export default theme;
 
 export const colors: CustomColors[] = [
+  'transparent',
   'black',
   'primaryDarkest',
   'primaryDark',
