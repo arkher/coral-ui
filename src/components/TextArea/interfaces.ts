@@ -11,6 +11,8 @@ type TextAreaProps = {
   keyboardType: KeyboardTypeOptions;
   autoCapitalize: 'none' | 'sentences' | 'words' | 'characters' | undefined;
   returnKeyType: ReturnKeyTypeOptions;
+  value: string;
+  onChange(): void;
 }>;
 
 export { TextAreaProps };

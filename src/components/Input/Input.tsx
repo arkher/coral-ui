@@ -115,6 +115,7 @@ const Input: React.FC<InputProps> = (
       {...props}
     >
       <TextInput
+        testID="Input"
         ref={inputElementRef}
         placeholder={placeholder}
         placeholderTextColor={colors.neutralDark}
