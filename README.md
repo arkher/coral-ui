@@ -1,4 +1,4 @@
-# Coral UI
+# DS Mobile
 
 <p>
   <!-- iOS -->
@@ -24,7 +24,7 @@
 
 Biblioteca de componentes em React native feita com a biblioteca Restyle do Shopify, permitindo e facilitando **desenvolvimento baseado em temas** e **props utilitárias de estilo**.
 
-```
+```tsx
 <Box backgroundColor="primary" mt={2} p={3}>
   <Text color="textInverted" fontFamily="Roboto, sans-serif">
     Branded box with white text inside
@@ -43,7 +43,7 @@ Biblioteca de componentes em React native feita com a biblioteca Restyle do Shop
 
 ## Consumindo a lib como cliente
 
-1. `yarn add coral-ui` - Instalando a biblioteca
+1. `yarn add @ds/mobile --registry=http://verdaccio.mateus/` - Instalando a biblioteca
 1. `yarn add typeface-{font-name}` ou `import /font/*.ttf` - Instalando a fonte de sua preferência react-native-vector-icons
 1. `yarn add react-native-vector-icons` - Instale o pacote de icones
 1. `npx react-native link react-native-vector-icons` faça o link dos icones e reinecie o emulador
@@ -133,7 +133,6 @@ Você poderá escolher entre feature, bug fix ou CI update, por exemplo. E adici
 Após criar sua branch, crie um pull request (PR). Uma vez aprovado, será movido para uma branch de release (como `next`), e eventualmente mergeado na master.
 ## Todo
 
-- [ ] PLOP - Micro-generator
 - [ ] Snapshot testing
 - [ ] Unit testing
 
