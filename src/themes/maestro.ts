@@ -2,6 +2,7 @@ import theme, { Theme } from './default';
 
 interface MaestroCustomProps extends Theme {
   colors: {
+    transparent: string;
     primaryDarkest: string;
     primaryDark: string;
     primaryBase: string;

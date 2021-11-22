@@ -1,13 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render correctly 1`] = `
+exports[`should TextField render correctly 1`] = `
 <RCTSafeAreaView
   emulateUnlessSupported={true}
 >
   <View
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
     style={
       Array [
         Object {
@@ -17,13 +14,12 @@ exports[`should render correctly 1`] = `
           "display": "flex",
           "flexDirection": "row",
           "marginVertical": 4,
-          "paddingHorizontal": 16,
-          "paddingVertical": 8,
+          "padding": 8,
         },
         Array [
           Object {
             "borderWidth": 1,
-            "height": 140,
+            "height": 56,
           },
         ],
       ]
@@ -32,8 +28,6 @@ exports[`should render correctly 1`] = `
   >
     <TextInput
       allowFontScaling={true}
-      multiline={true}
-      numberOfLines={7}
       onBlur={[Function]}
       onChangeText={[Function]}
       onFocus={[Function]}
@@ -47,28 +41,41 @@ exports[`should render correctly 1`] = `
           Object {},
           Object {
             "flex": 1,
-            "fontFamily": "\\"Inter\\", sans-serif",
-            "textAlignVertical": "top",
           },
         ]
       }
+      testID="Input"
       underlineColorAndroid="transparent"
     />
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "flex-end",
-        },
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
         Array [
-          Object {},
-        ],
-      ]
-    }
-    testID="Box"
-  />
+          Object {
+            "display": "flex",
+            "marginLeft": 4,
+          },
+          Array [
+            Object {},
+          ],
+        ]
+      }
+      testID="Box"
+    >
+      <Icon
+        color="#5D6A75"
+        name="close"
+        size={24}
+      />
+    </View>
+  </View>
 </RCTSafeAreaView>
 `;

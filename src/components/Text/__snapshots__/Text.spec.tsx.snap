@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should Text render correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "display": "flex",
+        "fontFamily": "\\"Inter\\", sans-serif",
+        "fontWeight": "400",
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+>
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. In totam dolorum ab vel ratione blanditiis amet tempora et doloribus dignissimos iste quia rerum, laudantium nesciunt. Expedita non minus quis culpa!
+</Text>
+`;
