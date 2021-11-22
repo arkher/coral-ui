@@ -18,7 +18,7 @@ const Playground: React.FC<PlaygroundProps> = ({ navigation }) => (
         🏗️ Escolha a seção que deseja:
       </Text>
 
-      <Button mt="sm" onPress={() => undefined}>
+      <Button mt="sm" disabled onPress={() => undefined}>
         Elementos textuais
       </Button>
 
@@ -26,7 +26,7 @@ const Playground: React.FC<PlaygroundProps> = ({ navigation }) => (
         Botões e Dialogs
       </Button>
 
-      <Button mt="sm" onPress={() => undefined}>
+      <Button mt="sm" disabled onPress={() => undefined}>
         Listas
       </Button>
 
