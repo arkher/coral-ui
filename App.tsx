@@ -13,7 +13,7 @@ import {
 } from '@expo-google-fonts/public-sans';
 
 import { ThemeProvider } from '@shopify/restyle';
-// import Storybook from './.storybook-mobile';
+import Storybook from './.storybook-mobile';
 import theme from './src/themes/default';
 import Forms from './playground/pages/Forms';
 import Playground from './playground';
