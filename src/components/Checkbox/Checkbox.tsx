@@ -27,6 +27,7 @@ const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
         style={styles.checkBox}
         onPress={handleChange}
         disabled={disabled}
+        testID="checkbox"
       >
         {value ? <Icon name="check" size={16} color="#fff" /> : <Box />}
       </TouchableHighlight>
@@ -35,6 +36,7 @@ const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
         fs="xxxs"
         color={disabled ? 'neutralBase' : 'neutralDarkest'}
         ml={{ phone: 'nano', tablet: 'nano' }}
+        testID="checkbox-label"
       >
         {label}
       </Text>
