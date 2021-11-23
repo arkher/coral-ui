@@ -1,10 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should Box render correctly 1`] = `
+exports[`should be Box render correctly 1`] = `
 <View
   style={
     Array [
       Object {
+        "display": "flex",
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+  testID="Box"
+/>
+`;
+
+exports[`should be large as margin 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "display": "flex",
+        "margin": 40,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+  testID="Box"
+/>
+`;
+
+exports[`should be primaryBase as background-color 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#0A7E19",
         "display": "flex",
       },
       Array [

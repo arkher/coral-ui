@@ -7,7 +7,7 @@ const ButtonDialogs: React.FC = () => (
     <StatusBar />
 
     <ScrollView>
-      <Box padding="sm">
+      <Box padding="sm" backgroundColor="white">
         <Text>Variantes</Text>
 
         <Button variant="primary" mt="sm" onPress={() => undefined}>

@@ -70,7 +70,6 @@ const TextArea: React.FC<TextAreaProps> = ({
       )}
 
       <Input
-        value={value}
         ref={textareaRef}
         placeholder={placeholder}
         variant={variantArea}
@@ -82,9 +81,10 @@ const TextArea: React.FC<TextAreaProps> = ({
         my="quark"
         px="xs"
         py="nano"
-        onChange={() => {
-          onChange?.();
+        value={value}
+        onChange={e => {
           setCountChar(textareaRef.current?.value?.length || 0);
+          onChange && onChange({ ...e, current: textareaRef.current });
         }}
         onFocus={() => textareaRef.current?.focus()}
         onBlur={() => textareaRef.current?.blur()}

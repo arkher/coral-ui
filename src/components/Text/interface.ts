@@ -1,5 +1,5 @@
 import { TextProps } from '@shopify/restyle';
-import { ReactNode } from 'markdown-to-jsx/node_modules/@types/react';
+import { ReactNode } from 'react';
 import { Theme } from '../../themes/institucional';
 
 type CustomTextProps = Partial<{

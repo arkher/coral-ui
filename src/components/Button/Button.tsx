@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, TouchableHighlight } from 'react-native';
-import { color, createRestyleComponent, useTheme } from '@shopify/restyle';
+import { createRestyleComponent, useTheme } from '@shopify/restyle';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
