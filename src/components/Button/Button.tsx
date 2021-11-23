@@ -64,7 +64,11 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <TouchableHighlight underlayColor="transparent" onPress={onPress}>
+    <TouchableHighlight
+      underlayColor="transparent"
+      onPress={onPress}
+      testID="ds-button"
+    >
       <Box
         backgroundColor={variantBgColor[variant]}
         borderColor={variantBorderColor[variant]}
