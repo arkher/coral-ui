@@ -1,15 +1,16 @@
 import { ReactNode } from 'react';
 import { BoxProps } from '@shopify/restyle';
-import { Theme } from '../../themes/default';
+import { ReactNode } from 'markdown-to-jsx/node_modules/@types/react';
+import { Theme } from '../../themes/institucional';
 
 type CustomBoxProps = Partial<{
   children: ReactNode;
-  bw: CustomBorderWidth;
-  op: CustomOpacity;
-  sof: CustomShadow;
-  sr: CustomShadow;
-  sop: CustomShadow;
-  h: CustomHeightComponent;
+  bw: Custom.BorderWidth;
+  op: Custom.Opacity;
+  sof: Custom.Shadow;
+  sr: Custom.Shadow;
+  sop: Custom.Shadow;
+  h: Custom.HeightComponent;
 }> &
   Partial<BoxProps<Theme>>;
 

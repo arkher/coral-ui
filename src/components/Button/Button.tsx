@@ -10,8 +10,7 @@ import {
   shadowOpacity,
   shadowRadius,
   Theme,
-} from '../../themes/default';
-
+} from '../../themes';
 import Text from '../Text/Text';
 import Box from '../Box/Box';
 import { BorderWidthOptions, ButtonProps, ColorsOptions } from './interface';
@@ -29,14 +28,14 @@ const Button: React.FC<ButtonProps> = ({
   const { colors } = useTheme<Theme>();
 
   const variantBgColor: ColorsOptions = {
-    primary: !disabled ? 'primaryBase' : 'neutralLightest',
-    secondary: !disabled ? 'transparent' : 'neutralLightest',
+    primary: !disabled ? 'primary-base' : 'neutral-lightest',
+    secondary: !disabled ? 'transparent' : 'neutral-lightest',
     tertiary: 'transparent',
   };
 
   const variantBorderColor: ColorsOptions = {
-    primary: !disabled ? 'primaryBase' : 'transparent',
-    secondary: !disabled ? 'primaryBase' : 'transparent',
+    primary: !disabled ? 'primary-base' : 'transparent',
+    secondary: !disabled ? 'primary-base' : 'transparent',
     tertiary: 'transparent',
   };
 
@@ -47,21 +46,21 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const variantColor: ColorsOptions = {
-    primary: !disabled ? 'white' : 'neutralBase',
-    secondary: !disabled ? 'primaryBase' : 'neutralBase',
-    tertiary: !disabled ? 'primaryBase' : 'neutralBase',
+    primary: !disabled ? 'white' : 'neutral-base',
+    secondary: !disabled ? 'primary-base' : 'neutral-base',
+    tertiary: !disabled ? 'primary-base' : 'neutral-base',
   };
 
   const variantIconColor = {
-    primary: !disabled ? colors.white : colors.neutralBase,
-    secondary: !disabled ? colors.primaryBase : colors.neutralBase,
-    tertiary: !disabled ? colors.primaryBase : colors.neutralBase,
+    primary: !disabled ? colors.white : colors['neutral-base'],
+    secondary: !disabled ? colors['primary-base'] : colors['neutral-base'],
+    tertiary: !disabled ? colors['primary-base'] : colors['neutral-base'],
   };
 
   const variantLoadingColor = {
     primary: colors.white,
-    secondary: colors.primaryBase,
-    tertiary: colors.primaryBase,
+    secondary: colors['primary-base'],
+    tertiary: colors['primary-base'],
   };
 
   return (
@@ -82,7 +81,7 @@ const Button: React.FC<ButtonProps> = ({
         ) : (
           <Box flexDirection="row" alignItems="center" justifyContent="center">
             {icon && (
-              <Box mr="quarck">
+              <Box mr="quark">
                 <Icon name={icon} size={24} color={variantIconColor[variant]} />
               </Box>
             )}

@@ -1,11 +1,6 @@
 import React from 'react';
 import { withDesign } from 'storybook-addon-designs';
-import {
-  colors,
-  borderWidthTokens,
-  spacingsInset,
-  radius,
-} from '../../themes/default';
+import { COLORS, BORDER_WIDTH, SPACINGS, RADIUS } from '../../themes/tokens';
 import Input from './Input';
 
 export default {
@@ -16,23 +11,23 @@ export default {
       control: { type: 'text' },
     },
     borderColor: {
-      options: colors,
+      options: COLORS,
       control: { type: 'select' },
     },
     borderWidth: {
-      options: borderWidthTokens,
+      options: BORDER_WIDTH,
       control: { type: 'select' },
     },
     padding: {
-      options: spacingsInset,
+      options: SPACINGS,
       control: { type: 'select' },
     },
     borderRadius: {
-      options: radius,
+      options: RADIUS,
       control: { type: 'select' },
     },
     variant: {
-      options: ['small', 'medium', 'smallArea', 'mediumArea'],
+      options: ['small', 'medium', 'small-area', 'medium-area'],
       control: { type: 'select' },
     },
     disabled: {
@@ -51,11 +46,11 @@ export default {
 interface TextInputProps {
   placeholder: string;
   value: string;
-  borderColor: CustomColors;
-  borderWidth: CustomBorderWidth;
-  padding: CustomSpacingInset;
-  borderRadius: CustomRadius;
-  variant: CustomHeightComponent;
+  borderColor: Custom.Colors;
+  borderWidth: Custom.BorderWidth;
+  padding: Custom.Spacing;
+  borderRadius: Custom.Radius;
+  variant: Custom.HeightComponent;
   disabled: boolean;
   multiline: boolean;
   numberOfLines: number;

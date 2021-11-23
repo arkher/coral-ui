@@ -1,11 +1,6 @@
 import React from 'react';
 import { createRestyleComponent, createText } from '@shopify/restyle';
-import {
-  fontSize,
-  letterSpacing,
-  lineHeight,
-  Theme,
-} from '../../themes/default';
+import { fontSize, letterSpacing, lineHeight, Theme } from '../../themes';
 import { CustomTextProps } from './interface';
 
 const Text = createText<Theme>();

@@ -12,14 +12,14 @@ storiesOf('Button', module)
   .addDecorator(withKnobs)
   .add('Basic Button', () => (
     <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
-      <Button onPress={action('clicked')} bg="primaryBase">
+      <Button onPress={action('clicked')} bg="primary-base">
         <Text>{text('Texto', 'Button text')}</Text>
       </Button>
     </View>
   ))
   .add('Com emoji', () => (
     <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
-      <Button onPress={action('clicked')} bg="primaryBase">
+      <Button onPress={action('clicked')} bg="primary-base">
         <Text>😀 😎 👍 💯</Text>
       </Button>
     </View>
@@ -29,7 +29,7 @@ storiesOf('Button', module)
       <Button
         onPress={action('loading')}
         loading
-        bg="primaryBase"
+        bg="primary-base"
         alignItems="center"
       />
     </View>

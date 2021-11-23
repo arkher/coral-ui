@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '@shopify/restyle';
-import { Theme } from '../../themes/default';
+import { Theme } from '../../themes/institucional';
 
 import Text from '../Text';
 import Box from '../Box';
@@ -34,15 +34,15 @@ const TextField: React.FC<TextFieldProps> = ({
   }, [status]);
 
   const statusKeyPair = {
-    error: colors.feedbackErrorBase,
-    success: colors.feedbackSuccessBase,
-    default: colors.neutralDark,
+    error: colors['feedback-error-base'],
+    success: colors['feedback-success-base'],
+    default: colors['neutral-dark'],
   };
 
   return (
     <SafeAreaView>
       {!!label && (
-        <Text fs="xxxs" fontWeight="700" color="neutralDarkest">
+        <Text fs="xxxs" fontWeight="700" color="neutral-darkest">
           {label}
         </Text>
       )}
@@ -53,7 +53,7 @@ const TextField: React.FC<TextFieldProps> = ({
         keyboardType={keyboardType}
         autoCapitalize={autoCapitalize}
         returnKeyType={returnKeyType}
-        my="quarck"
+        my="quark"
         p="nano"
         icon="close"
         style={{
@@ -76,7 +76,7 @@ const TextField: React.FC<TextFieldProps> = ({
               color={statusKeyPair[status]}
             />
           )}
-          <Text ml="quarck" fs="xxxxs" color="neutralDarkest">
+          <Text ml="quark" fs="xxxxs" color="neutral-darkest">
             {assistiveText}
           </Text>
         </Box>

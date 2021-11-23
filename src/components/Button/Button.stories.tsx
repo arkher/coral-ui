@@ -5,14 +5,14 @@ import { withDesign } from 'storybook-addon-designs';
 import { View } from 'react-native';
 import Text from '../Text/Text';
 import Button from './Button';
-import { colors } from '../../themes/default';
+import { COLORS } from '../../themes/tokens';
 
 export default {
   title: 'Componente/Button',
   component: Button,
   argTypes: {
     bg: {
-      options: colors,
+      options: COLORS,
       control: { type: 'select' },
     },
   },
@@ -25,7 +25,7 @@ const urlHandoff =
 export const Primary = ({ bg }: any): React.ReactNode => {
   return (
     <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
-      <Button onPress={action('clicked')} bg={bg || 'primaryBase'}>
+      <Button onPress={action('clicked')} bg={bg || 'primary-base'}>
         <Text>Button text</Text>
       </Button>
     </View>
@@ -43,12 +43,12 @@ export const Secondary = (): React.ReactNode => {
   return (
     <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
       <Button
-        bg="neutralLightest"
-        borderColor="primaryBase"
+        bg="neutral-lightest"
+        borderColor="primary-base"
         bw="hairline"
         onPress={action('clicked')}
       >
-        <Text color="primaryBase">Button text</Text>
+        <Text color="primary-base">Button text</Text>
       </Button>
     </View>
   );
@@ -64,8 +64,8 @@ Secondary.parameters = {
 export const Tertiary = (): React.ReactNode => {
   return (
     <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
-      <Button bg="neutralLightest" onPress={action('clicked')}>
-        <Text color="primaryBase">Button text</Text>
+      <Button bg="neutral-lightest" onPress={action('clicked')}>
+        <Text color="primary-base">Button text</Text>
       </Button>
     </View>
   );
@@ -84,7 +84,7 @@ export const ButtonLoading = (): React.ReactNode => {
       <Button
         onPress={action('loading')}
         loading
-        bg="primaryBase"
+        bg="primary-base"
         alignItems="center"
       />
     </View>

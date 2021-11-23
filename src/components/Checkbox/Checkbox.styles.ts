@@ -12,13 +12,13 @@ const useStyles = ({ checked, disabled, required }: Props) => {
   const theme = useTheme<Theme>();
 
   let borderColor;
-  if (disabled) borderColor = theme.colors.neutralLight;
-  else if (required) borderColor = theme.colors.feedbackErrorBase;
-  else borderColor = theme.colors.neutralBase;
+  if (disabled) borderColor = theme.colors['neutral-light'];
+  else if (required) borderColor = theme.colors['feedback-error-base'];
+  else borderColor = theme.colors['neutral-base'];
 
   let bg;
-  if (disabled) bg = theme.colors.neutralLight;
-  else if (checked) bg = theme.colors.feedbackInfoBase;
+  if (disabled) bg = theme.colors['neutral-light'];
+  else if (checked) bg = theme.colors['feedback-info-base'];
   else bg = theme.colors.white;
 
   return StyleSheet.create({
