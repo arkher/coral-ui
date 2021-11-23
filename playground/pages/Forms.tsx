@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { StatusBar } from 'react-native';
 import {
   Box,
-  Text,
   Button,
   TextField,
   TextArea,
@@ -43,7 +42,7 @@ const Forms: React.FC = () => {
               status="error"
               maxLength={100}
               assistiveText="Texto de suporte"
-              onChange={(e: any) => console.log(e.current?.value)}
+              onChange={e => console.log(e.current?.value)}
             />
           </Box>
 

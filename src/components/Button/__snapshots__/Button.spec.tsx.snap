@@ -11,6 +11,7 @@ exports[`should Button render correctly 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
+  testID="ds-button"
 >
   <View
     style={
