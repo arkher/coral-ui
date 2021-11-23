@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '@shopify/restyle';
-import themeInstitucional from '../src/themes/default';
+import themeInstitucional from '../src/themes/institucional';
 import themeMaestro from '../src/themes/maestro';
 import 'typeface-public-sans';
 import 'typeface-inter';

@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import { View } from 'react-native';
-import { colors, radius, opacities, shadows } from '../../themes/default';
+import { COLORS, RADIUS, OPACITIES, SHADOWS } from '../../themes/tokens';
 import Box from './Box';
 
 export default {
@@ -9,19 +9,19 @@ export default {
   component: Box,
   argTypes: {
     bg: {
-      options: colors,
+      options: COLORS,
       control: { type: 'select' },
     },
     borderRadius: {
-      options: radius,
+      options: RADIUS,
       control: { type: 'select' },
     },
     opacity: {
-      options: opacities,
+      options: OPACITIES,
       control: { type: 'select' },
     },
     shadow: {
-      options: shadows,
+      options: SHADOWS,
       control: { type: 'select' },
     },
     width: {
@@ -34,10 +34,10 @@ export default {
 };
 
 interface BoxProps {
-  bg: CustomColors;
-  borderRadius: CustomRadius;
-  opacity: CustomOpacity;
-  shadow: CustomShadow;
+  bg: Custom.Colors;
+  borderRadius: Custom.Radius;
+  opacity: Custom.Opacity;
+  shadow: Custom.Shadow;
   width: number;
   height: number;
 }
@@ -53,7 +53,7 @@ export const Default = ({
   return (
     <View style={{ margin: 8 }}>
       <Box
-        bg={bg || 'primaryBase'}
+        bg={bg || 'primary-base'}
         borderRadius={borderRadius}
         op={opacity}
         sof={shadow}

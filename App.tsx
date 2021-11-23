@@ -14,7 +14,7 @@ import {
 
 import { ThemeProvider } from '@shopify/restyle';
 import Storybook from './.storybook-mobile';
-import theme from './src/themes/default';
+import theme from './src/themes/institucional';
 import Forms from './playground/pages/Forms';
 import Playground from './playground';
 import ButtonDialogs from './playground/pages/ButtonDialogs';

@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '@shopify/restyle';
-import { Theme } from '../../themes/default';
+import { Theme } from '../../themes/institucional';
 
 import Text from '../Text';
 import Input from '../Input';
@@ -26,12 +26,12 @@ const TextArea: React.FC<TextAreaProps> = ({
   const { colors, textVariants } = useTheme<Theme>();
   const textareaRef = useRef<InputFowardEvents>(null);
 
-  const [variantArea] = useState<CustomHeightComponent>(() => {
+  const [variantArea] = useState<Custom.HeightComponent>(() => {
     switch (variant) {
       case 'small':
-        return 'smallArea';
+        return 'small-area';
       case 'medium':
-        return 'mediumArea';
+        return 'medium-area';
       default:
         return variant;
     }
@@ -48,9 +48,9 @@ const TextArea: React.FC<TextAreaProps> = ({
   }, [status]);
 
   const statusKeyPair = {
-    error: colors.feedbackErrorBase,
-    success: colors.feedbackSuccessBase,
-    default: colors.neutralDark,
+    error: colors['feedback-error-base'],
+    success: colors['feedback-success-base'],
+    default: colors['neutral-dark'],
   };
 
   useEffect(() => {
@@ -64,7 +64,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   return (
     <SafeAreaView>
       {!!label && (
-        <Text fs="xxxs" fontWeight="700" color="neutralDarkest">
+        <Text fs="xxxs" fontWeight="700" color="neutral-darkest">
           {label}
         </Text>
       )}
@@ -79,7 +79,7 @@ const TextArea: React.FC<TextAreaProps> = ({
         autoCapitalize={autoCapitalize}
         maxLength={maxLength}
         numberOfLines={7}
-        my="quarck"
+        my="quark"
         px="xs"
         py="nano"
         onChange={() => {
@@ -115,13 +115,13 @@ const TextArea: React.FC<TextAreaProps> = ({
                 color={statusKeyPair[status || 'default']}
               />
             )}
-            <Text ml="quarck" fs="xxxxs" color="neutralDarkest">
+            <Text ml="quark" fs="xxxxs" color="neutral-darkest">
               {assistiveText}
             </Text>
           </Box>
         )}
         {!!maxLength && (
-          <Text color="neutralDark">
+          <Text color="neutral-dark">
             {countChar}/{maxLength}
           </Text>
         )}

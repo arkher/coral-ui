@@ -34,7 +34,7 @@ const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
 
       <Text
         fs="xxxs"
-        color={disabled ? 'neutralBase' : 'neutralDarkest'}
+        color={disabled ? 'neutral-base' : 'neutral-darkest'}
         ml={{ phone: 'nano', tablet: 'nano' }}
         testID="checkbox-label"
       >

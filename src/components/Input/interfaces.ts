@@ -1,14 +1,14 @@
 import { BoxProps } from '@shopify/restyle';
 import { TextInputProps, TextInput } from 'react-native';
-import { Theme } from '../../themes/default';
+import { Theme } from '../../themes/institucional';
 
 type InputProps = {
-  variant: CustomHeightComponent;
+  variant: Custom.HeightComponent;
 } & Partial<{
   placeholder: string;
   icon: string;
-  bw: CustomBorderWidth;
-  p: CustomSpacing;
+  bw: Custom.BorderWidth;
+  p: Custom.Spacing;
 }> &
   Partial<BoxProps<Theme>> &
   TextInputProps;

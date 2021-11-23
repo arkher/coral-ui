@@ -8,7 +8,7 @@ import {
   shadowRadius,
   Theme,
   heightComponent,
-} from '../../themes/default';
+} from '../../themes';
 import { CustomBoxProps } from './interface';
 
 const Box = createBox<Theme>();

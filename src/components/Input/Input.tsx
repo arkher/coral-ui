@@ -10,7 +10,7 @@ import React, {
 import { createRestyleComponent, spacing, useTheme } from '@shopify/restyle';
 import { Keyboard, TextInput, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { borderWidth, Theme } from '../../themes/default';
+import { Theme, borderWidth } from '../../themes';
 import Box from '../Box';
 import { InputFowardEvents, InputProps, InputRef } from './interfaces';
 
@@ -39,7 +39,7 @@ const Input: React.FC<InputProps> = (
   const [hasSuccess, setHasSuccess] = useState(false);
 
   const [colorStatus, setColorStatus] =
-    useState<keyof Theme['colors']>('neutralDark');
+    useState<keyof Theme['colors']>('neutral-dark');
 
   const inputElementRef = useRef<InputRef>(null);
 
@@ -47,7 +47,7 @@ const Input: React.FC<InputProps> = (
     setIsFocused(true);
 
     if (!hasError && !hasSuccess) {
-      setColorStatus('primaryBase');
+      setColorStatus('primary-base');
     }
   }, [hasError, hasSuccess]);
 
@@ -55,7 +55,7 @@ const Input: React.FC<InputProps> = (
     setIsFocused(false);
 
     if (!hasError && !hasSuccess) {
-      setColorStatus('neutralDark');
+      setColorStatus('neutral-dark');
     }
   }, [hasError, hasSuccess]);
 
@@ -90,16 +90,16 @@ const Input: React.FC<InputProps> = (
         },
         error: () => {
           setHasError(true);
-          setColorStatus('feedbackErrorBase');
+          setColorStatus('feedback-error-base');
         },
         success: () => {
           setHasSuccess(true);
-          setColorStatus('feedbackSuccessBase');
+          setColorStatus('feedback-success-base');
         },
         clear: () => {
           setHasError(false);
           setHasSuccess(false);
-          setColorStatus('neutralDark');
+          setColorStatus('neutral-dark');
         },
       } as InputFowardEvents),
   );
@@ -118,7 +118,7 @@ const Input: React.FC<InputProps> = (
         testID="Input"
         ref={inputElementRef}
         placeholder={placeholder}
-        placeholderTextColor={colors.neutralDark}
+        placeholderTextColor="neutral-dark"
         onBlur={handleInputBlur}
         onSubmitEditing={() => {
           Keyboard.dismiss();
@@ -132,19 +132,17 @@ const Input: React.FC<InputProps> = (
         returnKeyType={returnKeyType}
         numberOfLines={numberOfLines}
         autoCapitalize={autoCapitalize}
-        selectionColor={colors.neutralDark}
+        selectionColor={colors['neutral-dark']}
         style={style}
       />
 
       {icon && (
         <TouchableWithoutFeedback onPress={handleClear}>
-          <Box ml="quarck">
+          <Box ml="quark">
             <Icon
               name={icon}
               size={24}
-              color={
-                isFocused || isFilled ? colors.primaryBase : colors.neutralDark
-              }
+              color={isFocused || isFilled ? 'primary-base' : 'neutral-dark'}
             />
           </Box>
         </TouchableWithoutFeedback>
