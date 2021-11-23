@@ -38,6 +38,21 @@ it('should have label', () => {
   );
 });
 
+test('should Checkbox render required feedback', async () => {
+  const { toJSON } = render(
+    <ThemeProvider theme={themeMaestro}>
+      <Checkbox
+        label="Label da checkbox"
+        required
+        value
+        onChange={() => undefined}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(toJSON()).toMatchSnapshot();
+});
+
 test('should Checkbox render correctly', async () => {
   const { toJSON } = render(
     <ThemeProvider theme={themeMaestro}>

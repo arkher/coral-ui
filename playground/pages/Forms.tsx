@@ -7,6 +7,7 @@ import {
   TextField,
   TextArea,
   Checkbox,
+  Input,
 } from '../../src/components';
 
 const Forms: React.FC = () => {
@@ -20,6 +21,7 @@ const Forms: React.FC = () => {
         padding="sm"
         flexDirection="column"
         justifyContent="space-between"
+        backgroundColor="white"
         flex={1}
       >
         <Box>
@@ -29,8 +31,8 @@ const Forms: React.FC = () => {
             status="success"
             assistiveText="Texto de suporte"
             placeholder="Digite seu email"
-            keyboardType="email-address"
             autoCapitalize="none"
+            onChange={e => console.log(e.current?.value)}
           />
 
           <Box my="sm">
@@ -39,8 +41,18 @@ const Forms: React.FC = () => {
               placeholder="Digite aqui..."
               variant="medium"
               status="error"
-              maxLength={10}
+              maxLength={100}
               assistiveText="Texto de suporte"
+              onChange={(e: any) => console.log(e.current?.value)}
+            />
+          </Box>
+
+          <Box my="nano">
+            <Input
+              placeholder="Digite aqui..."
+              variant="medium"
+              px="nano"
+              onChange={e => console.log(e)}
             />
           </Box>
         </Box>
@@ -57,14 +69,8 @@ const Forms: React.FC = () => {
             Enviar comentários
           </Button>
 
-          <Button
-            my="nano"
-            bg="white"
-            borderColor="primaryBase"
-            bw="thin"
-            onPress={() => undefined}
-          >
-            <Text color="primaryBase">Cancelar</Text>
+          <Button variant="secondary" my="nano" onPress={() => undefined}>
+            Cancelar
           </Button>
         </Box>
       </Box>

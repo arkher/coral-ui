@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, {
   useCallback,
   useRef,
@@ -27,6 +28,8 @@ const Input: React.FC<InputProps> = (
     autoCapitalize,
     style,
     returnKeyType,
+    value,
+    onChangeText,
     ...props
   },
   ref,
@@ -66,16 +69,16 @@ const Input: React.FC<InputProps> = (
 
   const handleChange = useCallback(
     (newValue: string) => {
-      if (maxLength && newValue?.length <= maxLength) {
-        // eslint-disable-next-line no-param-reassign
-        ref.current.value = newValue;
-      }
+      // eslint-disable-next-line no-param-reassign
+      ref.current.value = newValue;
 
       if (newValue.length > 0) {
         setIsFilled(true);
+      } else {
+        setIsFilled(false);
       }
     },
-    [maxLength, ref],
+    [ref],
   );
 
   useImperativeHandle(
@@ -118,13 +121,14 @@ const Input: React.FC<InputProps> = (
         testID="Input"
         ref={inputElementRef}
         placeholder={placeholder}
-        placeholderTextColor="neutral-dark"
+        placeholderTextColor={colors['neutral-dark']}
         onBlur={handleInputBlur}
         onSubmitEditing={() => {
           Keyboard.dismiss();
         }}
         onFocus={handleInputFocus}
-        onChangeText={handleChange}
+        onChangeText={onChangeText || handleChange}
+        value={value}
         editable={editable}
         multiline={multiline}
         maxLength={maxLength}

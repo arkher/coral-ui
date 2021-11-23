@@ -51,7 +51,10 @@ const App: React.FC = () => {
     return (
       <ThemeProvider theme={themeWithFont}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Playground">
+          <Stack.Navigator
+            initialRouteName="Playground"
+            screenOptions={{ animation: 'slide_from_right' }}
+          >
             <Stack.Screen
               name="Playground"
               component={Playground}

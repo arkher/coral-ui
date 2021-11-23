@@ -19,6 +19,8 @@ const TextField: React.FC<TextFieldProps> = ({
   keyboardType,
   autoCapitalize,
   returnKeyType,
+  value,
+  onChange,
 }) => {
   const { colors } = useTheme<Theme>();
   const textfieldRef = useRef<InputFowardEvents>(null);
@@ -53,6 +55,10 @@ const TextField: React.FC<TextFieldProps> = ({
         keyboardType={keyboardType}
         autoCapitalize={autoCapitalize}
         returnKeyType={returnKeyType}
+        value={value}
+        onChange={e => {
+          onChange && onChange({ ...e, current: textfieldRef.current });
+        }}
         my="quark"
         p="nano"
         icon="close"

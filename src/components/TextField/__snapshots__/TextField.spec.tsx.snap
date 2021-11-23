@@ -5,6 +5,7 @@ exports[`should TextField render correctly 1`] = `
   emulateUnlessSupported={true}
 >
   <View
+    onChange={[Function]}
     style={
       Array [
         Object {
@@ -71,7 +72,207 @@ exports[`should TextField render correctly 1`] = `
       testID="Box"
     >
       <Icon
-        color="#5D6A75"
+        color="neutral-dark"
+        name="close"
+        size={24}
+      />
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
+
+exports[`should have a error feedback 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#2D3338",
+          "display": "flex",
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "fontWeight": "700",
+        },
+        Array [
+          Object {
+            "fontSize": 14,
+          },
+        ],
+      ]
+    }
+  >
+    Label do TextArea
+  </Text>
+  <View
+    onChange={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderColor": "#E20A0A",
+          "borderRadius": 4,
+          "display": "flex",
+          "flexDirection": "row",
+          "marginVertical": 4,
+          "padding": 8,
+        },
+        Array [
+          Object {
+            "borderWidth": 2,
+            "height": 56,
+          },
+        ],
+      ]
+    }
+    testID="Box"
+  >
+    <TextInput
+      allowFontScaling={true}
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Placeholder"
+      placeholderTextColor="#5D6A75"
+      rejectResponderTermination={true}
+      selectionColor="#5D6A75"
+      style={
+        Array [
+          Object {},
+          Object {
+            "flex": 1,
+          },
+        ]
+      }
+      testID="Input"
+      underlineColorAndroid="transparent"
+    />
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "marginLeft": 4,
+          },
+          Array [
+            Object {},
+          ],
+        ]
+      }
+      testID="Box"
+    >
+      <Icon
+        color="neutral-dark"
+        name="close"
+        size={24}
+      />
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
+
+exports[`should have a success feedback 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#2D3338",
+          "display": "flex",
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "fontWeight": "700",
+        },
+        Array [
+          Object {
+            "fontSize": 14,
+          },
+        ],
+      ]
+    }
+  >
+    Label do TextArea
+  </Text>
+  <View
+    onChange={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderColor": "#00B649",
+          "borderRadius": 4,
+          "display": "flex",
+          "flexDirection": "row",
+          "marginVertical": 4,
+          "padding": 8,
+        },
+        Array [
+          Object {
+            "borderWidth": 2,
+            "height": 56,
+          },
+        ],
+      ]
+    }
+    testID="Box"
+  >
+    <TextInput
+      allowFontScaling={true}
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Placeholder"
+      placeholderTextColor="#5D6A75"
+      rejectResponderTermination={true}
+      selectionColor="#5D6A75"
+      style={
+        Array [
+          Object {},
+          Object {
+            "flex": 1,
+          },
+        ]
+      }
+      testID="Input"
+      underlineColorAndroid="transparent"
+    />
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "marginLeft": 4,
+          },
+          Array [
+            Object {},
+          ],
+        ]
+      }
+      testID="Box"
+    >
+      <Icon
+        color="neutral-dark"
         name="close"
         size={24}
       />

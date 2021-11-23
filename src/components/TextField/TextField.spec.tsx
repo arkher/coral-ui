@@ -22,6 +22,50 @@ test('should have a placeholder passed by prop', () => {
   expect(getAllByPlaceholderText('Placeholder').length).toBe(1);
 });
 
+test('should have a label passed by prop', () => {
+  const { getAllByText } = render(
+    <ThemeProvider theme={themeMaestro}>
+      <TextField
+        label="Label do TextArea"
+        variant="medium"
+        placeholder="Placeholder"
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getAllByText('Label do TextArea').length).toBe(1);
+});
+
+test('should have a success feedback', () => {
+  const { toJSON } = render(
+    <ThemeProvider theme={themeMaestro}>
+      <TextField
+        label="Label do TextArea"
+        variant="medium"
+        status="success"
+        placeholder="Placeholder"
+      />
+    </ThemeProvider>,
+  );
+
+  expect(toJSON()).toMatchSnapshot();
+});
+
+test('should have a error feedback', () => {
+  const { toJSON } = render(
+    <ThemeProvider theme={themeMaestro}>
+      <TextField
+        label="Label do TextArea"
+        variant="medium"
+        status="error"
+        placeholder="Placeholder"
+      />
+    </ThemeProvider>,
+  );
+
+  expect(toJSON()).toMatchSnapshot();
+});
+
 test('should TextField render correctly', async () => {
   const { toJSON } = render(
     <ThemeProvider theme={themeMaestro}>
