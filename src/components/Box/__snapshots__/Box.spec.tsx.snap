@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should Box render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "display": "flex",
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+  testID="Box"
+/>
+`;

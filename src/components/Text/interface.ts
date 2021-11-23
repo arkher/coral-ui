@@ -7,6 +7,7 @@ type CustomTextProps = Partial<{
   fs?: CustomFontSize;
   lh?: CustomLineHeight;
   ls?: CustomLetterSpacing;
+  testID?: string;
 }> &
   Partial<TextProps<Theme>>;
 

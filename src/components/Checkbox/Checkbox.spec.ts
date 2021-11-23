@@ -1,1 +1,0 @@
-describe('ds-Checkbox', () => undefined);

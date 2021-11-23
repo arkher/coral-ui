@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should Button render correctly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#0A7E19",
+          "borderColor": "#0A7E19",
+          "borderRadius": 4,
+          "display": "flex",
+          "height": 48,
+          "justifyContent": "center",
+          "shadowColor": "#000000",
+        },
+        Array [
+          Object {
+            "borderWidth": 0,
+          },
+          Array [
+            Object {},
+          ],
+        ],
+      ]
+    }
+    testID="Box"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Array [
+            Object {},
+          ],
+        ]
+      }
+      testID="Box"
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "display": "flex",
+              "fontFamily": "\\"Inter\\", sans-serif",
+              "fontWeight": "600",
+            },
+            Array [
+              Object {
+                "fontSize": 14,
+              },
+            ],
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "fontFamily": "\\"Inter\\", sans-serif",
+                "fontWeight": "400",
+              },
+              Array [
+                Object {},
+              ],
+            ]
+          }
+        >
+          Label Button
+        </Text>
+      </Text>
+    </View>
+  </View>
+</View>
+`;
