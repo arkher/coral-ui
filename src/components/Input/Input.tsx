@@ -106,9 +106,9 @@ const Input: React.FC<InputProps> = (
 
   return (
     <Box
-      bw={hasError || hasSuccess || isFocused ? 'thin' : 'hairline'}
+      bw={hasError || hasSuccess || isFocused ? 'sm' : 'xs'}
       borderColor={colorStatus}
-      borderRadius="sm"
+      br="radius-1"
       flexDirection="row"
       alignItems="center"
       h={variant}
