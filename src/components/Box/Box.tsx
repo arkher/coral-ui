@@ -2,6 +2,7 @@ import { createBox, createRestyleComponent } from '@shopify/restyle';
 import React from 'react';
 import {
   borderWidth,
+  borderRadius,
   opacity,
   shadowOffset,
   shadowOpacity,
@@ -22,6 +23,7 @@ const CustomBox: React.FC<CustomBoxProps> = ({ children, ...props }) => (
 export default createRestyleComponent<CustomBoxProps, Theme>(
   [
     borderWidth,
+    borderRadius,
     opacity,
     shadowOffset,
     shadowRadius,

@@ -5,6 +5,7 @@ import { Theme } from '../../themes/institucional';
 
 type CustomBoxProps = Partial<{
   children: ReactNode;
+  br: Custom.Radius;
   bw: Custom.BorderWidth;
   op: Custom.Opacity;
   sof: Custom.Shadow;

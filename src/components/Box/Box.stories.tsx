@@ -35,7 +35,7 @@ export default {
 
 interface BoxProps {
   bg: Custom.Colors;
-  borderRadius: Custom.Radius;
+  br: Custom.Radius;
   opacity: Custom.Opacity;
   shadow: Custom.Shadow;
   width: number;
@@ -44,7 +44,7 @@ interface BoxProps {
 
 export const Default = ({
   bg,
-  borderRadius,
+  br,
   opacity,
   shadow,
   width,
@@ -54,7 +54,7 @@ export const Default = ({
     <View style={{ margin: 8 }}>
       <Box
         bg={bg || 'primary-base'}
-        borderRadius={borderRadius}
+        br={br}
         op={opacity}
         sof={shadow}
         sr={shadow}
