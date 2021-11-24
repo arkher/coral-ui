@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { BoxProps, TextProps } from '@shopify/restyle';
-import { ReactNode } from 'markdown-to-jsx/node_modules/@types/react';
 import { Theme } from '../../themes/institucional';
 
 type ButtonProps = {
@@ -12,6 +11,7 @@ type ButtonProps = {
   loading?: boolean;
   textProps?: TextProps<Theme>;
   bw?: Custom.BorderWidth;
+  br?: Custom.BorderRadius;
   op?: Custom.Opacity;
   sof?: Custom.Shadow;
   sr?: Custom.Shadow;

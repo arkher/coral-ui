@@ -13,7 +13,7 @@ exports[`should TextArea render correctly 1`] = `
         Object {
           "alignItems": "center",
           "borderColor": "#5D6A75",
-          "borderRadius": 4,
+          "borderRadius": 8,
           "display": "flex",
           "flexDirection": "row",
           "marginVertical": 4,
@@ -23,7 +23,7 @@ exports[`should TextArea render correctly 1`] = `
         Array [
           Object {
             "borderWidth": 1,
-            "height": 140,
+            "height": 56,
           },
         ],
       ]
