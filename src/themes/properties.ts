@@ -9,13 +9,13 @@ export const borderWidthValues = {
 };
 
 export const borderRadiusValues = {
-  'radius-0': 0,
-  'radius-1': 0.25,
-  'radius-2': 0.5,
-  'radius-3': 1,
-  'radius-4': 1.5,
-  pill: 31.25,
-  circular: 50,
+  none: 0,
+  nano: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
+  pill: 500,
+  circular: '50%' as unknown as number,
 };
 
 export const sizeHeightValues = {

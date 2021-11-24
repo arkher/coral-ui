@@ -1,4 +1,5 @@
 import { createTheme } from '@shopify/restyle';
+import { borderRadiusValues } from '.';
 
 const palette = {
   transparent: 'transparent',
@@ -71,15 +72,7 @@ const textVariants = {
   },
 };
 
-const borderRadius = {
-  none: 0,
-  sm: 4,
-  md: 8,
-  lg: 16,
-  xl: 24,
-  pill: 500,
-  circular: '50%' as unknown as number,
-};
+const borderRadius = borderRadiusValues;
 
 const theme = createTheme({
   colors: palette,

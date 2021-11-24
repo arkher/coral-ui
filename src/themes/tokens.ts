@@ -1,11 +1,11 @@
 export const BORDER_WIDTH = ['none', 'xs', 'sm', 'md', 'lg'] as const;
 
 export const RADIUS = [
-  'radius-0',
-  'radius-1',
-  'radius-2',
-  'radius-3',
-  'radius-4',
+  'none',
+  'nano',
+  'sm',
+  'md',
+  'lg',
   'pill',
   'circular',
 ] as const;
