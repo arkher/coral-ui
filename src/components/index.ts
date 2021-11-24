@@ -12,3 +12,5 @@ export { default as TextField } from './TextField';
 export * from './TextField';
 export { default as TextArea } from './TextArea';
 export * from './TextArea';
+export { default as Switch } from './Switch';
+export * from './Switch';
