@@ -7,7 +7,7 @@ import { Theme } from '../../themes/institucional';
 import Text from '../Text';
 import Input from '../Input';
 import Box from '../Box';
-import { TextAreaProps } from './interfaces';
+import { TextAreaProps, TypeVariantHeight } from './interfaces';
 import { InputFowardEvents } from '../Input/interfaces';
 
 const TextArea: React.FC<TextAreaProps> = ({
@@ -26,16 +26,16 @@ const TextArea: React.FC<TextAreaProps> = ({
   const { colors, textVariants } = useTheme<Theme>();
   const textareaRef = useRef<InputFowardEvents>(null);
 
-  const [variantArea] = useState<Custom.HeightComponent>(() => {
-    switch (variant) {
-      case 'small':
-        return 'xs';
-      case 'medium':
-        return 'sm';
-      default:
-        return variant;
-    }
-  });
+  const statusKeyPair = {
+    error: colors['feedback-error-base'],
+    success: colors['feedback-success-base'],
+    default: colors['neutral-dark'],
+  };
+
+  const variantHeight: TypeVariantHeight = {
+    small: 'lg',
+    medium: 'xl',
+  };
 
   useEffect(() => {
     if (status === 'error') {
@@ -43,20 +43,6 @@ const TextArea: React.FC<TextAreaProps> = ({
     }
 
     if (status === 'success') {
-      textareaRef.current?.success();
-    }
-  }, [status]);
-
-  const statusKeyPair = {
-    error: colors['feedback-error-base'],
-    success: colors['feedback-success-base'],
-    default: colors['neutral-dark'],
-  };
-
-  useEffect(() => {
-    if (status === 'error') {
-      textareaRef.current?.error();
-    } else if (status === 'success') {
       textareaRef.current?.success();
     }
   }, [status]);
@@ -73,7 +59,7 @@ const TextArea: React.FC<TextAreaProps> = ({
         value={value}
         ref={textareaRef}
         placeholder={placeholder}
-        variant={variantArea}
+        variant={variantHeight[variant]}
         multiline
         keyboardType={keyboardType}
         autoCapitalize={autoCapitalize}

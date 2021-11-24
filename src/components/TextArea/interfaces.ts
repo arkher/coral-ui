@@ -15,4 +15,8 @@ type TextAreaProps = {
   onChange(): void;
 }>;
 
-export { TextAreaProps };
+type TypeVariantHeight = {
+  [index: string]: Custom.HeightComponent;
+};
+
+export { TextAreaProps, TypeVariantHeight };

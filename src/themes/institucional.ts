@@ -1,5 +1,4 @@
 import { createTheme } from '@shopify/restyle';
-import { borderRadiusValues } from '.';
 
 const palette = {
   transparent: 'transparent',
@@ -44,7 +43,7 @@ const palette = {
   'highlight-05-light': '#DDF4F2',
 };
 
-export const spacingInsetValues = {
+const spacingInsetValues = {
   quark: 4,
   nano: 8,
   xs: 16,
@@ -72,7 +71,15 @@ const textVariants = {
   },
 };
 
-const borderRadius = borderRadiusValues;
+const borderRadius = {
+  none: 0,
+  nano: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
+  pill: 500,
+  circular: '50%' as unknown as number,
+};
 
 const theme = createTheme({
   colors: palette,

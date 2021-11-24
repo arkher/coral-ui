@@ -57,14 +57,8 @@ const Forms: React.FC = () => {
             Enviar comentários
           </Button>
 
-          <Button
-            my="nano"
-            bg="white"
-            borderColor="primaryBase"
-            bw="thin"
-            onPress={() => undefined}
-          >
-            <Text color="primaryBase">Cancelar</Text>
+          <Button variant="secondary" my="nano" onPress={() => undefined}>
+            Cancelar
           </Button>
         </Box>
       </Box>

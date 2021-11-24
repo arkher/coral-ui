@@ -7,7 +7,7 @@ import { Theme } from '../../themes/institucional';
 import Text from '../Text';
 import Box from '../Box';
 import Input from '../Input';
-import { TextFieldProps } from './interfaces';
+import { TextFieldProps, TypeVariantHeight } from './interfaces';
 import { InputFowardEvents } from '../Input/interfaces';
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -23,6 +23,17 @@ const TextField: React.FC<TextFieldProps> = ({
   const { colors } = useTheme<Theme>();
   const textfieldRef = useRef<InputFowardEvents>(null);
 
+  const statusKeyPair = {
+    error: colors['feedback-error-base'],
+    success: colors['feedback-success-base'],
+    default: colors['neutral-dark'],
+  };
+
+  const variantHeight: TypeVariantHeight = {
+    small: 'xs',
+    medium: 'sm',
+  };
+
   useEffect(() => {
     if (status === 'error') {
       textfieldRef.current?.error();
@@ -32,23 +43,6 @@ const TextField: React.FC<TextFieldProps> = ({
       textfieldRef.current?.success();
     }
   }, [status]);
-
-  const statusKeyPair = {
-    error: colors['feedback-error-base'],
-    success: colors['feedback-success-base'],
-    default: colors['neutral-dark'],
-  };
-
-  const [variantArea] = useState<Custom.HeightComponent>(() => {
-    switch (variant) {
-      case 'small':
-        return 'xs';
-      case 'medium':
-        return 'sm';
-      default:
-        return variant;
-    }
-  });
 
   return (
     <SafeAreaView>
@@ -60,12 +54,12 @@ const TextField: React.FC<TextFieldProps> = ({
       <Input
         ref={textfieldRef}
         placeholder={placeholder}
-        variant={variantArea}
+        variant={variantHeight[variant]}
         keyboardType={keyboardType}
         autoCapitalize={autoCapitalize}
         returnKeyType={returnKeyType}
         my="quark"
-        p="sm"
+        px="xs"
         icon="close"
         style={{
           flex: 1,
