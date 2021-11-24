@@ -11,7 +11,6 @@ type ButtonProps = {
   loading?: boolean;
   textProps?: TextProps<Theme>;
   bw?: Custom.BorderWidth;
-  br?: Custom.BorderRadius;
   op?: Custom.Opacity;
   sof?: Custom.Shadow;
   sr?: Custom.Shadow;

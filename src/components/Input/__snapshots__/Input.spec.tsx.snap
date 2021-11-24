@@ -7,7 +7,7 @@ exports[`should Input render correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "#5D6A75",
-        "borderRadius": 8,
+        "borderRadius": 4,
         "display": "flex",
         "flexDirection": "row",
       },

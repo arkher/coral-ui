@@ -19,15 +19,15 @@ exports[`should Button render correctly 1`] = `
           "alignItems": "center",
           "backgroundColor": "#0A7E19",
           "borderColor": "#0A7E19",
+          "borderRadius": 4,
           "display": "flex",
-          "height": 48,
           "justifyContent": "center",
           "shadowColor": "#000000",
         },
         Array [
           Object {
-            "borderRadius": 8,
             "borderWidth": 0,
+            "height": 40,
           },
           Array [
             Object {},

@@ -7,14 +7,14 @@ interface PlaygroundProps {
 
 const Playground: React.FC<PlaygroundProps> = ({ navigation }) => (
   <Box m="sm">
-    <Text fs="lg" lineHeight={55}>
+    <Text fs="4xl" lineHeight={55}>
       Bem-vindo ao
       <Text fontWeight="bold"> Catálogo </Text>
       do DS-Mobile 📓
     </Text>
 
     <Box my="md">
-      <Text fs="sm" mb="nano">
+      <Text fs="xl" mb="nano">
         🏗️ Escolha a seção que deseja:
       </Text>
 

@@ -10,11 +10,11 @@ exports[`should TextField render correctly 1`] = `
         Object {
           "alignItems": "center",
           "borderColor": "#5D6A75",
-          "borderRadius": 8,
+          "borderRadius": 4,
           "display": "flex",
           "flexDirection": "row",
           "marginVertical": 4,
-          "padding": 24,
+          "paddingHorizontal": 16,
         },
         Array [
           Object {

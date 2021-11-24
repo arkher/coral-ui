@@ -12,4 +12,8 @@ type TextFieldProps = {
   returnKeyType: ReturnKeyTypeOptions;
 }>;
 
-export { TextFieldProps };
+type TypeVariantHeight = {
+  [index: string]: Custom.HeightComponent;
+};
+
+export { TextFieldProps, TypeVariantHeight };
