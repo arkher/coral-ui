@@ -33,7 +33,7 @@ const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
       </TouchableHighlight>
 
       <Text
-        fs="xxxs"
+        fs="md"
         color={disabled ? 'neutral-base' : 'neutral-darkest'}
         ml={{ phone: 'nano', tablet: 'nano' }}
         testID="checkbox-label"
