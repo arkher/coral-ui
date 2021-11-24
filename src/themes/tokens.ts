@@ -1,9 +1,13 @@
-export const BORDER_WIDTH = [
-  'none',
-  'hairline',
-  'thin',
-  'thick',
-  'heavy',
+export const BORDER_WIDTH = ['none', 'xs', 'sm', 'md', 'lg'] as const;
+
+export const RADIUS = [
+  'radius-0',
+  'radius-1',
+  'radius-2',
+  'radius-3',
+  'radius-4',
+  'pill',
+  'circular',
 ] as const;
 
 export const COLORS = [
@@ -50,77 +54,52 @@ export const COLORS = [
 ] as const;
 
 export const FONT_SIZES = [
-  'details',
-  'xxxxs',
-  'xxxs',
-  'xxs',
   'xs',
   'sm',
   'md',
   'lg',
   'xl',
-  'xxl',
-  'xxxl',
-  'xxxxl',
-  'giant',
-  'display',
+  '2xl',
+  '3xl',
+  '4xl',
+  '5xl',
+  '6xl',
+  '7xl',
+  '8xl',
+  '9xl',
+  '10xl',
 ] as const;
 
-export const HEIGHTS = [
-  'small',
-  'medium',
-  'small-area',
-  'medium-area',
-] as const;
+export const HEIGHTS = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
-export const LINE_HEIGHTS = [
-  'superdistant',
-  'distant',
-  'medium',
-  'tight',
-] as const;
+export const LINE_HEIGHTS = ['lg', 'md', 'sm', 'xs'] as const;
 
-export const LETTER_SPACINGS = [
-  'superdistant',
-  'distant',
-  'medium',
-  'tight',
-] as const;
+export const LETTER_SPACINGS = ['lg', 'md', 'sm', 'xs'] as const;
 
 export const OPACITIES = [
-  'semiopaque',
-  'intense',
-  'medium',
-  'light',
-  'semitransparent',
+  'opacity-5',
+  'opacity-4',
+  'opacity-3',
+  'opacity-2',
+  'opacity-1',
 ] as const;
 
-export const SHADOWS = ['near', 'medium', 'distant', 'superdistant'] as const;
+export const SHADOWS = ['xs', 'sm', 'md', 'lg'] as const;
 
 export const SPACINGS = [
-  'quark',
-  'nano',
-  'xxxs',
-  'xxs',
   'xs',
   'sm',
   'md',
   'lg',
   'xl',
-  'xxl',
-  'xxxl',
-  'huge',
-  'giant',
+  '2xl',
+  '3xl',
+  '4xl',
+  '5xl',
+  '6xl',
+  '7xl',
+  '8xl',
+  '9xl',
 ] as const;
 
-export const SIZES = ['sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'] as const;
-
-export const RADIUS = [
-  'none',
-  'sm',
-  'md',
-  'lg',
-  'xl',
-  'pill',
-  'circular',
-] as const;
+export const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const;
