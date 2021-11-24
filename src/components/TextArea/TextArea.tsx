@@ -29,9 +29,9 @@ const TextArea: React.FC<TextAreaProps> = ({
   const [variantArea] = useState<Custom.HeightComponent>(() => {
     switch (variant) {
       case 'small':
-        return 'small-area';
+        return 'xs';
       case 'medium':
-        return 'medium-area';
+        return 'sm';
       default:
         return variant;
     }
@@ -64,7 +64,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   return (
     <SafeAreaView>
       {!!label && (
-        <Text fs="xxxs" fontWeight="700" color="neutral-darkest">
+        <Text fs="md" fontWeight="700" color="neutral-darkest">
           {label}
         </Text>
       )}
@@ -115,7 +115,7 @@ const TextArea: React.FC<TextAreaProps> = ({
                 color={statusKeyPair[status || 'default']}
               />
             )}
-            <Text ml="quark" fs="xxxxs" color="neutral-darkest">
+            <Text ml="quark" fs="sm" color="neutral-darkest">
               {assistiveText}
             </Text>
           </Box>
