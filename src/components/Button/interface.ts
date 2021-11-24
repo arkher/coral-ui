@@ -23,7 +23,7 @@ type ColorsOptions = {
 };
 
 type BorderWidthOptions = {
-  [index: string]: CustomBorderWidth;
+  [index: string]: Custom.BorderWidth;
 };
 
 export { ButtonProps, ColorsOptions, BorderWidthOptions };
