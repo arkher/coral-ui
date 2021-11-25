@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Pressable } from 'react-native';
-import Animated, { spring } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { SwitchProps } from './interfaces';
 import useStyles from './Switch.styles';
 
@@ -13,7 +13,7 @@ const DSSwitch: React.FC<SwitchProps> = ({
   const styles = useStyles({ checked: value, disabled });
   useEffect(() => {
     if (value) {
-      spring(switchTranslate, {
+      Animated.spring(switchTranslate, {
         toValue: 16,
         mass: 1,
         damping: 16,
@@ -23,7 +23,7 @@ const DSSwitch: React.FC<SwitchProps> = ({
         restDisplacementThreshold: 0.001,
       }).start();
     } else {
-      spring(switchTranslate, {
+      Animated.spring(switchTranslate, {
         toValue: 0,
         mass: 1,
         damping: 16,
@@ -40,7 +40,7 @@ const DSSwitch: React.FC<SwitchProps> = ({
   }, [value, onChange]);
 
   return (
-    <Pressable onPress={memoizedOnSwitchPressCallback}>
+    <Pressable onPress={memoizedOnSwitchPressCallback} testID="ds-switch">
       <Animated.View style={styles.containerStyle}>
         <Animated.View
           style={[
