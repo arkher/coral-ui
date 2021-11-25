@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { BoxProps, TextProps } from '@shopify/restyle';
-import { ReactNode } from 'markdown-to-jsx/node_modules/@types/react';
 import { Theme } from '../../themes/institucional';
 
 type ButtonProps = {
@@ -23,7 +22,7 @@ type ColorsOptions = {
 };
 
 type BorderWidthOptions = {
-  [index: string]: CustomBorderWidth;
+  [index: string]: Custom.BorderWidth;
 };
 
 export { ButtonProps, ColorsOptions, BorderWidthOptions };

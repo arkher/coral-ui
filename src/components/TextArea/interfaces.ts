@@ -25,4 +25,8 @@ type TextAreaProps = {
   onChange: ((e: CustomOnChange) => void) | undefined;
 }>;
 
-export { TextAreaProps };
+type TypeVariantHeight = {
+  [index: string]: Custom.HeightComponent;
+};
+
+export { TextAreaProps, TypeVariantHeight };

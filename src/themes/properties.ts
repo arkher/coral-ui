@@ -2,102 +2,113 @@ import { createRestyleFunction } from '@shopify/restyle';
 
 export const borderWidthValues = {
   none: 0,
-  hairline: 1,
-  thin: 2,
-  thick: 4,
-  heavy: 8,
+  xs: 1,
+  sm: 2,
+  md: 4,
+  lg: 8,
+};
+
+export const borderRadiusValues = {
+  none: 0,
+  nano: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
+  pill: 500,
+  circular: '50%' as unknown as number,
 };
 
 export const sizeHeightValues = {
-  small: 40,
-  medium: 56,
-  'small-area': 108,
-  'medium-area': 140,
+  xs: 40,
+  sm: 56,
+  md: 64,
+  lg: 108,
+  xl: 140,
 };
 
 export const fontSizeValues = {
-  details: 10,
-  xxxxs: 12,
-  xxxs: 14,
-  xxs: 16,
-  xs: 20,
-  sm: 24,
-  md: 32,
-  lg: 40,
-  xl: 48,
-  xxl: 56,
-  xxxl: 64,
-  xxxxl: 72,
-  giant: 80,
-  display: 96,
+  xs: 10,
+  sm: 12,
+  md: 14,
+  lg: 16,
+  xl: 20,
+  '2xl': 24,
+  '3xl': 32,
+  '4xl': 40,
+  '5xl': 48,
+  '6xl': 56,
+  '7xl': 64,
+  '8xl': 72,
+  '9xl': 80,
+  '10xl': 96,
 };
 
 export const lineHeightValues = {
-  superdistant: '200%',
-  distant: '160%',
-  medium: '130%',
-  tight: '100%',
+  lg: '200%',
+  md: '160%',
+  sm: '130%',
+  xs: '100%',
 };
 
 export const letterSpacingValues = {
-  superdistant: 1.5,
-  distant: 0.5,
-  medium: 0,
-  tight: -1.5,
+  lg: 1.5,
+  md: 0.5,
+  sm: 0,
+  xs: -1.5,
 };
 
 export const opacityValues = {
-  semiopaque: 0.8,
-  intense: 0.64,
-  medium: 0.32,
-  light: 0.16,
-  semitransparent: 0.08,
+  'opacity-5': 0.8,
+  'opacity-4': 0.64,
+  'opacity-3': 0.32,
+  'opacity-2': 0.16,
+  'opacity-1': 0.08,
 };
 
 export const shadowOffsetValues = {
-  near: { width: 0, height: 1.5 },
-  medium: { width: 0, height: 4 },
-  distant: { width: 0, height: 10 },
-  superdistant: { width: 0, height: 16 },
+  xs: { width: 0, height: 1.5 },
+  sm: { width: 0, height: 4 },
+  md: { width: 0, height: 10 },
+  lg: { width: 0, height: 16 },
 };
 
 export const shadowOpacityValues = {
-  near: 0.12,
-  medium: 0.1,
-  distant: 0.1,
-  superdistant: 0.1,
+  xs: 0.12,
+  sm: 0.1,
+  md: 0.1,
+  lg: 0.1,
 };
 
 export const shadowRadiusValues = {
-  near: 3.5,
-  medium: 8,
-  distant: 16,
-  superdistant: 32,
+  xs: 3.5,
+  sm: 8,
+  md: 16,
+  lg: 32,
 };
 
 export const spacingValues = {
-  quark: 4,
-  nano: 8,
-  xxxs: 16,
-  xxs: 24,
-  xs: 32,
-  sm: 40,
-  md: 48,
-  lg: 56,
-  xl: 64,
-  xxl: 80,
-  xxxl: 120,
-  huge: 160,
-  giant: 200,
+  xs: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
+  xl: 32,
+  '2xl': 40,
+  '3xl': 48,
+  '4xl': 56,
+  '5xl': 64,
+  '6xl': 80,
+  '7xl': 120,
+  '8xl': 160,
+  '9xl': 200,
 };
 
 export const sizeValues = {
-  sm: 16,
-  md: 20,
-  lg: 24,
-  xl: 32,
-  xxl: 48,
-  xxxl: 96,
+  xs: 16,
+  sm: 20,
+  md: 24,
+  lg: 32,
+  xl: 48,
+  '2xl': 96,
 };
 
 export const borderWidth = createRestyleFunction({
@@ -105,6 +116,12 @@ export const borderWidth = createRestyleFunction({
   styleProperty: 'borderWidth',
   transform: ({ value }: { value: Custom.BorderWidth }) =>
     borderWidthValues[value],
+});
+
+export const borderRadius = createRestyleFunction({
+  property: 'br',
+  styleProperty: 'borderRadius',
+  transform: ({ value }: { value: Custom.Radius }) => borderRadiusValues[value],
 });
 
 export const fontSize = createRestyleFunction({

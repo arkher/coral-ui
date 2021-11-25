@@ -43,7 +43,7 @@ const palette = {
   'highlight-05-light': '#DDF4F2',
 };
 
-export const spacingInsetValues = {
+const spacingInsetValues = {
   quark: 4,
   nano: 8,
   xs: 16,
@@ -73,10 +73,10 @@ const textVariants = {
 
 const borderRadius = {
   none: 0,
-  sm: 4,
-  md: 8,
-  lg: 16,
-  xl: 24,
+  nano: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
   pill: 500,
   circular: '50%' as unknown as number,
 };

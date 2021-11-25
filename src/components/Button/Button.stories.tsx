@@ -45,7 +45,7 @@ export const Secondary = (): React.ReactNode => {
       <Button
         bg="neutral-lightest"
         borderColor="primary-base"
-        bw="hairline"
+        bw="xs"
         onPress={action('clicked')}
       >
         <Text color="primary-base">Button text</Text>
