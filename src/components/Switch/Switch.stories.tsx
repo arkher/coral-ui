@@ -5,24 +5,7 @@ import Switch from './Switch';
 export default {
   title: 'Componente/Switch',
   component: Switch,
-  argTypes: {
-    label: {
-      control: { type: 'text' },
-      defaultValue: 'Label',
-    },
-    labelStyle: {
-      control: { type: 'none' },
-    },
-    required: {
-      control: { type: 'none' },
-    },
-    disabled: {
-      control: { type: 'none' },
-    },
-    onChange: {
-      control: { type: 'none' },
-    },
-  },
+  argTypes: {},
   decorators: [withDesign],
 };
 
