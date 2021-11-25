@@ -1,5 +1,5 @@
 export type SwitchProps = {
-  onPress(value: boolean): void;
+  onChange(value: boolean): void;
   value: boolean;
   disabled?: boolean;
 };

@@ -1,23 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { ColorValue, Pressable } from 'react-native';
-import Animated, { interpolateColors, spring } from 'react-native-reanimated';
-import { useTheme } from '@shopify/restyle';
+import { Pressable } from 'react-native';
+import Animated, { spring } from 'react-native-reanimated';
 import { SwitchProps } from './interfaces';
 import useStyles from './Switch.styles';
-import { Theme } from '../..';
 
 const DSSwitch: React.FC<SwitchProps> = ({
-  onPress,
+  onChange,
   value,
   disabled,
 }: SwitchProps) => {
-  const theme = useTheme<Theme>();
-
-  const [switchTranslate] = useState(new Animated.Value(0));
-  const activeTrackColor = disabled
-    ? theme.colors['neutral-light']
-    : theme.colors['primary-base'];
-  const inactiveTrackColor = theme.colors.white;
+  const [switchTranslate] = useState(new Animated.Value(value ? 16 : 0));
   const styles = useStyles({ checked: value, disabled });
   useEffect(() => {
     if (value) {
@@ -44,8 +36,8 @@ const DSSwitch: React.FC<SwitchProps> = ({
   }, [value, switchTranslate]);
 
   const memoizedOnSwitchPressCallback = React.useCallback(() => {
-    onPress(!value);
-  }, [value, onPress]);
+    onChange(!value);
+  }, [value, onChange]);
 
   return (
     <Pressable onPress={memoizedOnSwitchPressCallback}>
