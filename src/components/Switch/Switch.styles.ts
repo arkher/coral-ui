@@ -48,7 +48,7 @@ const useStyles = ({
       height: 24,
       padding: theme.spacing.quark,
       borderRadius: 25,
-      borderWidth: checked ? borderWidthValues.none : borderWidthValues.thin,
+      borderWidth: checked ? borderWidthValues.none : borderWidthValues.sm,
       borderColor,
       backgroundColor,
       justifyContent: 'center',
