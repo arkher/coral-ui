@@ -1,57 +1,47 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ScrollView } from 'react-native';
-import { Text, Box, Button, Switch } from '../src/components';
+import { Box, Button, Text } from '../src/components';
 
 interface PlaygroundProps {
   navigation: any;
 }
 
-const Playground: React.FC<PlaygroundProps> = ({ navigation }) => {
-  const [switchActive, setSwitchActive] = useState(false);
-  return (
+const Playground: React.FC<PlaygroundProps> = ({ navigation }) => (
+  <ScrollView style={{ backgroundColor: 'white' }}>
     <Box m="sm">
-      <ScrollView>
-        <Text fs="lg" lineHeight={55}>
-          Bem-vindo ao
-          <Text fontWeight="bold"> Catálogo </Text>
-          do DS-Mobile 📓
+      <Text fs="lg" lineHeight={55}>
+        Bem-vindo ao
+        <Text fontWeight="bold"> Catálogo </Text>
+        do DS-Mobile 📓
+      </Text>
+
+      <Box my="md">
+        <Text fs="sm" mb="nano">
+          🏗️ Escolha a seção que deseja:
         </Text>
 
-        <Box my="md">
-          <Text fs="sm" mb="nano">
-            🏗️ Escolha a seção que deseja:
-          </Text>
+        <Button mt="sm" disabled onPress={() => undefined}>
+          Elementos textuais
+        </Button>
 
-          <Button mt="sm" disabled onPress={() => undefined}>
-            Elementos textuais
-          </Button>
+        <Button mt="sm" onPress={() => navigation.navigate('ButtonDialogs')}>
+          Botões e Dialogs
+        </Button>
 
-          <Button mt="sm" onPress={() => navigation.navigate('ButtonDialogs')}>
-            Botões e Dialogs
-          </Button>
+        <Button mt="sm" disabled onPress={() => undefined}>
+          Listas
+        </Button>
 
-          <Button mt="sm" disabled onPress={() => undefined}>
-            Listas
-          </Button>
+        <Button mt="sm" onPress={() => navigation.navigate('Forms')}>
+          Formulários
+        </Button>
 
-          <Button mt="sm" onPress={() => navigation.navigate('Forms')}>
-            Formulários
-          </Button>
-
-          <Button mt="sm" onPress={() => navigation.navigate('Storybook')}>
-            Storybook
-          </Button>
-
-          <Switch
-            value={switchActive}
-            onPress={() => {
-              setSwitchActive(!switchActive);
-            }}
-          />
-        </Box>
-      </ScrollView>
+        <Button mt="sm" onPress={() => navigation.navigate('Storybook')}>
+          Storybook
+        </Button>
+      </Box>
     </Box>
-  );
-};
+  </ScrollView>
+);
 
 export default Playground;

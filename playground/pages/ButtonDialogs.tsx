@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StatusBar } from 'react-native';
-import { Box, Text, Button } from '../../src/components';
+import { Box, Button, Text } from '../../src/components';
 
 const ButtonDialogs: React.FC = () => (
   <>
@@ -98,6 +98,21 @@ const ButtonDialogs: React.FC = () => (
         <Button variant="tertiary" disabled mt="sm" onPress={() => undefined}>
           Tertiary Disable
         </Button>
+
+        <Text>Buttons inline</Text>
+        <Box flex={1} flexDirection="row">
+          <Button
+            variant="secondary"
+            mt="sm"
+            mr="nano"
+            onPress={() => undefined}
+          >
+            Secondary
+          </Button>
+          <Button variant="primary" mt="sm" onPress={() => undefined}>
+            Primary
+          </Button>
+        </Box>
       </Box>
     </ScrollView>
   </>
