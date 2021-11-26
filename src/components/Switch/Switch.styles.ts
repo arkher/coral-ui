@@ -1,12 +1,21 @@
 import { useTheme } from '@shopify/restyle';
-import { StyleSheet } from 'react-native';
-import { Theme } from '../..';
+import { StyleSheet, ViewStyle } from 'react-native';
+import { borderWidthValues, Theme } from '../..';
 
 type UseStyleProps = {
   checked: boolean;
   disabled?: boolean;
 };
-const useStyles = ({ checked, disabled }: UseStyleProps) => {
+
+interface Styles {
+  circleStyle: ViewStyle;
+  containerStyle: ViewStyle;
+}
+
+const useStyles = ({
+  checked,
+  disabled,
+}: UseStyleProps): StyleSheet.NamedStyles<Styles> => {
   const theme = useTheme<Theme>();
   let borderColor = theme.colors['neutral-base'];
   let circleColor = theme.colors['neutral-dark'];
@@ -27,7 +36,7 @@ const useStyles = ({ checked, disabled }: UseStyleProps) => {
       backgroundColor = theme.colors['neutral-light'];
     }
   }
-  return StyleSheet.create({
+  return StyleSheet.create<Styles>({
     circleStyle: {
       width: 16,
       height: 16,
@@ -39,16 +48,10 @@ const useStyles = ({ checked, disabled }: UseStyleProps) => {
       height: 24,
       padding: theme.spacing.quark,
       borderRadius: 25,
-      borderWidth: checked ? 0 : 2,
+      borderWidth: checked ? borderWidthValues.none : borderWidthValues.thin,
       borderColor,
       backgroundColor,
       justifyContent: 'center',
-    },
-    shadowValue: {
-      shadowColor: theme.colors.black,
-      shadowOpacity: 0.23,
-      shadowRadius: 2.62,
-      elevation: 4,
     },
   });
 };
