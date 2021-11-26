@@ -40,7 +40,7 @@ const useStyles = ({
     circleStyle: {
       width: 16,
       height: 16,
-      borderRadius: 8,
+      borderRadius: theme.borderRadii.circular,
       backgroundColor: circleColor,
     },
     containerStyle: {

@@ -14,7 +14,7 @@ const DSSwitch: React.FC<SwitchProps> = ({
   useEffect(() => {
     if (value) {
       Animated.spring(switchTranslate, {
-        toValue: 16,
+        toValue: 15,
         mass: 1,
         damping: 16,
         stiffness: 120,
