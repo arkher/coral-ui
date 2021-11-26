@@ -1,6 +1,12 @@
 import React from 'react';
 import { withDesign } from 'storybook-addon-designs';
-import { COLORS, BORDER_WIDTH, SPACINGS, RADIUS } from '../../themes/tokens';
+import {
+  COLORS,
+  BORDER_WIDTH,
+  SPACINGS,
+  RADIUS,
+  HEIGHTS,
+} from '../../themes/tokens';
 import Input from './Input';
 
 export default {
@@ -27,7 +33,7 @@ export default {
       control: { type: 'select' },
     },
     variant: {
-      options: ['small', 'medium', 'small-area', 'medium-area'],
+      options: HEIGHTS,
       control: { type: 'select' },
     },
     disabled: {

@@ -22,13 +22,13 @@ exports[`should Button render correctly 1`] = `
           "borderColor": "#0A7E19",
           "borderRadius": 4,
           "display": "flex",
-          "height": 48,
           "justifyContent": "center",
           "shadowColor": "#000000",
         },
         Array [
           Object {
             "borderWidth": 0,
+            "height": 40,
           },
           Array [
             Object {},

@@ -2,6 +2,7 @@ import * as TOKENS from '../themes/tokens';
 
 declare global {
   namespace Custom {
+    type BorderRadius = typeof TOKENS.RADIUS[number];
     type BorderWidth = typeof TOKENS.BORDER_WIDTH[number];
     type Colors = typeof TOKENS.COLORS[number];
     type FontSize = typeof TOKENS.FONT_SIZES[number];

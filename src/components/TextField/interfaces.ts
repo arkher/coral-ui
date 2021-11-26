@@ -24,4 +24,8 @@ type TextFieldProps = {
   onChange: ((e: CustomOnChange) => void) | undefined;
 }>;
 
-export { TextFieldProps };
+type TypeVariantHeight = {
+  [index: string]: Custom.HeightComponent;
+};
+
+export { TextFieldProps, TypeVariantHeight };
