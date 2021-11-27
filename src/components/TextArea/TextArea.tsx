@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
+/* eslint-disable react/destructuring-assignment */
+import React, { useState, forwardRef, useCallback } from 'react';
 import { SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '@shopify/restyle';
@@ -7,24 +8,26 @@ import { Theme } from '../../themes/institucional';
 import Text from '../Text';
 import Input from '../Input';
 import Box from '../Box';
-import { TextAreaProps, TypeVariantHeight } from './interfaces';
-import { InputFowardEvents } from '../Input/interfaces';
+import { ColorOptions, TextAreaProps, TypeVariantHeight } from './interfaces';
+import { InputRef } from '../Input/interfaces';
 
-const TextArea: React.FC<TextAreaProps> = ({
-  label,
-  placeholder,
-  variant,
-  status,
-  maxLength,
-  assistiveText,
-  autoCapitalize,
-  keyboardType,
-  value,
-  onChange,
-}) => {
+const TextArea: React.ForwardRefRenderFunction<InputRef, TextAreaProps> = (
+  {
+    label,
+    placeholder,
+    variant,
+    status,
+    maxLength,
+    assistiveText,
+    autoCapitalize,
+    keyboardType,
+    value,
+  },
+  ref,
+) => {
+  const [isFocused, setIsFocused] = useState(false);
   const [countChar, setCountChar] = useState(0);
   const { colors, textVariants } = useTheme<Theme>();
-  const textareaRef = useRef<InputFowardEvents>(null);
 
   const statusKeyPair = {
     error: colors['feedback-error-base'],
@@ -37,15 +40,19 @@ const TextArea: React.FC<TextAreaProps> = ({
     medium: 'xl',
   };
 
-  useEffect(() => {
-    if (status === 'error') {
-      textareaRef.current?.error();
-    }
+  const statusBorderColor: ColorOptions = {
+    error: 'feedback-error-base',
+    success: 'feedback-success-base',
+    default: 'neutral-dark',
+  };
 
-    if (status === 'success') {
-      textareaRef.current?.success();
-    }
-  }, [status]);
+  const handleFocus = useCallback(() => {
+    setIsFocused(true);
+  }, []);
+
+  const handleBlur = useCallback(() => {
+    setIsFocused(false);
+  }, []);
 
   return (
     <SafeAreaView>
@@ -56,9 +63,14 @@ const TextArea: React.FC<TextAreaProps> = ({
       )}
 
       <Input
-        ref={textareaRef}
+        ref={ref}
         placeholder={placeholder}
-        variant={variantHeight[variant]}
+        h={variantHeight[variant]}
+        bw="sm"
+        borderColor={
+          isFocused ? 'primary-base' : statusBorderColor[status || 'default']
+        }
+        borderRadius="sm"
         multiline
         keyboardType={keyboardType}
         autoCapitalize={autoCapitalize}
@@ -68,12 +80,9 @@ const TextArea: React.FC<TextAreaProps> = ({
         px="xs"
         py="nano"
         value={value}
-        onChange={e => {
-          setCountChar(textareaRef.current?.value?.length || 0);
-          onChange && onChange({ ...e, current: textareaRef.current });
-        }}
-        onFocus={() => textareaRef.current?.focus()}
-        onBlur={() => textareaRef.current?.blur()}
+        onChangeText={newValue => setCountChar(newValue.length)}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         style={{
           flex: 1,
           fontFamily: textVariants?.regular?.fontFamily,
@@ -89,15 +98,15 @@ const TextArea: React.FC<TextAreaProps> = ({
           <Box flexDirection="row" alignItems="center">
             {status === 'success' && (
               <Icon
-                name="check-circle-outline"
-                size={24}
+                name="check-circle"
+                size={16}
                 color={statusKeyPair[status || 'default']}
               />
             )}
             {status === 'error' && (
               <Icon
-                name="alert-circle-outline"
-                size={24}
+                name="alert-circle"
+                size={16}
                 color={statusKeyPair[status || 'default']}
               />
             )}
@@ -116,4 +125,4 @@ const TextArea: React.FC<TextAreaProps> = ({
   );
 };
 
-export default TextArea;
+export default forwardRef(TextArea);

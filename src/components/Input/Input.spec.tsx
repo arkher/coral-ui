@@ -11,7 +11,7 @@ jest.mock('react-native-vector-icons/MaterialCommunityIcons', () => 'Icon');
 test('should have a placeholder passed by prop', () => {
   const { getAllByPlaceholderText } = render(
     <ThemeProvider theme={themeMaestro}>
-      <Input variant="xs" placeholder="Placeholder" />
+      <Input placeholder="Placeholder" />
     </ThemeProvider>,
   );
 
@@ -25,7 +25,6 @@ test('should render input from user', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={themeMaestro}>
       <Input
-        variant="small"
         placeholder="Placeholder"
         value={value}
         onChangeText={newValue => {
@@ -44,7 +43,7 @@ test('should render input from user', () => {
 test('should Input render correctly', async () => {
   const { toJSON } = render(
     <ThemeProvider theme={themeMaestro}>
-      <Input variant="sm" placeholder="Placeholder" />
+      <Input placeholder="Placeholder" />
     </ThemeProvider>,
   );
 

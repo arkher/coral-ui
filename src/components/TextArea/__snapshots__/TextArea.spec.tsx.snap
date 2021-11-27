@@ -6,14 +6,13 @@ exports[`should be TextArea render correctly 1`] = `
 >
   <View
     onBlur={[Function]}
-    onChange={[Function]}
     onFocus={[Function]}
     style={
       Array [
         Object {
           "alignItems": "center",
           "borderColor": "#5D6A75",
-          "borderRadius": 4,
+          "borderRadius": 8,
           "display": "flex",
           "flexDirection": "row",
           "marginVertical": 4,
@@ -22,7 +21,7 @@ exports[`should be TextArea render correctly 1`] = `
         },
         Array [
           Object {
-            "borderWidth": 1,
+            "borderWidth": 2,
             "height": 140,
           },
         ],
@@ -34,23 +33,18 @@ exports[`should be TextArea render correctly 1`] = `
       allowFontScaling={true}
       multiline={true}
       numberOfLines={7}
-      onBlur={[Function]}
       onChangeText={[Function]}
-      onFocus={[Function]}
       onSubmitEditing={[Function]}
       placeholder="Placeholder"
       placeholderTextColor="#5D6A75"
       rejectResponderTermination={true}
       selectionColor="#5D6A75"
       style={
-        Array [
-          Object {},
-          Object {
-            "flex": 1,
-            "fontFamily": "\\"Inter\\", sans-serif",
-            "textAlignVertical": "top",
-          },
-        ]
+        Object {
+          "flex": 1,
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "textAlignVertical": "top",
+        }
       }
       testID="Input"
       underlineColorAndroid="transparent"
@@ -99,14 +93,13 @@ exports[`should have a error feedback 1`] = `
   </Text>
   <View
     onBlur={[Function]}
-    onChange={[Function]}
     onFocus={[Function]}
     style={
       Array [
         Object {
           "alignItems": "center",
           "borderColor": "#E20A0A",
-          "borderRadius": 4,
+          "borderRadius": 8,
           "display": "flex",
           "flexDirection": "row",
           "marginVertical": 4,
@@ -127,23 +120,18 @@ exports[`should have a error feedback 1`] = `
       allowFontScaling={true}
       multiline={true}
       numberOfLines={7}
-      onBlur={[Function]}
       onChangeText={[Function]}
-      onFocus={[Function]}
       onSubmitEditing={[Function]}
       placeholder="Placeholder"
       placeholderTextColor="#5D6A75"
       rejectResponderTermination={true}
       selectionColor="#5D6A75"
       style={
-        Array [
-          Object {},
-          Object {
-            "flex": 1,
-            "fontFamily": "\\"Inter\\", sans-serif",
-            "textAlignVertical": "top",
-          },
-        ]
+        Object {
+          "flex": 1,
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "textAlignVertical": "top",
+        }
       }
       testID="Input"
       underlineColorAndroid="transparent"
@@ -192,14 +180,13 @@ exports[`should have a success feedback 1`] = `
   </Text>
   <View
     onBlur={[Function]}
-    onChange={[Function]}
     onFocus={[Function]}
     style={
       Array [
         Object {
           "alignItems": "center",
           "borderColor": "#00B649",
-          "borderRadius": 4,
+          "borderRadius": 8,
           "display": "flex",
           "flexDirection": "row",
           "marginVertical": 4,
@@ -220,23 +207,18 @@ exports[`should have a success feedback 1`] = `
       allowFontScaling={true}
       multiline={true}
       numberOfLines={7}
-      onBlur={[Function]}
       onChangeText={[Function]}
-      onFocus={[Function]}
       onSubmitEditing={[Function]}
       placeholder="Placeholder"
       placeholderTextColor="#5D6A75"
       rejectResponderTermination={true}
       selectionColor="#5D6A75"
       style={
-        Array [
-          Object {},
-          Object {
-            "flex": 1,
-            "fontFamily": "\\"Inter\\", sans-serif",
-            "textAlignVertical": "top",
-          },
-        ]
+        Object {
+          "flex": 1,
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "textAlignVertical": "top",
+        }
       }
       testID="Input"
       underlineColorAndroid="transparent"

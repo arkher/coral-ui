@@ -5,13 +5,14 @@ exports[`should TextField render correctly 1`] = `
   emulateUnlessSupported={true}
 >
   <View
-    onChange={[Function]}
+    onBlur={[Function]}
+    onFocus={[Function]}
     style={
       Array [
         Object {
           "alignItems": "center",
           "borderColor": "#5D6A75",
-          "borderRadius": 4,
+          "borderRadius": 8,
           "display": "flex",
           "flexDirection": "row",
           "marginVertical": 4,
@@ -19,7 +20,7 @@ exports[`should TextField render correctly 1`] = `
         },
         Array [
           Object {
-            "borderWidth": 1,
+            "borderWidth": 2,
             "height": 56,
           },
         ],
@@ -29,21 +30,16 @@ exports[`should TextField render correctly 1`] = `
   >
     <TextInput
       allowFontScaling={true}
-      onBlur={[Function]}
       onChangeText={[Function]}
-      onFocus={[Function]}
       onSubmitEditing={[Function]}
       placeholder="Placeholder"
       placeholderTextColor="#5D6A75"
       rejectResponderTermination={true}
       selectionColor="#5D6A75"
       style={
-        Array [
-          Object {},
-          Object {
-            "flex": 1,
-          },
-        ]
+        Object {
+          "flex": 1,
+        }
       }
       testID="Input"
       underlineColorAndroid="transparent"
@@ -72,7 +68,7 @@ exports[`should TextField render correctly 1`] = `
       testID="Box"
     >
       <Icon
-        color="neutral-dark"
+        color="#5D6A75"
         name="close"
         size={24}
       />
@@ -105,17 +101,18 @@ exports[`should have a error feedback 1`] = `
     Label do TextArea
   </Text>
   <View
-    onChange={[Function]}
+    onBlur={[Function]}
+    onFocus={[Function]}
     style={
       Array [
         Object {
           "alignItems": "center",
           "borderColor": "#E20A0A",
-          "borderRadius": 4,
+          "borderRadius": 8,
           "display": "flex",
           "flexDirection": "row",
           "marginVertical": 4,
-          "padding": 8,
+          "paddingHorizontal": 16,
         },
         Array [
           Object {
@@ -129,21 +126,16 @@ exports[`should have a error feedback 1`] = `
   >
     <TextInput
       allowFontScaling={true}
-      onBlur={[Function]}
       onChangeText={[Function]}
-      onFocus={[Function]}
       onSubmitEditing={[Function]}
       placeholder="Placeholder"
       placeholderTextColor="#5D6A75"
       rejectResponderTermination={true}
       selectionColor="#5D6A75"
       style={
-        Array [
-          Object {},
-          Object {
-            "flex": 1,
-          },
-        ]
+        Object {
+          "flex": 1,
+        }
       }
       testID="Input"
       underlineColorAndroid="transparent"
@@ -172,7 +164,7 @@ exports[`should have a error feedback 1`] = `
       testID="Box"
     >
       <Icon
-        color="neutral-dark"
+        color="#5D6A75"
         name="close"
         size={24}
       />
@@ -205,17 +197,18 @@ exports[`should have a success feedback 1`] = `
     Label do TextArea
   </Text>
   <View
-    onChange={[Function]}
+    onBlur={[Function]}
+    onFocus={[Function]}
     style={
       Array [
         Object {
           "alignItems": "center",
           "borderColor": "#00B649",
-          "borderRadius": 4,
+          "borderRadius": 8,
           "display": "flex",
           "flexDirection": "row",
           "marginVertical": 4,
-          "padding": 8,
+          "paddingHorizontal": 16,
         },
         Array [
           Object {
@@ -229,21 +222,16 @@ exports[`should have a success feedback 1`] = `
   >
     <TextInput
       allowFontScaling={true}
-      onBlur={[Function]}
       onChangeText={[Function]}
-      onFocus={[Function]}
       onSubmitEditing={[Function]}
       placeholder="Placeholder"
       placeholderTextColor="#5D6A75"
       rejectResponderTermination={true}
       selectionColor="#5D6A75"
       style={
-        Array [
-          Object {},
-          Object {
-            "flex": 1,
-          },
-        ]
+        Object {
+          "flex": 1,
+        }
       }
       testID="Input"
       underlineColorAndroid="transparent"
@@ -272,7 +260,7 @@ exports[`should have a success feedback 1`] = `
       testID="Box"
     >
       <Icon
-        color="neutral-dark"
+        color="#5D6A75"
         name="close"
         size={24}
       />
