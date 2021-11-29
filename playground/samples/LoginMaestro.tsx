@@ -1,5 +1,12 @@
 import React, { useRef, useState } from 'react';
-import { StatusBar, Image } from 'react-native';
+import {
+  StatusBar,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+} from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Box, Text, Button, TextField, Switch } from '../../src/components';
 import { InputRef } from '../../src/components/Input/interfaces';
 
@@ -17,10 +24,18 @@ const LoginMaestro: React.FC = () => {
   const passwordRef = useRef<InputRef>(null);
 
   return (
-    <Box backgroundColor="white" flex={1}>
+    <KeyboardAwareScrollView
+      contentContainerStyle={{ flex: 1, backgroundColor: 'white' }}
+    >
       <StatusBar />
 
-      <Box padding="sm" flexDirection="column" justifyContent="center" flex={1}>
+      <Box
+        pt="sm"
+        px="sm"
+        flexDirection="column"
+        justifyContent="center"
+        flex={1}
+      >
         <Box mb="sm">
           <Image source={pathImg} style={{ width: 75, height: 75 }} />
         </Box>
@@ -61,7 +76,7 @@ const LoginMaestro: React.FC = () => {
           </Box>
         </Box>
 
-        <Button variant="tertiary" onPress={() => undefined} my="sm">
+        <Button variant="tertiary" onPress={() => undefined} my="xs">
           Esqueceu sua senha?
         </Button>
 
@@ -69,18 +84,18 @@ const LoginMaestro: React.FC = () => {
           <Text mr="nano">Usar impressão digital</Text>
           <Switch value={checked} onChange={() => setChecked(!checked)} />
         </Box>
-
-        <Button variant="tertiary" onPress={() => undefined} mt="lg">
-          Ouvidoria
-        </Button>
+        <Box alignItems="center" flexDirection="column" mt="lg">
+          <Button variant="tertiary" onPress={() => undefined}>
+            Ouvidoria
+          </Button>
+          <Box alignItems="center">
+            <Text fs="sm" color="neutral-base">
+              Maestro v2.1.65 | v255
+            </Text>
+          </Box>
+        </Box>
       </Box>
-
-      <Box alignItems="center" my="nano">
-        <Text fs="sm" color="neutral-base">
-          Maestro v2.1.65 | v255
-        </Text>
-      </Box>
-    </Box>
+    </KeyboardAwareScrollView>
   );
 };
 
