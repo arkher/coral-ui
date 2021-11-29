@@ -35,7 +35,7 @@ exports[`should Checkbox render correctly 1`] = `
         Array [
           Object {
             "backgroundColor": "#FFFFFF",
-            "borderRadius": 8,
+            "borderRadius": 9999,
             "height": 16,
             "width": 16,
           },
