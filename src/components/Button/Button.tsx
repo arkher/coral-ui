@@ -68,6 +68,7 @@ const Button: React.FC<ButtonProps> = ({
       underlayColor="transparent"
       onPress={onPress}
       testID="ds-button"
+      style={{ flex: 1, alignItems: 'center' }}
     >
       <Box
         backgroundColor={variantBgColor[variant]}
@@ -75,9 +76,11 @@ const Button: React.FC<ButtonProps> = ({
         bw={variantBorderWidth[variant]}
         borderRadius="nano"
         shadowColor="black"
-        h="xs"
+        height={{ phone: 48, tablet: 48 }}
+        width={{ phone: '100%', tablet: '100%' }}
         alignItems="center"
         justifyContent="center"
+        flex={1}
         {...props}
       >
         {loading ? (

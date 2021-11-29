@@ -78,7 +78,7 @@ const borderRadius = {
   md: 16,
   lg: 24,
   pill: 500,
-  circular: '50%' as unknown as number,
+  circular: 9999,
 };
 
 const theme = createTheme({

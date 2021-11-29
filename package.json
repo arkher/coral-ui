@@ -39,14 +39,15 @@
   },
   "dependencies": {
     "@shopify/restyle": "^1.4.0",
+    "react-native-reanimated": "^2.2.4",
     "react-native-vector-icons": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@expo/webpack-config": "^0.16.2",
     "@expo-google-fonts/public-sans": "^0.2.0",
+    "@expo/webpack-config": "^0.16.2",
     "@react-native-community/eslint-config": "^2.0.0",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
@@ -77,6 +78,7 @@
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
     "add": "^2.0.6",
+    "babel-jest": "^27.3.1",
     "babel-loader": "^8.0.6",
     "babel-preset-expo": "8.5.1",
     "commitizen": "^4.2.1",
@@ -102,10 +104,10 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
-    "react-native-web": "0.17.1",
-    "react-test-renderer": "^16.13.1",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.8.0",
+    "react-native-web": "0.17.1",
+    "react-test-renderer": "^16.13.1",
     "rollup": "^2.8.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.27.0",
@@ -119,6 +121,7 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": ["./jest-setup.js"],
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
     ],
@@ -126,6 +129,9 @@
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
       "\\.(ts|tsx)$": "ts-jest"
     },
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
+    ],
     "globals": {
       "ts-jest": {
         "tsconfig": "tsconfig.jest.json"
@@ -134,7 +140,10 @@
     "moduleFileExtensions": [
       "ts",
       "tsx",
-      "js"
+      "js",
+      "jsx",
+      "json",
+      "node"
     ],
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
   },

@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
 import { BoxProps } from '@shopify/restyle';
+import { ReactNode } from 'react';
+import { ViewStyle } from 'react-native';
 import { Theme } from '../../themes/institucional';
 
 type CustomBoxProps = Partial<{
@@ -11,6 +12,7 @@ type CustomBoxProps = Partial<{
   sr: Custom.Shadow;
   sop: Custom.Shadow;
   h: Custom.HeightComponent;
+  style: ViewStyle;
 }> &
   Partial<BoxProps<Theme>>;
 

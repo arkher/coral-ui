@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should Checkbox render correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  testID="ds-switch"
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#0A7E19",
+        "borderColor": "#B4BBC2",
+        "borderRadius": 25,
+        "borderWidth": 0,
+        "height": 24,
+        "justifyContent": "center",
+        "padding": 4,
+        "width": 40,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 9999,
+            "height": 16,
+            "width": 16,
+          },
+          Object {
+            "transform": Array [
+              Object {
+                "translateX": AnimatedValue {
+                  " __value": 16,
+                },
+              },
+            ],
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
