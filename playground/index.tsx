@@ -35,6 +35,10 @@ const Playground: React.FC<PlaygroundProps> = ({ navigation }) => (
         <Button mt="sm" onPress={() => navigation.navigate('Storybook')}>
           Storybook
         </Button>
+
+        <Button mt="sm" onPress={() => navigation.navigate('LoginMaestro')}>
+          Login Maestro
+        </Button>
       </Box>
     </Box>
   </ScrollView>
