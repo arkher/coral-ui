@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { Box, Button, Text } from '../src/components';
+import { Text, Box, Button } from '../src/components';
 
 interface PlaygroundProps {
   navigation: any;
@@ -9,17 +9,13 @@ interface PlaygroundProps {
 const Playground: React.FC<PlaygroundProps> = ({ navigation }) => (
   <ScrollView style={{ backgroundColor: 'white' }}>
     <Box m="sm">
-      <Text fs="lg" lineHeight={55}>
+      <Text fs="4xl">
         Bem-vindo ao
         <Text fontWeight="bold"> Catálogo </Text>
-        do DS-Mobile 📓
+        do DS-Mobile 📓🏗️
       </Text>
 
       <Box my="md">
-        <Text fs="sm" mb="nano">
-          🏗️ Escolha a seção que deseja:
-        </Text>
-
         <Button mt="sm" disabled onPress={() => undefined}>
           Elementos textuais
         </Button>

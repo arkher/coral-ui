@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should RadioButton render correctly 1`] = `
+Array [
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#2D3338",
+          "display": "flex",
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "fontWeight": "700",
+          "marginBottom": 8,
+        },
+        Array [
+          Object {
+            "fontSize": 14,
+          },
+        ],
+      ]
+    }
+  >
+    RadioButton Label
+  </Text>,
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "marginVertical": 4,
+        },
+        Array [
+          Object {},
+        ],
+      ]
+    }
+    testID="Box"
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#B4BBC2",
+          "borderRadius": 12,
+          "borderWidth": 2,
+          "height": 24,
+          "justifyContent": "center",
+          "width": 24,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+            },
+            Array [
+              Object {},
+            ],
+          ]
+        }
+        testID="Box"
+      />
+    </View>
+    <Text
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "fontFamily": "\\"Inter\\", sans-serif",
+            "fontWeight": "400",
+            "marginLeft": 8,
+          },
+          Array [
+            Object {},
+          ],
+        ]
+      }
+    >
+      zero
+    </Text>
+  </View>,
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "marginVertical": 4,
+        },
+        Array [
+          Object {},
+        ],
+      ]
+    }
+    testID="Box"
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#B4BBC2",
+          "borderRadius": 12,
+          "borderWidth": 2,
+          "height": 24,
+          "justifyContent": "center",
+          "width": 24,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+            },
+            Array [
+              Object {},
+            ],
+          ]
+        }
+        testID="Box"
+      />
+    </View>
+    <Text
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "fontFamily": "\\"Inter\\", sans-serif",
+            "fontWeight": "400",
+            "marginLeft": 8,
+          },
+          Array [
+            Object {},
+          ],
+        ]
+      }
+    >
+      um
+    </Text>
+  </View>,
+]
+`;

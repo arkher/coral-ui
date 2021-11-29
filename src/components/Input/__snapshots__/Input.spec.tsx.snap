@@ -6,16 +6,11 @@ exports[`should Input render correctly 1`] = `
     Array [
       Object {
         "alignItems": "center",
-        "borderColor": "#5D6A75",
-        "borderRadius": 4,
         "display": "flex",
         "flexDirection": "row",
       },
       Array [
-        Object {
-          "borderWidth": 1,
-          "height": 56,
-        },
+        Object {},
       ],
     ]
   }
@@ -23,19 +18,12 @@ exports[`should Input render correctly 1`] = `
 >
   <TextInput
     allowFontScaling={true}
-    onBlur={[Function]}
     onChangeText={[Function]}
-    onFocus={[Function]}
     onSubmitEditing={[Function]}
     placeholder="Placeholder"
     placeholderTextColor="#5D6A75"
     rejectResponderTermination={true}
     selectionColor="#5D6A75"
-    style={
-      Array [
-        Object {},
-      ]
-    }
     testID="Input"
     underlineColorAndroid="transparent"
   />
