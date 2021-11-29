@@ -1,6 +1,6 @@
 import { useTheme } from '@shopify/restyle';
 import { StyleSheet, ViewStyle } from 'react-native';
-import { borderWidthValues, Theme } from '../..';
+import { borderWidthValues, Theme } from '../../themes';
 
 type UseStyleProps = {
   checked: boolean;
@@ -17,6 +17,7 @@ const useStyles = ({
   disabled,
 }: UseStyleProps): StyleSheet.NamedStyles<Styles> => {
   const theme = useTheme<Theme>();
+
   let borderColor = theme.colors['neutral-base'];
   let circleColor = theme.colors['neutral-dark'];
   let backgroundColor = theme.colors.white;

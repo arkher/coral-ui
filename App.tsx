@@ -12,12 +12,12 @@ import {
   PublicSans_700Bold,
 } from '@expo-google-fonts/public-sans';
 
-import { ThemeProvider } from '@shopify/restyle';
 import Storybook from './.storybook-mobile';
-import theme from './src/themes/institucional';
+import { themeMaestro, ThemeProvider } from './src/themes';
 import Forms from './playground/pages/Forms';
 import Playground from './playground';
 import ButtonDialogs from './playground/pages/ButtonDialogs';
+import LoginMaestro from './playground/samples/LoginMaestro';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,7 +30,7 @@ const App: React.FC = () => {
   });
 
   const themeWithFont = {
-    ...theme,
+    ...themeMaestro,
     textVariants: {
       bold: {
         fontFamily: 'bold',
@@ -71,6 +71,7 @@ const App: React.FC = () => {
               options={{ title: 'Botões e Diálogos' }}
             />
             <Stack.Screen name="Storybook" component={Storybook} />
+            <Stack.Screen name="LoginMaestro" component={LoginMaestro} />
           </Stack.Navigator>
         </NavigationContainer>
       </ThemeProvider>
