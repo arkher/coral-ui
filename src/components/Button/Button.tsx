@@ -79,7 +79,8 @@ const Button: React.FC<ButtonProps> = ({
     >
       <TouchableHighlight
         underlayColor="transparent"
-        onPress={onPress}
+        onPress={() => (!disabled ? onPress() : null)}
+        activeOpacity={!disabled ? 0.5 : 1}
         testID="ds-button"
         style={{
           flex: 1,
