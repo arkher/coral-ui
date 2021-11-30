@@ -1,11 +1,5 @@
 import React, { useRef, useState } from 'react';
-import {
-  StatusBar,
-  Image,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-} from 'react-native';
+import { StatusBar, Image } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Box, Text, Button, TextField, Switch } from '../../src/components';
 import { InputRef } from '../../src/components/Input/interfaces';

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { ScrollView, StatusBar } from 'react-native';
+import { StatusBar, ScrollView } from 'react-native';
+
 import {
   Box,
   Text,
@@ -10,6 +11,7 @@ import {
   Switch,
   Radiobutton,
 } from '../../src/components';
+
 import { InputRef } from '../../src/components/Input/interfaces';
 import { RadioButtonRef } from '../../src/components/RadioButton/interfaces';
 
@@ -39,7 +41,7 @@ const Forms: React.FC = () => {
   const radioButtonRef = useRef<RadioButtonRef>(null);
 
   return (
-    <>
+    <ScrollView>
       <StatusBar />
 
       <Box
@@ -126,7 +128,7 @@ const Forms: React.FC = () => {
           Obter Valores do Formulário
         </Button>
       </Box>
-    </>
+    </ScrollView>
   );
 };
 
