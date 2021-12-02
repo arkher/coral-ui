@@ -2,41 +2,52 @@
 
 exports[`should Button render correctly 1`] = `
 <View
-  accessible={true}
-  focusable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  testID="ds-button"
->
-  <View
-    style={
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#0A7E19",
+        "borderColor": "#0A7E19",
+        "borderRadius": 4,
+        "display": "flex",
+        "flexShrink": 1,
+        "height": 48,
+        "justifyContent": "center",
+        "shadowColor": "#000000",
+        "width": "100%",
+      },
       Array [
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#0A7E19",
-          "borderColor": "#0A7E19",
-          "borderRadius": 4,
-          "display": "flex",
-          "justifyContent": "center",
-          "shadowColor": "#000000",
+          "borderWidth": 0,
         },
         Array [
-          Object {
-            "borderWidth": 0,
-            "height": 40,
-          },
-          Array [
-            Object {},
-          ],
+          Object {},
         ],
-      ]
+      ],
+    ]
+  }
+  testID="Box"
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "height": "100%",
+        "justifyContent": "center",
+        "width": "100%",
+      }
     }
-    testID="Box"
+    testID="ds-button"
   >
     <View
       style={
