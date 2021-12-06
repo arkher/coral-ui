@@ -6,10 +6,15 @@ import { InputRef } from '../../src/components/Input/interfaces';
 
 import pathImg from '../../assets/client/icon.webp';
 
+type ResultType = {
+  cpf: string;
+  password: string;
+};
+
 const LoginMaestro: React.FC = () => {
   const [checked, setChecked] = useState(true);
 
-  const [result, setResult] = useState<any>({
+  const [result, setResult] = useState<ResultType>({
     cpf: '',
     password: '',
   });
@@ -59,12 +64,13 @@ const LoginMaestro: React.FC = () => {
             </Button>
             <Button
               variant="primary"
-              onPress={() =>
+              onPress={() => {
                 setResult({
-                  name: cpfFieldRef.current?.value || '',
-                  email: passwordRef.current?.value || '',
-                })
-              }
+                  cpf: cpfFieldRef.current?.value || '',
+                  password: passwordRef.current?.value || '',
+                });
+                return result;
+              }}
             >
               Entrar
             </Button>

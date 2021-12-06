@@ -15,11 +15,19 @@ import {
 import { InputRef } from '../../src/components/Input/interfaces';
 import { RadioButtonRef } from '../../src/components/RadioButton/interfaces';
 
+type ResultType = {
+  name: string;
+  email: string;
+  feedback: string;
+  checkbox: string;
+  petPreferido: string;
+};
+
 const Forms: React.FC = () => {
   const [checked, setChecked] = useState(false);
   const [checkedSwitch, setCheckedSwitch] = useState(false);
 
-  const [result, setResult] = useState<any>({
+  const [result, setResult] = useState<ResultType>({
     name: '',
     email: '',
     feedback: '',

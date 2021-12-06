@@ -33,8 +33,23 @@ test('should be primary base colored', () => {
     </ThemeProvider>,
   );
 
-  expect(getByTestId('ds-button').props.children[0].props.backgroundColor).toBe(
-    'primary-base',
+  expect(getByTestId('button-box').props.style[0].backgroundColor).toBe(
+    '#0A7E19',
+  );
+});
+
+test('should be neutral lightest colored', () => {
+  const onEventMock = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={themeMaestro}>
+      <Button variant="primary" disabled onPress={onEventMock}>
+        <Text>Button</Text>
+      </Button>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('button-box').props.style[0].backgroundColor).toBe(
+    '#F7F7F7',
   );
 });
 

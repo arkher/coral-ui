@@ -13,6 +13,7 @@ type CustomBoxProps = Partial<{
   sop: Custom.Shadow;
   h: Custom.HeightComponent;
   style: ViewStyle;
+  testID: string;
 }> &
   Partial<BoxProps<Theme>>;
 

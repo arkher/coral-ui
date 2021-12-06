@@ -14,8 +14,12 @@ import { CustomBoxProps } from './interface';
 
 const Box = createBox<Theme>();
 
-const CustomBox: React.FC<CustomBoxProps> = ({ children, ...props }) => (
-  <Box testID="Box" {...props}>
+const CustomBox: React.FC<CustomBoxProps> = ({
+  children,
+  testID,
+  ...props
+}) => (
+  <Box testID={testID || 'Box'} {...props}>
     {children}
   </Box>
 );

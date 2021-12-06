@@ -81,6 +81,7 @@ const Button: React.FC<ButtonProps> = ({
       alignItems="center"
       justifyContent="center"
       flexShrink={1}
+      testID="button-box"
       {...props}
     >
       <Pressable
