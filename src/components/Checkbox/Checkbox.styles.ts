@@ -1,5 +1,5 @@
 import { useTheme } from '@shopify/restyle';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 import { Theme } from '../..';
 
 interface Props {
@@ -8,7 +8,15 @@ interface Props {
   required: boolean;
 }
 
-const useStyles = ({ checked, disabled, required }: Props) => {
+interface Styles {
+  checkBox: ViewStyle;
+}
+
+const useStyles = ({
+  checked,
+  disabled,
+  required,
+}: Props): StyleSheet.NamedStyles<Styles> => {
   const theme = useTheme<Theme>();
 
   let borderColor;

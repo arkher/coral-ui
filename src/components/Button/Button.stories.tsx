@@ -7,6 +7,11 @@ import Text from '../Text/Text';
 import Button from './Button';
 import { COLORS } from '../../themes/tokens';
 
+type Props = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  bg: any;
+};
+
 export default {
   title: 'Componente/Button',
   component: Button,
@@ -22,7 +27,7 @@ export default {
 const urlHandoff =
   'https://www.figma.com/file/3raVfIADTUZCzFOOaQ9PMQ/HANDOFF-%7C-Core-Components-Mobile-%7C-Institucional?node-id=203%3A1636';
 
-export const Primary = ({ bg }: any): React.ReactNode => {
+export const Primary = ({ bg }: Props): React.ReactNode => {
   return (
     <View style={{ width: 360, marginTop: 8, marginLeft: 8 }}>
       <Button onPress={action('clicked')} bg={bg || 'primary-base'}>

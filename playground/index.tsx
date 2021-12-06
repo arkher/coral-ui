@@ -3,6 +3,7 @@ import { ScrollView } from 'react-native';
 import { Text, Box, Button } from '../src/components';
 
 interface PlaygroundProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   navigation: any;
 }
 

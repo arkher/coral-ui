@@ -2,6 +2,11 @@ import React from 'react';
 import { withDesign } from 'storybook-addon-designs';
 import Checkbox from './Checkbox';
 
+type Props = {
+  label: string;
+  value: boolean;
+};
+
 export default {
   title: 'Componente/Checkbox',
   component: Checkbox,
@@ -33,7 +38,7 @@ const urlHandoff =
   'https://www.figma.com/file/3raVfIADTUZCzFOOaQ9PMQ/HANDOFF-%7C-Core-Components-Mobile-%7C-Institucional?node-id=356%3A5928';
 
 // Stories
-export const Basic = ({ label, value }: any): React.ReactNode => (
+export const Basic = ({ label, value }: Props): React.ReactNode => (
   <Checkbox label={label} onChange={() => undefined} value={value} />
 );
 
@@ -44,7 +49,7 @@ Basic.parameters = {
   },
 };
 
-export const Disabled = ({ label, value }: any): React.ReactNode => (
+export const Disabled = ({ label, value }: Props): React.ReactNode => (
   <Checkbox label={label} onChange={() => undefined} value={value} disabled />
 );
 
@@ -55,7 +60,7 @@ Disabled.parameters = {
   },
 };
 
-export const Required = ({ label, value }: any): React.ReactNode => (
+export const Required = ({ label, value }: Props): React.ReactNode => (
   <Checkbox label={label} onChange={() => undefined} value={value} required />
 );
 

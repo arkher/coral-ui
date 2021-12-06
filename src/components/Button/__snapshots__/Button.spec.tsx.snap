@@ -26,12 +26,15 @@ exports[`should Button render correctly 1`] = `
       ],
     ]
   }
-  testID="Box"
+  testID="button-box"
 >
   <View
     accessible={true}
+    collapsable={false}
     focusable={true}
+    onBlur={[Function]}
     onClick={[Function]}
+    onFocus={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -39,13 +42,20 @@ exports[`should Button render correctly 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "height": "100%",
-        "justifyContent": "center",
-        "width": "100%",
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 4,
+          "flex": 1,
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": "100%",
+        },
+        Object {
+          "backgroundColor": "transparent",
+        },
+      ]
     }
     testID="ds-button"
   >
