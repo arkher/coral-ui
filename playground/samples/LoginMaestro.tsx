@@ -37,6 +37,7 @@ const LoginMaestro: React.FC = () => {
         <Box>
           <TextField
             ref={cpfFieldRef}
+            type="cpf"
             label="CPF"
             variant="medium"
             placeholder="000.000.000-00"
