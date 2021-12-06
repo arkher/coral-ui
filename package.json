@@ -40,6 +40,7 @@
   "dependencies": {
     "@shopify/restyle": "^1.4.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-masked-text": "^1.13.0",
     "react-native-reanimated": "^2.2.4",
     "react-native-vector-icons": "^8.1.0"
   },

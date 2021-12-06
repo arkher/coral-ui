@@ -21,6 +21,7 @@ const TextField: React.ForwardRefRenderFunction<InputRef, TextFieldProps> = (
     autoCapitalize,
     returnKeyType,
     value,
+    ...props
   },
   ref,
 ) => {
@@ -80,6 +81,7 @@ const TextField: React.ForwardRefRenderFunction<InputRef, TextFieldProps> = (
         style={{
           flex: 1,
         }}
+        {...props}
       />
       {!!assistiveText && (
         <Box flexDirection="row" alignItems="center">

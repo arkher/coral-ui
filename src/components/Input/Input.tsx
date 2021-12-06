@@ -4,11 +4,13 @@ import React, {
   useState,
   useImperativeHandle,
   forwardRef,
+  LegacyRef,
 } from 'react';
 
 import { useTheme } from '@shopify/restyle';
 import { Keyboard, TextInput, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { TextInputMask } from 'react-native-masked-text';
 import { Theme } from '../../themes';
 import Box from '../Box';
 import { InputRef, InputProps, TextInputRef } from './interfaces';
@@ -25,8 +27,10 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
     autoCapitalize,
     style,
     returnKeyType,
-    value,
     onChangeText,
+    type,
+    options,
+    value,
     ...props
   },
   ref,
@@ -35,11 +39,6 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   const inputElementRef = useRef<TextInputRef>(null);
 
   const { colors } = useTheme<Theme>();
-
-  const handleClear = useCallback(() => {
-    inputElementRef.current?.clear();
-    setIsFilled(false);
-  }, []);
 
   const handleChange = useCallback(
     (newValue: string) => {
@@ -56,32 +55,63 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
     [onChangeText],
   );
 
+  const handleClear = useCallback(() => {
+    handleChange('');
+    inputElementRef.current?.clear?.();
+    setIsFilled(false);
+  }, [handleChange]);
+
   useImperativeHandle(ref, () => ({
     value: inputElementRef.current?.value,
   }));
 
   return (
     <Box flexDirection="row" alignItems="center" {...props}>
-      <TextInput
-        testID="Input"
-        ref={inputElementRef}
-        placeholder={placeholder}
-        placeholderTextColor={colors['neutral-dark']}
-        onChangeText={handleChange}
-        onSubmitEditing={() => {
-          Keyboard.dismiss();
-        }}
-        value={value}
-        editable={editable}
-        multiline={multiline}
-        maxLength={maxLength}
-        keyboardType={keyboardType}
-        returnKeyType={returnKeyType}
-        numberOfLines={numberOfLines}
-        autoCapitalize={autoCapitalize}
-        selectionColor={colors['neutral-dark']}
-        style={style}
-      />
+      {type ? (
+        <TextInputMask
+          type={type}
+          options={options}
+          testID="Input"
+          ref={inputElementRef as unknown as LegacyRef<TextInputMask>}
+          placeholder={placeholder}
+          placeholderTextColor={colors['neutral-dark']}
+          onChangeText={handleChange}
+          onSubmitEditing={() => {
+            Keyboard.dismiss();
+          }}
+          value={inputElementRef.current?.value}
+          editable={editable}
+          multiline={multiline}
+          maxLength={maxLength}
+          keyboardType={keyboardType}
+          returnKeyType={returnKeyType}
+          numberOfLines={numberOfLines}
+          autoCapitalize={autoCapitalize}
+          selectionColor={colors['neutral-dark']}
+          style={style}
+        />
+      ) : (
+        <TextInput
+          testID="Input"
+          ref={inputElementRef}
+          placeholder={placeholder}
+          placeholderTextColor={colors['neutral-dark']}
+          onChangeText={handleChange}
+          onSubmitEditing={() => {
+            Keyboard.dismiss();
+          }}
+          value={value}
+          editable={editable}
+          multiline={multiline}
+          maxLength={maxLength}
+          keyboardType={keyboardType}
+          returnKeyType={returnKeyType}
+          numberOfLines={numberOfLines}
+          autoCapitalize={autoCapitalize}
+          selectionColor={colors['neutral-dark']}
+          style={style}
+        />
+      )}
 
       {icon && (
         <TouchableWithoutFeedback onPress={handleClear}>
