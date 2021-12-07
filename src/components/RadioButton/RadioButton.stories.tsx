@@ -1,18 +1,16 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+// import { storiesOf } from '@storybook/react-native';
 import RadioButton from './RadioButton';
 
 export default {
-  title: 'RadioButton',
+  title: 'Componente/RadioButton',
   component: RadioButton,
 };
 
 // Stories
 export const BasicRadioButton = (): React.ReactNode => (
-  <RadioButton label="label" options={[]}>
-    Olá mundo!
-  </RadioButton>
+  <RadioButton label="label" options={[]} />
 );
 
 // Add all stories to RN/Expo storybook
-storiesOf('RadioButton', module).add('Basic', BasicRadioButton);
+// storiesOf('RadioButton', module).add('Basic', BasicRadioButton);

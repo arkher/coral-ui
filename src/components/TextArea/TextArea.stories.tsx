@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import TextArea from './TextArea';
 
 export default {
-  title: 'Experimental/TextArea',
+  title: 'Componente/TextArea',
   component: TextArea,
   argTypes: {
     label: {
