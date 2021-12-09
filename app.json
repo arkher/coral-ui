@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Coral UI",
-    "slug": "coral-ui",
+    "name": "Playground Coral",
+    "slug": "Playground-Coral",
     "entryPoint": "node_modules/expo/AppEntry.js",
     "platforms": ["ios", "android", "web"],
     "version": "0.0.1",
