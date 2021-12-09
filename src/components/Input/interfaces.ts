@@ -11,7 +11,14 @@ export type TextInputMaskType =
   | 'only-numbers'
   | 'money'
   | 'cel-phone'
+  | 'date'
   | 'datetime';
+
+export type OptionsPerType = {
+  date: TextInputMaskOptionProp;
+  money: TextInputMaskOptionProp;
+};
+
 type InputProps = Partial<{
   placeholder: string;
   icon: string;
