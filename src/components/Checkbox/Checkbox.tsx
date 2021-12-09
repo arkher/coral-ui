@@ -2,13 +2,19 @@ import React from 'react';
 import { TouchableHighlight } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Box from '../Box';
+import { CustomBoxProps } from '../Box/interface';
 import Text from '../Text';
 import useStyles from './Checkbox.styles';
 import { CheckboxProps } from './interfaces';
 
-const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
-  const { label, onChange, value, disabled, required } = props;
-
+const Checkbox: React.FC<CheckboxProps & CustomBoxProps> = ({
+  label,
+  onChange,
+  value,
+  disabled,
+  required,
+  ...props
+}: CheckboxProps & CustomBoxProps) => {
   const styles = useStyles({
     checked: value,
     disabled: !!disabled,
@@ -22,7 +28,7 @@ const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
   };
 
   return (
-    <Box flexDirection="row" alignItems="center">
+    <Box flexDirection="row" alignItems="center" {...props}>
       <TouchableHighlight
         style={styles.checkBox}
         onPress={handleChange}
