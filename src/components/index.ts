@@ -16,3 +16,5 @@ export { default as Switch } from './Switch';
 export * from './Switch';
 export { default as Radiobutton } from './RadioButton';
 export * from './RadioButton';
+export { default as Pressable } from './Pressable';
+export * from './Pressable';
