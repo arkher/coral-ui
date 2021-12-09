@@ -1,19 +1,28 @@
+import { useTheme } from '@shopify/restyle';
 import React, {
-  useCallback,
-  useRef,
-  useState,
-  useImperativeHandle,
   forwardRef,
   LegacyRef,
+  useCallback,
+  useImperativeHandle,
+  useRef,
+  useState,
 } from 'react';
-
-import { useTheme } from '@shopify/restyle';
 import { Keyboard, TextInput, TouchableWithoutFeedback } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TextInputMask } from 'react-native-masked-text';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Theme } from '../../themes';
 import Box from '../Box';
-import { InputRef, InputProps, TextInputRef } from './interfaces';
+import { InputProps, InputRef, TextInputRef } from './interfaces';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const optionsPerType: any = {
+  date: {
+    mask: '99/99/9999',
+  },
+  money: {
+    unit: 'R$ ',
+  },
+};
 
 const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   {
@@ -66,11 +75,11 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   }));
 
   return (
-    <Box flexDirection="row" alignItems="center" {...props}>
+    <Box flexDirection="row" alignItems="center" testID="input-box" {...props}>
       {type ? (
         <TextInputMask
-          type={type}
-          options={options}
+          type={type === 'date' ? 'custom' : type}
+          options={optionsPerType[type] || options}
           testID="Input"
           ref={inputElementRef as unknown as LegacyRef<TextInputMask>}
           placeholder={placeholder}
@@ -92,6 +101,7 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
         />
       ) : (
         <TextInput
+          textContentType="password"
           testID="Input"
           ref={inputElementRef}
           placeholder={placeholder}
