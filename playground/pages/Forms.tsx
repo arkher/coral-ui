@@ -128,8 +128,8 @@ const Forms: React.FC = () => {
               name: nameRef.current?.value || '',
               email: textFieldRef.current?.value || '',
               feedback: textAreaRef.current?.value || '',
-              checkbox: checked,
-              petPreferido: radioButtonRef.current?.value || '',
+              checkbox: checked as unknown as string,
+              petPreferido: (radioButtonRef.current?.value as string) || '',
             })
           }
         >
