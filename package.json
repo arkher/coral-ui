@@ -1,6 +1,6 @@
 {
   "name": "@ds/mobile",
-  "version": "0.1.8",
+  "version": "0.1.0",
   "description": "Biblioteca de components criada pelo Design System para os produtos da Pulse criada em react-native",
   "author": "Design System",
   "keywords": [
@@ -18,8 +18,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "expo:web": "expo start --web",
-    "web": "start-storybook -p 6006 -c ./.storybook",
+    "web": "expo start --web",
+    "storybook": "start-storybook -p 6006 -c ./.storybook",
     "build": "rm -rf dist && rollup -c",
     "prepare": "rm -rf dist && rollup -c",
     "build-storybook": "build-storybook",
@@ -27,9 +27,8 @@
     "lint": "eslint .",
     "format": "prettier *.{js,tsx} -w",
     "commit": "git-cz",
-    "generate:component": "plop --plopfile ./src/generators/plopfile.js component",
+    "new": "plop --plopfile ./src/generators/plopfile.js component",
     "release": "semantic-release",
-    "storybook": "start-storybook",
     "clean": "rm -rf dist && rm -rf node_modules",
     "lint-staged": "lint-staged --config lint-staged.js",
     "husky-install": "husky install"

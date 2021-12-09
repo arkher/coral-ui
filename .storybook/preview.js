@@ -38,7 +38,7 @@ export const decorators = [
       <ThemeProvider
         theme={labelTheme === 'maestro' ? themeMaestro : themeInstitucional}
       >
-        {story()}
+        <div>{story()}</div>
       </ThemeProvider>
     );
   },
