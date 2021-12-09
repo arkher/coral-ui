@@ -13,28 +13,22 @@ const Playground: React.FC<PlaygroundProps> = ({ navigation }) => (
       <Text fs="4xl">
         Bem-vindo ao
         <Text fontWeight="bold"> Catálogo </Text>
-        do DS-Mobile 📓🏗️
+        do DS-Mobile 🏗️
       </Text>
 
-      <Box my="md">
-        <Button mt="sm" disabled onPress={() => undefined}>
-          Elementos textuais
-        </Button>
+      <Button
+        variant="tertiary"
+        mt="sm"
+        onPress={() => navigation.navigate('Storybook')}
+      >
+        <Text fs="xl">Acessar Storybook 🃏</Text>
+      </Button>
 
-        <Button mt="sm" onPress={() => navigation.navigate('ButtonDialogs')}>
-          Botões e Dialogs
-        </Button>
-
-        <Button mt="sm" disabled onPress={() => undefined}>
-          Listas
-        </Button>
+      <Box mt="lg">
+        <Text> Casos de uso 🔽</Text>
 
         <Button mt="sm" onPress={() => navigation.navigate('Forms')}>
           Formulários
-        </Button>
-
-        <Button mt="sm" onPress={() => navigation.navigate('Storybook')}>
-          Storybook
         </Button>
 
         <Button mt="sm" onPress={() => navigation.navigate('LoginMaestro')}>

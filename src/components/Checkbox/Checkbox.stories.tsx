@@ -1,6 +1,11 @@
 import React from 'react';
 import { withDesign } from 'storybook-addon-designs';
+import { storiesOf } from '@storybook/react-native';
+import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import Checkbox from './Checkbox';
+import Text from '../Text';
+import { StoriesView } from '../../stories/StorieView';
 
 type Props = {
   label: string;
@@ -70,3 +75,27 @@ Required.parameters = {
     url: urlHandoff,
   },
 };
+
+// Add all stories to RN/Expo storybook
+storiesOf('Checkbox-ds', module)
+  .addDecorator(getStory => <StoriesView>{getStory()}</StoriesView>)
+  .addDecorator(withKnobs)
+  .add('Default', () => (
+    <>
+      <Text mb="sm">Checkbox / Marked / Default</Text>
+
+      <Checkbox value onChange={action('clicked!')} label="Checkbox marked" />
+
+      <Checkbox
+        value={false}
+        onChange={action('clicked!')}
+        label="Checkbox not marked"
+      />
+
+      <Checkbox
+        value={boolean('value', false, 'default')}
+        onChange={action('clicked!')}
+        label="Checkbox knobs value"
+      />
+    </>
+  ));
