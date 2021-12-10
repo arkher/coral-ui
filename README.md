@@ -1,4 +1,4 @@
-# Coral UI
+# DS Mobile
 
 <p>
   <!-- iOS -->
@@ -9,7 +9,7 @@
   <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
 </p>
 
-<img alt="expo examples" src="https://i.imgur.com/j253BeR.png">
+<!-- <img alt="expo examples" src="https://i.imgur.com/j253BeR.png"> -->
 
 ## Features
 
@@ -24,7 +24,7 @@
 
 Biblioteca de componentes em React native feita com a biblioteca Restyle do Shopify, permitindo e facilitando **desenvolvimento baseado em temas** e **props utilitárias de estilo**.
 
-```
+```tsx
 <Box backgroundColor="primary" mt={2} p={3}>
   <Text color="textInverted" fontFamily="Roboto, sans-serif">
     Branded box with white text inside
@@ -38,6 +38,37 @@ Biblioteca de componentes em React native feita com a biblioteca Restyle do Shop
 
 1. `yarn` - Instala as dependências
 1. `yarn web` - Inicia o Storybook em visualização Web no browser padrão
+1. `yarn android` - Inicia o Storybook em visualização no dispositivo ou emulador Android
+1. `yarn ios` - Inicia o Storybook em visualização no dispositivo ou emulador ios
+
+## Consumindo a lib como cliente
+
+1. `yarn add @ds/mobile --registry=http://verdaccio.mateus/` - Instalando a biblioteca
+1. `yarn add typeface-{font-name}` ou `import /font/*.ttf` - Instalando a fonte de sua preferência react-native-vector-icons
+1. `yarn add react-native-vector-icons` - Instale o pacote de icones
+1. `npx react-native link react-native-vector-icons` faça o link dos icones e reinecie o emulador
+1. Faça o import do `themeProvider` e o tema de sua preferência utilizando o exemplo destacado abaixo:
+
+```tsx
+import React from 'react';
+import App from './App';
+
+import {ThemeProvider, themeInstitucional, Box} from 'coral-ui';
+
+const App = () => {
+  return (
+    <ThemeProvider theme={themeInstitucional}>
+      <App />
+    </ThemeProvider>
+  );
+};
+
+export default App;
+```
+
+1. `yarn start --reset-cache` inicie o servidor limpando o cache do metro bundle
+2. `yarn android` instale o .apk em modo debug
+3. Enjoy 😎!
 
 ### Rodando em dispositivos nativos (Android/IOS)
 
@@ -102,7 +133,6 @@ Você poderá escolher entre feature, bug fix ou CI update, por exemplo. E adici
 Após criar sua branch, crie um pull request (PR). Uma vez aprovado, será movido para uma branch de release (como `next`), e eventualmente mergeado na master.
 ## Todo
 
-- [ ] PLOP - Micro-generator
 - [ ] Snapshot testing
 - [ ] Unit testing
 

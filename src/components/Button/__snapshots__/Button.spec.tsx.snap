@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should Button render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#0A7E19",
+        "borderColor": "#0A7E19",
+        "borderRadius": 4,
+        "display": "flex",
+        "flexShrink": 1,
+        "height": 48,
+        "justifyContent": "center",
+        "shadowColor": "#000000",
+        "width": "100%",
+      },
+      Array [
+        Object {
+          "borderWidth": 0,
+        },
+        Array [
+          Object {},
+        ],
+      ],
+    ]
+  }
+  testID="button-box"
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 4,
+          "flex": 1,
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": "100%",
+        },
+        Object {
+          "backgroundColor": "transparent",
+        },
+      ]
+    }
+    testID="ds-button"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Array [
+            Object {},
+          ],
+        ]
+      }
+      testID="Box"
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "display": "flex",
+              "fontFamily": "\\"Inter\\", sans-serif",
+              "fontWeight": "600",
+            },
+            Array [
+              Object {
+                "fontSize": 14,
+              },
+            ],
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "fontFamily": "\\"Inter\\", sans-serif",
+                "fontWeight": "400",
+              },
+              Array [
+                Object {},
+              ],
+            ]
+          }
+        >
+          Label Button
+        </Text>
+      </Text>
+    </View>
+  </View>
+</View>
+`;
