@@ -34,7 +34,8 @@ export default {
 };
 
 interface BoxProps {
-  bg: Custom.Colors;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  bg: any;
   borderRadius: Custom.Radius;
   opacity: Custom.Opacity;
   shadow: Custom.Shadow;
