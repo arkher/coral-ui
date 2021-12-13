@@ -181,7 +181,8 @@
   "release": {
     "branch": "master",
     "npmPublish": false,
-    "ci": false,
+    "ci": true,
+    "repositoryUrl": "https://github.com/arkher/coral-ui.git",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/changelog",
