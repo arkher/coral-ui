@@ -27,7 +27,7 @@ test('should be black', () => {
   const onEventMock = jest.fn();
   const { getByTestId } = render(
     <ThemeProvider theme={themeMaestro}>
-      <Pressable onPress={onEventMock} boxProps={{ bg: 'black' }}>
+      <Pressable onPress={onEventMock} bg="black">
         <Text>Pressable</Text>
       </Pressable>
     </ThemeProvider>,

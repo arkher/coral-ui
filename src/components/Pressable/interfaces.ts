@@ -5,5 +5,5 @@ import { CustomBoxProps } from '../Box/interface';
 export type CustomPressableProps = PressableProps &
   Partial<{
     children: React.ReactNode;
-    boxProps: CustomBoxProps;
-  }>;
+  }> &
+  CustomBoxProps;
