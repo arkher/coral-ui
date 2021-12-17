@@ -3,7 +3,7 @@ import React from 'react';
 import { withDesign } from 'storybook-addon-designs';
 import { StoriesView } from '../../stories/StorieView';
 import { COLORS } from '../../themes/tokens';
-import Text from '../Text';
+import Box from '../Box';
 import Pressable from './Pressable';
 
 type Props = {
@@ -28,8 +28,14 @@ const urlHandoff =
 
 // Stories
 export const BasicPressable = ({ bg }: Props): React.ReactNode => (
-  <Pressable boxProps={{ bg }}>
-    <Text>Olá mundo!</Text>
+  <Pressable
+    flexDirection="row"
+    justifyContent="space-between"
+    alignItems="baseline"
+    bg="feedback-info-base"
+  >
+    <Box width={100} height={100} bg="black" />
+    <Box width={100} height={100} ml="md" bg="black" />
   </Pressable>
 );
 

@@ -1,6 +1,6 @@
 {
   "name": "@ds/mobile",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Biblioteca de components criada pelo Design System para os produtos da Pulse criada em react-native",
   "author": "Design System",
   "keywords": [
@@ -42,7 +42,7 @@
     "@shopify/restyle": "^1.4.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-masked-text": "^1.13.0",
-    "react-native-reanimated": "^2.2.4",
+    "react-native-reanimated": "~2.2.0",
     "react-native-vector-icons": "^8.1.0"
   },
   "devDependencies": {
@@ -181,7 +181,8 @@
   "release": {
     "branch": "master",
     "npmPublish": false,
-    "ci": false,
+    "ci": true,
+    "repositoryUrl": "https://github.com/ds-org-team/coral-ui",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/changelog",
