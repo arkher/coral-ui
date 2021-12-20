@@ -63,7 +63,6 @@ const CustomPressable: React.FC<CustomPressableProps> = ({
     justifyContent,
     alignItems,
   };
-  console.warn(spacing[p]);
 
   return (
     <Box
