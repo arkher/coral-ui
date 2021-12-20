@@ -38,6 +38,9 @@ const CustomPressable: React.FC<CustomPressableProps> = ({
   pl,
   pr,
   pt,
+  flexDirection,
+  justifyContent,
+  alignItems,
   ...props
 }: CustomPressableProps) => {
   const styles = useStyles();
@@ -56,6 +59,9 @@ const CustomPressable: React.FC<CustomPressableProps> = ({
     android_disableSound,
     android_ripple,
     testOnly_pressed,
+    flexDirection,
+    justifyContent,
+    alignItems,
   };
 
   return (
@@ -84,6 +90,13 @@ const CustomPressable: React.FC<CustomPressableProps> = ({
               spacing[pr as 'quark' | 'nano' | 'xs' | 'sm' | 'md' | 'lg'],
             paddingLeft:
               spacing[pl as 'quark' | 'nano' | 'xs' | 'sm' | 'md' | 'lg'],
+            flexDirection: flexDirection as
+              | 'row'
+              | 'column'
+              | 'row-reverse'
+              | 'column-reverse',
+            justifyContent: justifyContent as 'center',
+            alignItems: alignItems as 'center',
           },
           { ...(styles.customStyle as ViewStyle) },
           { ...(style as ViewStyle) },
