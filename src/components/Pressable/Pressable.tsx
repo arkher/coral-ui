@@ -63,6 +63,7 @@ const CustomPressable: React.FC<CustomPressableProps> = ({
     justifyContent,
     alignItems,
   };
+  console.warn(spacing[p]);
 
   return (
     <Box
@@ -80,6 +81,7 @@ const CustomPressable: React.FC<CustomPressableProps> = ({
           {
             elevation: pressed ? 1 : 3,
           },
+          { ...(styles.customStyle as ViewStyle) },
           {
             padding: spacing[p as 'quark' | 'nano' | 'xs' | 'sm' | 'md' | 'lg'],
             paddingTop:
@@ -98,7 +100,6 @@ const CustomPressable: React.FC<CustomPressableProps> = ({
             justifyContent: justifyContent as 'center',
             alignItems: alignItems as 'center',
           },
-          { ...(styles.customStyle as ViewStyle) },
           { ...(style as ViewStyle) },
         ]}
         {...pressableProps}
