@@ -4,7 +4,8 @@ import { withDesign } from 'storybook-addon-designs';
 import { StoriesView } from '../../stories/StorieView';
 import { COLORS } from '../../themes/tokens';
 import Box from '../Box';
-import Pressable from './Pressable';
+import Text from '../Text';
+import Paper from './Paper';
 
 type Props = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -13,7 +14,7 @@ type Props = {
 
 export default {
   title: 'Elements/Pressable',
-  component: Pressable,
+  component: Paper,
   argTypes: {
     bg: {
       options: COLORS,
@@ -27,8 +28,8 @@ const urlHandoff =
   'https://www.figma.com/file/3raVfIADTUZCzFOOaQ9PMQ/HANDOFF-%7C-Core-Components-Mobile-%7C-Institucional?node-id=203%3A1636';
 
 // Stories
-export const BasicPressable = ({ bg }: Props): React.ReactNode => (
-  <Pressable
+export const BasicPaper = ({ bg }: Props): React.ReactNode => (
+  <Paper
     flexDirection="row"
     justifyContent="space-between"
     alignItems="baseline"
@@ -36,10 +37,10 @@ export const BasicPressable = ({ bg }: Props): React.ReactNode => (
   >
     <Box width={100} height={100} bg="black" />
     <Box width={100} height={100} ml="md" bg="black" />
-  </Pressable>
+  </Paper>
 );
 
-BasicPressable.parameters = {
+BasicPaper.parameters = {
   design: {
     type: 'figma',
     url: urlHandoff,
@@ -53,8 +54,8 @@ storiesOf('Pressable-ds', module)
     <>
       <Text mb="sm">Pressable </Text>
 
-      <Pressable boxProps={{ bg: 'white' }}>
+      <Paper mt="lg" p="lg">
         <Text p="md">Clique-me!</Text>
-      </Pressable>
+      </Paper>
     </>
   ));

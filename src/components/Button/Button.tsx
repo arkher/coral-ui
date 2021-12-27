@@ -77,7 +77,6 @@ const Button: React.FC<ButtonProps> = ({
       borderRadius="nano"
       shadowColor="black"
       height={{ phone: 48, tablet: 48 }}
-      width={{ phone: '100%', tablet: '100%' }}
       alignItems="center"
       justifyContent="center"
       flexShrink={1}

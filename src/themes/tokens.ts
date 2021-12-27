@@ -43,7 +43,7 @@ export const COLORS = [
   'highlight-02-base',
   'highlight-02-light',
   'highlight-03-dark',
-  'highlight-03base',
+  'highlight-03-base',
   'highlight-03-light',
   'highlight-04-dark',
   'highlight-04-base',

@@ -1,4 +1,4 @@
-# pressable - basic usage
+# switch - basic usage
 
 ## Props
 |Nome|Descrição|Valores|

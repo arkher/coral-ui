@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should be TextArea render correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <View
+    onBlur={[Function]}
+    onFocus={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderColor": "#5D6A75",
+          "borderRadius": 8,
+          "display": "flex",
+          "flexDirection": "row",
+          "marginVertical": 4,
+          "paddingHorizontal": 16,
+          "paddingVertical": 8,
+        },
+        Array [
+          Object {
+            "borderWidth": 2,
+            "height": 140,
+          },
+        ],
+      ]
+    }
+    testID="input-box"
+  >
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      numberOfLines={7}
+      onChangeText={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Placeholder"
+      placeholderTextColor="#5D6A75"
+      rejectResponderTermination={true}
+      selectionColor="#5D6A75"
+      style={
+        Object {
+          "flex": 1,
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "textAlignVertical": "top",
+        }
+      }
+      testID="Input"
+      textContentType="password"
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+        },
+        Array [
+          Object {},
+        ],
+      ]
+    }
+    testID="Box"
+  />
+</RCTSafeAreaView>
+`;
+
+exports[`should have a error feedback 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#2D3338",
+          "display": "flex",
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "fontWeight": "700",
+        },
+        Array [
+          Object {
+            "fontSize": 14,
+          },
+        ],
+      ]
+    }
+  >
+    Label do TextArea
+  </Text>
+  <View
+    onBlur={[Function]}
+    onFocus={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderColor": "#E20A0A",
+          "borderRadius": 8,
+          "display": "flex",
+          "flexDirection": "row",
+          "marginVertical": 4,
+          "paddingHorizontal": 16,
+          "paddingVertical": 8,
+        },
+        Array [
+          Object {
+            "borderWidth": 2,
+            "height": 140,
+          },
+        ],
+      ]
+    }
+    testID="input-box"
+  >
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      numberOfLines={7}
+      onChangeText={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Placeholder"
+      placeholderTextColor="#5D6A75"
+      rejectResponderTermination={true}
+      selectionColor="#5D6A75"
+      style={
+        Object {
+          "flex": 1,
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "textAlignVertical": "top",
+        }
+      }
+      testID="Input"
+      textContentType="password"
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+        },
+        Array [
+          Object {},
+        ],
+      ]
+    }
+    testID="Box"
+  />
+</RCTSafeAreaView>
+`;
+
+exports[`should have a success feedback 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#2D3338",
+          "display": "flex",
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "fontWeight": "700",
+        },
+        Array [
+          Object {
+            "fontSize": 14,
+          },
+        ],
+      ]
+    }
+  >
+    Label do TextArea
+  </Text>
+  <View
+    onBlur={[Function]}
+    onFocus={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderColor": "#00B649",
+          "borderRadius": 8,
+          "display": "flex",
+          "flexDirection": "row",
+          "marginVertical": 4,
+          "paddingHorizontal": 16,
+          "paddingVertical": 8,
+        },
+        Array [
+          Object {
+            "borderWidth": 2,
+            "height": 140,
+          },
+        ],
+      ]
+    }
+    testID="input-box"
+  >
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      numberOfLines={7}
+      onChangeText={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Placeholder"
+      placeholderTextColor="#5D6A75"
+      rejectResponderTermination={true}
+      selectionColor="#5D6A75"
+      style={
+        Object {
+          "flex": 1,
+          "fontFamily": "\\"Inter\\", sans-serif",
+          "textAlignVertical": "top",
+        }
+      }
+      testID="Input"
+      textContentType="password"
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+        },
+        Array [
+          Object {},
+        ],
+      ]
+    }
+    testID="Box"
+  />
+</RCTSafeAreaView>
+`;

@@ -21,15 +21,18 @@ const LoginMaestro: React.FC = () => (
         <Image source={pathImg} style={{ width: 75, height: 75 }} />
       </Box>
 
-      <Box>
-        <Box flexDirection="row" mt="lg">
-          <Button variant="secondary" mr="nano" onPress={() => undefined}>
-            Primeiro acesso
-          </Button>
-          <Button variant="primary" onPress={() => undefined}>
-            Entrar
-          </Button>
-        </Box>
+      <Box flexDirection="row" mt="lg">
+        <Button
+          variant="secondary"
+          mr="nano"
+          onPress={() => undefined}
+          flex={1}
+        >
+          Primeiro acesso
+        </Button>
+        <Button flex={1} variant="primary" onPress={() => undefined}>
+          Entrar
+        </Button>
       </Box>
 
       <Button variant="tertiary" onPress={() => undefined} my="xs">

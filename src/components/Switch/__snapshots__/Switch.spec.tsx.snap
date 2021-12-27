@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should Checkbox render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "display": "flex",
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+  testID="Box"
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(10, 126, 25, 1)",
+        "borderColor": "#5D6A75",
+        "borderRadius": 25,
+        "borderWidth": 0,
+        "height": 24,
+        "justifyContent": "center",
+        "width": 40,
+      }
+    }
+    testID="ds-switch"
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(255, 255, 255, 1)",
+          "borderRadius": 8,
+          "height": 16,
+          "transform": Array [
+            Object {
+              "translateX": 8,
+            },
+          ],
+          "width": 16,
+        }
+      }
+    />
+  </View>
+</View>
+`;

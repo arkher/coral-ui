@@ -1,6 +1,6 @@
 {
   "name": "@ds/mobile",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "Biblioteca de components criada pelo Design System para os produtos da Pulse criada em react-native",
   "author": "Design System",
   "keywords": [

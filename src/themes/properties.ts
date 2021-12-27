@@ -118,6 +118,34 @@ export const borderWidth = createRestyleFunction({
     borderWidthValues[value],
 });
 
+export const borderBottomWidth = createRestyleFunction({
+  property: 'bbw',
+  styleProperty: 'borderBottomWidth',
+  transform: ({ value }: { value: Custom.BorderWidth }) =>
+    borderWidthValues[value],
+});
+
+export const borderTopWidth = createRestyleFunction({
+  property: 'btw',
+  styleProperty: 'borderTopWidth',
+  transform: ({ value }: { value: Custom.BorderWidth }) =>
+    borderWidthValues[value],
+});
+
+export const borderLeftWidth = createRestyleFunction({
+  property: 'blw',
+  styleProperty: 'borderLeftWidth',
+  transform: ({ value }: { value: Custom.BorderWidth }) =>
+    borderWidthValues[value],
+});
+
+export const borderRightWidth = createRestyleFunction({
+  property: 'brw',
+  styleProperty: 'borderRightWidth',
+  transform: ({ value }: { value: Custom.BorderWidth }) =>
+    borderWidthValues[value],
+});
+
 export const borderRadius = createRestyleFunction({
   property: 'br',
   styleProperty: 'borderRadius',

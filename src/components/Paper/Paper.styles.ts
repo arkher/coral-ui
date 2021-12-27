@@ -11,7 +11,7 @@ const useStyles = (): StyleSheet.NamedStyles<Styles> => {
   return StyleSheet.create({
     customStyle: {
       shadowOffset: shadowOffsetValues.lg,
-      shadowColor: colors.black,
+      shadowColor: '#a9a9b8',
       shadowRadius: shadowRadiusValues.sm,
       shadowOpacity: 0.3,
       backgroundColor: colors.white,

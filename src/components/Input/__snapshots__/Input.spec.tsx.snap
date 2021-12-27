@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should Input render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+  testID="input-box"
+>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    onSubmitEditing={[Function]}
+    placeholder="Placeholder"
+    placeholderTextColor="#5D6A75"
+    rejectResponderTermination={true}
+    selectionColor="#5D6A75"
+    testID="Input"
+    textContentType="password"
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;

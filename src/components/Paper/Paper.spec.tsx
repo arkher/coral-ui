@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, fireEvent, render } from '@testing-library/react-native';
 import { ThemeProvider } from '@shopify/restyle';
-import Pressable from './Pressable';
+import Pressable from './Paper';
 import Text from '../Text';
 import themeMaestro from '../../themes/maestro';
 

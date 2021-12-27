@@ -3,6 +3,10 @@ import React from 'react';
 import {
   borderRadius,
   borderWidth,
+  borderBottomWidth,
+  borderTopWidth,
+  borderLeftWidth,
+  borderRightWidth,
   opacity,
   shadowOffset,
   shadowOpacity,
@@ -28,6 +32,10 @@ export default createRestyleComponent<CustomBoxProps, Theme>(
   [
     borderRadius,
     borderWidth,
+    borderBottomWidth,
+    borderTopWidth,
+    borderLeftWidth,
+    borderRightWidth,
     opacity,
     shadowOffset,
     shadowRadius,
