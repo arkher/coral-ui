@@ -33,11 +33,20 @@ const CustomPaper: React.FC<CustomPaperProps> = ({
   android_disableSound,
   android_ripple,
   testOnly_pressed,
+  px,
+  py,
   p,
+  padding,
   pb,
+  paddingBottom,
   pl,
+  paddingLeft,
   pr,
+  paddingRight,
   pt,
+  paddingTop,
+  height,
+  width,
   flexDirection,
   justifyContent,
   alignItems,
@@ -70,6 +79,7 @@ const CustomPaper: React.FC<CustomPaperProps> = ({
       minHeight="auto"
       minWidth="auto"
       br="md"
+      overflow="scroll"
       testID="pressable-box"
       {...props}
     >
@@ -81,15 +91,50 @@ const CustomPaper: React.FC<CustomPaperProps> = ({
           },
           { ...(styles.customStyle as ViewStyle) },
           {
-            padding: spacing[p as 'quark' | 'nano' | 'xs' | 'sm' | 'md' | 'lg'],
+            padding:
+              spacing[
+                (padding || p) as 'quark' | 'nano' | 'xs' | 'sm' | 'md' | 'lg'
+              ],
             paddingTop:
-              spacing[pt as 'quark' | 'nano' | 'xs' | 'sm' | 'md' | 'lg'],
+              spacing[
+                (paddingTop || pt || py) as
+                  | 'quark'
+                  | 'nano'
+                  | 'xs'
+                  | 'sm'
+                  | 'md'
+                  | 'lg'
+              ],
             paddingBottom:
-              spacing[pb as 'quark' | 'nano' | 'xs' | 'sm' | 'md' | 'lg'],
+              spacing[
+                (paddingBottom || pb || py) as
+                  | 'quark'
+                  | 'nano'
+                  | 'xs'
+                  | 'sm'
+                  | 'md'
+                  | 'lg'
+              ],
             paddingRight:
-              spacing[pr as 'quark' | 'nano' | 'xs' | 'sm' | 'md' | 'lg'],
+              spacing[
+                (paddingRight || pr || px) as
+                  | 'quark'
+                  | 'nano'
+                  | 'xs'
+                  | 'sm'
+                  | 'md'
+                  | 'lg'
+              ],
             paddingLeft:
-              spacing[pl as 'quark' | 'nano' | 'xs' | 'sm' | 'md' | 'lg'],
+              spacing[
+                (paddingLeft || pl || px) as
+                  | 'quark'
+                  | 'nano'
+                  | 'xs'
+                  | 'sm'
+                  | 'md'
+                  | 'lg'
+              ],
             flexDirection: flexDirection as
               | 'row'
               | 'column'
@@ -97,6 +142,8 @@ const CustomPaper: React.FC<CustomPaperProps> = ({
               | 'column-reverse',
             justifyContent: justifyContent as 'center',
             alignItems: alignItems as 'center',
+            height: height as number,
+            width: width as number,
           },
           { ...(style as ViewStyle) },
         ]}
