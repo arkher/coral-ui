@@ -76,10 +76,10 @@ const Button: React.FC<ButtonProps> = ({
       bw={variantBorderWidth[variant]}
       borderRadius="nano"
       shadowColor="black"
-      height={{ phone: 48, tablet: 48 }}
+      minHeight={{ phone: 48, tablet: 48 }}
       alignItems="center"
       justifyContent="center"
-      flexShrink={1}
+      flexShrink={5}
       testID="button-box"
       {...props}
     >
@@ -93,7 +93,7 @@ const Button: React.FC<ButtonProps> = ({
             flex: 1,
             alignItems: 'center',
             justifyContent: 'center',
-            width: '100%',
+            minWidth: '100%',
             height: '100%',
             opacity: disabled ? 0.5 : 1,
             borderRadius: borderRadii.nano,
