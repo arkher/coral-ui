@@ -1,11 +1,8 @@
 /* eslint-disable arrow-body-style */
-import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { View } from 'react-native';
-import { StoriesView } from '../../stories/StorieView';
 import { COLORS, RADIUS, OPACITIES, SHADOWS } from '../../themes/tokens';
 import Box from './Box';
-import Text from '../Text';
 
 export default {
   title: 'Elements/Box',
@@ -69,14 +66,3 @@ export const Default = ({
     </View>
   );
 };
-
-// Add all stories to RN/Expo storybook
-storiesOf('Box-ds', module)
-  .addDecorator(getStory => <StoriesView>{getStory()}</StoriesView>)
-  .add('Default', () => (
-    <>
-      <Text mb="sm">Box / Paragraph </Text>
-
-      <Box bg="primary-base" borderRadius="nano" width={100} height={50} />
-    </>
-  ));

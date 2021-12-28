@@ -42,7 +42,7 @@
     "@shopify/restyle": "^1.4.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-masked-text": "^1.13.0",
-    "react-native-vector-icons": "^8.1.0"
+    "react-native-vector-icons": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -62,13 +62,9 @@
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-docs": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
-    "@storybook/addon-knobs": "^6.3.1",
     "@storybook/addon-links": "^6.3.12",
-    "@storybook/addon-ondevice-actions": "^5.3.23",
-    "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@storybook/addons": "~6.3.12",
     "@storybook/react": "~6.3.12",
-    "@storybook/react-native": "~5.3.25",
     "@storybook/ui": "^6.3.12",
     "@testing-library/jest-native": "^4.0.4",
     "@testing-library/react-native": "^8.0.0",

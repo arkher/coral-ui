@@ -12,11 +12,11 @@ import {
   PublicSans_700Bold,
 } from '@expo-google-fonts/public-sans';
 
-import Storybook from './playground/.storybook/index.js';
 import { themeMaestro, ThemeProvider } from './src/themes';
 import Forms from './playground/samples/Forms';
 import Playground from './playground';
 import LoginMaestro from './playground/samples/LoginMaestro';
+import Buttons from './playground/samples/Buttons';
 
 const Stack = createNativeStackNavigator();
 
@@ -64,7 +64,11 @@ const App: React.FC = () => {
               component={Forms}
               options={{ title: 'Formulários' }}
             />
-            <Stack.Screen name="Storybook" component={Storybook} />
+            <Stack.Screen
+              name="Buttons"
+              component={Buttons}
+              options={{ title: 'Botões' }}
+            />
             <Stack.Screen name="LoginMaestro" component={LoginMaestro} />
           </Stack.Navigator>
         </NavigationContainer>

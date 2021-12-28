@@ -1,10 +1,6 @@
-import { withKnobs } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { withDesign } from 'storybook-addon-designs';
-import { StoriesView } from '../../stories/StorieView';
 import TextArea from './TextArea';
-import Text from '../Text';
 
 export default {
   title: 'Componente/TextArea',
@@ -67,64 +63,3 @@ Medium.parameters = {
     url: urlHandoff,
   },
 };
-
-// Add all stories to RN/Expo storybook
-storiesOf('TextArea-ds', module)
-  .addDecorator(getStory => <StoriesView>{getStory()}</StoriesView>)
-  .addDecorator(withKnobs)
-  .add('Small', () => (
-    <>
-      <Text mb="sm">TextArea / Success / Error</Text>
-
-      <TextArea
-        label="Label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="small"
-      />
-
-      <TextArea
-        label="Label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="small"
-        status="success"
-      />
-
-      <TextArea
-        label="Label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="small"
-        status="error"
-      />
-    </>
-  ))
-  .add('Medium', () => (
-    <>
-      <Text mb="sm">TextField / Success / Error</Text>
-
-      <TextArea
-        label="label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="medium"
-      />
-
-      <TextArea
-        label="Label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="medium"
-        status="success"
-      />
-
-      <TextArea
-        label="Label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="medium"
-        status="error"
-      />
-    </>
-  ));

@@ -54,7 +54,7 @@ interface TextInputProps {
   value: string;
   borderColor: Custom.Colors;
   borderWidth: Custom.BorderWidth;
-  padding: Custom.Spacing;
+  padding: 'nano' | 'sm' | 'md' | 'lg' | 'xs' | 'quark';
   borderRadius: Custom.Radius;
   variant: Custom.HeightComponent;
   disabled: boolean;
@@ -81,7 +81,7 @@ export const Default = ({
     bw={borderWidth || 'hairline'}
     p={padding || 'nano'}
     borderRadius={borderRadius}
-    variant={variant}
+    h={variant}
     editable={disabled}
     multiline={multiline}
     numberOfLines={numberOfLines}
