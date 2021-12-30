@@ -1,5 +1,6 @@
 import { KeyboardTypeOptions, ReturnKeyTypeOptions } from 'react-native';
 import { Theme } from '../../themes/institucional';
+import { InputProps } from '../Input/interfaces';
 
 type TextAreaProps = {
   variant: 'small' | 'medium';
@@ -13,7 +14,8 @@ type TextAreaProps = {
   autoCapitalize: 'none' | 'sentences' | 'words' | 'characters' | undefined;
   returnKeyType: ReturnKeyTypeOptions;
   value: string;
-}>;
+}> &
+  InputProps;
 
 type TypeVariantHeight = {
   [index: string]: Custom.HeightComponent;

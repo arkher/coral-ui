@@ -22,6 +22,7 @@ const TextArea: React.ForwardRefRenderFunction<InputRef, TextAreaProps> = (
     autoCapitalize,
     keyboardType,
     value,
+    ...props
   },
   ref,
 ) => {
@@ -88,6 +89,7 @@ const TextArea: React.ForwardRefRenderFunction<InputRef, TextAreaProps> = (
           fontFamily: textVariants?.regular?.fontFamily,
           textAlignVertical: 'top',
         }}
+        {...props}
       />
 
       <Box
