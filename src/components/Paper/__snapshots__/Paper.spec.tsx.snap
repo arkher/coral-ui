@@ -9,6 +9,7 @@ exports[`should render correctly 1`] = `
         "display": "flex",
         "minHeight": "auto",
         "minWidth": "auto",
+        "overflow": "scroll",
       },
       Array [
         Object {
@@ -55,12 +56,14 @@ exports[`should render correctly 1`] = `
         Object {
           "alignItems": undefined,
           "flexDirection": undefined,
+          "height": undefined,
           "justifyContent": undefined,
           "padding": undefined,
           "paddingBottom": undefined,
           "paddingLeft": undefined,
           "paddingRight": undefined,
           "paddingTop": undefined,
+          "width": undefined,
         },
         Object {
           "0": Object {},

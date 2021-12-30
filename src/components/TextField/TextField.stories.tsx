@@ -1,8 +1,5 @@
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react-native';
 import { withDesign } from 'storybook-addon-designs';
-import { StoriesView } from '../../stories/StorieView';
 import Text from '../Text';
 import TextField from './TextField';
 
@@ -79,64 +76,3 @@ Medium.parameters = {
     url: urlHandoff,
   },
 };
-
-// Add all stories to RN/Expo storybook
-storiesOf('TextField-ds', module)
-  .addDecorator(getStory => <StoriesView>{getStory()}</StoriesView>)
-  .addDecorator(withKnobs)
-  .add('Small', () => (
-    <>
-      <Text mb="sm">TextField / Success / Error</Text>
-
-      <TextField
-        label="Label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="small"
-      />
-
-      <TextField
-        label="Label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="small"
-        status="success"
-      />
-
-      <TextField
-        label="Label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="small"
-        status="error"
-      />
-    </>
-  ))
-  .add('Medium', () => (
-    <>
-      <Text mb="sm">TextField / Success / Error</Text>
-
-      <TextField
-        label="label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="medium"
-      />
-
-      <TextField
-        label="Label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="medium"
-        status="success"
-      />
-
-      <TextField
-        label="Label"
-        assistiveText="Texto de suporte"
-        placeholder="Placeholder"
-        variant="medium"
-        status="error"
-      />
-    </>
-  ));

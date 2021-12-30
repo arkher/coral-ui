@@ -1,11 +1,6 @@
 import React from 'react';
-import { boolean, withKnobs } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react-native';
-import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
-import { StoriesView } from '../../stories/StorieView';
 import Switch from './Switch';
-import Text from '../Text';
 
 export default {
   title: 'Componente/Switch',
@@ -61,21 +56,3 @@ CheckedDisabled.parameters = {
     url: urlHandoff,
   },
 };
-
-// Add all stories to RN/Expo storybook
-storiesOf('Switch-ds', module)
-  .addDecorator(getStory => <StoriesView>{getStory()}</StoriesView>)
-  .addDecorator(withKnobs)
-  .add('Default', () => (
-    <>
-      <Text mb="sm">Switch / Marked / Default / Disabled</Text>
-
-      <Switch onChange={() => undefined} value disabled />
-
-      <Switch
-        my="sm"
-        value={boolean('value', false, 'default')}
-        onChange={action('clicked!')}
-      />
-    </>
-  ));

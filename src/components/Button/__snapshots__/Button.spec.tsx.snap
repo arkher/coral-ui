@@ -10,9 +10,9 @@ exports[`should Button render correctly 1`] = `
         "borderColor": "#0A7E19",
         "borderRadius": 4,
         "display": "flex",
-        "flexShrink": 1,
-        "height": 48,
+        "flexShrink": 5,
         "justifyContent": "center",
+        "minHeight": 48,
         "shadowColor": "#000000",
       },
       Array [
@@ -48,8 +48,8 @@ exports[`should Button render correctly 1`] = `
           "flex": 1,
           "height": "100%",
           "justifyContent": "center",
+          "minWidth": "100%",
           "opacity": 1,
-          "width": "100%",
         },
         Object {
           "backgroundColor": "transparent",

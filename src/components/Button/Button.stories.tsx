@@ -1,14 +1,11 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, withKnobs } from '@storybook/addon-knobs';
 import { withDesign } from 'storybook-addon-designs';
-import { storiesOf } from '@storybook/react-native';
 import { Alert, View } from 'react-native';
 import Text from '../Text/Text';
 import Button from './Button';
 import { COLORS } from '../../themes/tokens';
-import { StoriesView, StoriesViewInline } from '../../stories/StorieView';
 
 type Props = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -93,144 +90,3 @@ export const ButtonLoading = (): React.ReactNode => {
     </View>
   );
 };
-
-// Add all stories to RN/Expo storybook
-storiesOf('Button-ds', module)
-  .addDecorator(getStory => <StoriesView>{getStory()}</StoriesView>)
-  .addDecorator(withKnobs)
-  .add('Primary', () => (
-    <>
-      <Text mb="sm">Primary / Icon / Disabled / Loading</Text>
-
-      <Button onPress={action('clicked!')}>
-        <Text>{text('label', 'Button primary', 'primary')}</Text>
-      </Button>
-
-      <Button my="lg" onPress={() => Alert.alert('clicked!')}>
-        <Text>Button with Emoji 👋</Text>
-      </Button>
-
-      <Button icon="check-circle" onPress={() => Alert.alert('clicked!')}>
-        <Text>Button with Icon</Text>
-      </Button>
-
-      <Button disabled my="lg" onPress={() => Alert.alert('clicked!')}>
-        <Text>Button primary disabled</Text>
-      </Button>
-
-      <Button loading onPress={() => Alert.alert('clicked!')}>
-        <Text>Button primary loading</Text>
-      </Button>
-    </>
-  ))
-  .add('Secondary', () => (
-    <>
-      <Text mb="sm">Secondary / Icon / Disabled / Loading</Text>
-
-      <Button variant="secondary" onPress={() => Alert.alert('clicked!')}>
-        <Text>Button with Icon</Text>
-      </Button>
-
-      <Button
-        my="sm"
-        variant="secondary"
-        onPress={() => Alert.alert('clicked!')}
-      >
-        <Text>Button with Emoji 👋</Text>
-      </Button>
-
-      <Button
-        variant="secondary"
-        icon="check-circle"
-        onPress={() => Alert.alert('clicked!')}
-      >
-        <Text>Button primary</Text>
-      </Button>
-
-      <Button
-        variant="secondary"
-        disabled
-        my="lg"
-        onPress={() => Alert.alert('clicked!')}
-      >
-        <Text>Button primary disabled</Text>
-      </Button>
-
-      <Button
-        variant="secondary"
-        loading
-        onPress={() => Alert.alert('clicked!')}
-      >
-        <Text>Button primary loading</Text>
-      </Button>
-    </>
-  ))
-  .add('Tertiary', () => (
-    <>
-      <Text mb="sm">Tertiary / Icon / Disabled / Loading</Text>
-
-      <Button variant="tertiary" onPress={() => Alert.alert('clicked!')}>
-        <Text>Button with Icon</Text>
-      </Button>
-
-      <Button
-        my="sm"
-        variant="tertiary"
-        onPress={() => Alert.alert('clicked!')}
-      >
-        <Text>Button with Emoji 👋</Text>
-      </Button>
-
-      <Button
-        variant="tertiary"
-        icon="check-circle"
-        onPress={() => Alert.alert('clicked!')}
-      >
-        <Text>Button primary</Text>
-      </Button>
-
-      <Button variant="tertiary" disabled my="lg" onPress={action('clicked!')}>
-        <Text>Button primary disabled</Text>
-      </Button>
-
-      <Button
-        variant="tertiary"
-        loading
-        onPress={() => Alert.alert('clicked!')}
-      >
-        <Text>Button primary loading</Text>
-      </Button>
-    </>
-  ))
-  .add('Inline', () => (
-    <>
-      <Text>Buttons Inline</Text>
-
-      <StoriesViewInline>
-        <Button variant="primary" mt="sm" onPress={() => undefined}>
-          Primary
-        </Button>
-        <Button variant="secondary" mt="sm" ml="nano" onPress={() => undefined}>
-          Secondary
-        </Button>
-      </StoriesViewInline>
-
-      <StoriesViewInline>
-        <Button variant="primary" mt="sm" mr="nano" onPress={() => undefined}>
-          Entrar
-        </Button>
-        <Button variant="secondary" mt="sm" onPress={() => undefined}>
-          Cancelar
-        </Button>
-      </StoriesViewInline>
-
-      <StoriesViewInline>
-        <Button variant="tertiary" mt="sm" mr="nano" onPress={() => undefined}>
-          Primeiro acesso
-        </Button>
-        <Button variant="tertiary" mt="sm" onPress={() => undefined}>
-          Ouvidoria
-        </Button>
-      </StoriesViewInline>
-    </>
-  ));

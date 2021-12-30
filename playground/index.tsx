@@ -16,19 +16,13 @@ const Playground: React.FC<PlaygroundProps> = ({ navigation }) => (
         do DS-Mobile 🏗️
       </Text>
 
-      <Button
-        variant="tertiary"
-        mt="sm"
-        onPress={() => navigation.navigate('Storybook')}
-      >
-        <Text fs="xl">Acessar Storybook 🃏</Text>
-      </Button>
-
       <Box mt="lg">
-        <Text> Casos de uso 🔽</Text>
-
         <Button mt="sm" onPress={() => navigation.navigate('Forms')}>
           Formulários
+        </Button>
+
+        <Button mt="sm" onPress={() => navigation.navigate('Buttons')}>
+          Botões
         </Button>
 
         <Button mt="sm" onPress={() => navigation.navigate('LoginMaestro')}>

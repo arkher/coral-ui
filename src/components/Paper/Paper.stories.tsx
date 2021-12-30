@@ -1,7 +1,5 @@
-import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { withDesign } from 'storybook-addon-designs';
-import { StoriesView } from '../../stories/StorieView';
 import { COLORS } from '../../themes/tokens';
 import Box from '../Box';
 import Text from '../Text';
@@ -46,16 +44,3 @@ BasicPaper.parameters = {
     url: urlHandoff,
   },
 };
-
-// Add all stories to RN/Expo storybook
-storiesOf('Pressable-ds', module)
-  .addDecorator(getStory => <StoriesView>{getStory()}</StoriesView>)
-  .add('Default', () => (
-    <>
-      <Text mb="sm">Pressable </Text>
-
-      <Paper mt="lg" p="lg">
-        <Text p="md">Clique-me!</Text>
-      </Paper>
-    </>
-  ));

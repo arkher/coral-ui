@@ -1,59 +1,103 @@
-import React from 'react';
-import { Image, StatusBar } from 'react-native';
+import React, { useRef, useState } from 'react';
+import { StatusBar, Image } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { Box, Text, Button, TextField, Switch } from '../../src/components';
+import { InputRef } from '../../src/components/Input/interfaces';
+
 import pathImg from '../../assets/client/icon.webp';
-import { Box, Button, Text } from '../../src/components';
 
-const LoginMaestro: React.FC = () => (
-  <KeyboardAwareScrollView
-    contentContainerStyle={{ flex: 1, backgroundColor: 'white' }}
-  >
-    <StatusBar />
+type ResultType = {
+  cpf: string;
+  password: string;
+};
 
-    <Box
-      pt="sm"
-      px="sm"
-      flexDirection="column"
-      justifyContent="center"
-      flex={1}
+const LoginMaestro: React.FC = () => {
+  const [checked, setChecked] = useState(true);
+
+  const [result, setResult] = useState<ResultType>({
+    cpf: '',
+    password: '',
+  });
+
+  const cpfFieldRef = useRef<InputRef>(null);
+  const passwordRef = useRef<InputRef>(null);
+
+  return (
+    <KeyboardAwareScrollView
+      contentContainerStyle={{ flex: 1, backgroundColor: 'white' }}
     >
-      <Box mb="sm">
-        <Image source={pathImg} style={{ width: 75, height: 75 }} />
-      </Box>
+      <StatusBar />
 
-      <Box flexDirection="row" mt="lg">
-        <Button
-          variant="secondary"
-          mr="nano"
-          onPress={() => undefined}
-          flex={1}
-        >
-          Primeiro acesso
-        </Button>
-        <Button flex={1} variant="primary" onPress={() => undefined}>
-          Entrar
-        </Button>
-      </Box>
+      <Box
+        pt="sm"
+        px="sm"
+        flexDirection="column"
+        justifyContent="center"
+        flex={1}
+      >
+        <Box mb="sm">
+          <Image source={pathImg} style={{ width: 75, height: 75 }} />
+        </Box>
 
-      <Button variant="tertiary" onPress={() => undefined} my="xs">
-        Esqueceu sua senha?
-      </Button>
+        <Box>
+          <TextField
+            ref={cpfFieldRef}
+            type="cpf"
+            label="CPF"
+            variant="medium"
+            placeholder="000.000.000-00"
+            autoCapitalize="none"
+            keyboardType="numeric"
+          />
 
-      <Box flexDirection="row" alignItems="center" justifyContent="center">
-        <Text mr="nano">Usar impressão digital</Text>
-      </Box>
-      <Box alignItems="center" flexDirection="column" mt="lg">
-        <Button variant="tertiary" onPress={() => undefined}>
-          Ouvidoria
+          <TextField
+            ref={passwordRef}
+            label="Senha"
+            variant="medium"
+            placeholder="Digite sua senha"
+            autoCapitalize="none"
+          />
+
+          <Box flexDirection="row" mt="lg">
+            <Button variant="secondary" mr="nano" onPress={() => undefined}>
+              Primeiro acesso
+            </Button>
+            <Button
+              variant="primary"
+              onPress={() => {
+                setResult({
+                  cpf: cpfFieldRef.current?.value || '',
+                  password: passwordRef.current?.value || '',
+                });
+                return result;
+              }}
+            >
+              Entrar
+            </Button>
+          </Box>
+        </Box>
+
+        <Button variant="tertiary" onPress={() => undefined} my="xs">
+          Esqueceu sua senha?
         </Button>
-        <Box alignItems="center">
-          <Text fs="sm" color="neutral-base">
-            Maestro v2.1.65 | v255
-          </Text>
+
+        <Box flexDirection="row" alignItems="center" justifyContent="center">
+          <Text mr="nano">Usar impressão digital</Text>
+          <Switch value={checked} onChange={() => setChecked(!checked)} />
+        </Box>
+        <Box alignItems="center" flexDirection="column" mt="lg">
+          <Button variant="tertiary" onPress={() => undefined}>
+            Ouvidoria
+          </Button>
+          <Box alignItems="center">
+            <Text fs="sm" color="neutral-base">
+              Maestro v2.1.65 | v255
+            </Text>
+          </Box>
         </Box>
       </Box>
-    </Box>
-  </KeyboardAwareScrollView>
-);
+    </KeyboardAwareScrollView>
+  );
+};
 
 export default LoginMaestro;
