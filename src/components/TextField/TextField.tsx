@@ -53,6 +53,20 @@ const TextField: React.ForwardRefRenderFunction<InputRef, TextFieldProps> = (
     setIsFocused(false);
   }, []);
 
+  const renderIconPerStatus = () => {
+    if (status === 'success') {
+      return (
+        <Icon name="check-circle" size={16} color={statusKeyPair[status]} />
+      );
+    }
+    if (status === 'error') {
+      return (
+        <Icon name="alert-circle" size={16} color={statusKeyPair[status]} />
+      );
+    }
+    return <></>;
+  };
+
   return (
     <SafeAreaView>
       {!!label && (
@@ -83,19 +97,14 @@ const TextField: React.ForwardRefRenderFunction<InputRef, TextFieldProps> = (
         }}
         {...props}
       />
-      {!!assistiveText && (
-        <Box flexDirection="row" alignItems="center">
-          {status === 'success' && (
-            <Icon name="check-circle" size={16} color={statusKeyPair[status]} />
-          )}
-          {status === 'error' && (
-            <Icon name="alert-circle" size={16} color={statusKeyPair[status]} />
-          )}
+      <Box flexDirection="row" alignItems="center" height={16}>
+        {renderIconPerStatus()}
+        {!!assistiveText && (
           <Text ml="quark" fs="sm" color="neutral-darkest">
             {assistiveText}
           </Text>
-        </Box>
-      )}
+        )}
+      </Box>
     </SafeAreaView>
   );
 };

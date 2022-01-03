@@ -95,6 +95,7 @@ const TextArea: React.ForwardRefRenderFunction<InputRef, TextAreaProps> = (
       <Box
         flexDirection="row"
         justifyContent={assistiveText ? 'space-between' : 'flex-end'}
+        height={16}
       >
         {!!assistiveText && (
           <Box flexDirection="row" alignItems="center">
